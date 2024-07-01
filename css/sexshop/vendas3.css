@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+button {
+     margin: 300px 0 0 23px;
+}
+
+#cor-azul {
+    margin: 110px 0 0 20px;
+    background-color: blue;
+}
+
+#cor-branco {
+    margin: 110px 0 0 60px;
+    background-color: white;
+}
+
+#cor-preto {
+    margin: 110px 0 0 20px;
+    background-color: black;
+}
+
+#cor-vermelho {
+    margin: 110px 0 0 60px;
+    background-color: red;
+}
+
+#cor-rosa {
+    margin: 110px 0 0 20px;
+    background-color: pink;
+}
+
+#cor-preto1 {
+    margin: 110px 0 0 60px;
+    background-color: black;
+}
+
+#cor-amarelo {
+    margin: 110px 0 0 20px;
+    background-color: yellow;
+}
