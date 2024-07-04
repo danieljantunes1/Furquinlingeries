@@ -1,35 +1,17 @@
 @charset "UTF-8";
 
 .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11 {
+    position: absolute;
     width: 270px;
     height: 530px;
     margin: 0 50% 0 50%;
     cursor: pointer;
     background-color: #f2f3f3
-  }
-
-@media (max-width: 1100px) {
-  .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11 {
-    width: 233px;
-}
 }
 
-@media (max-width: 980px) {
+@media (max-width: 999px) {
   .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11 {
-   zoom: 85%;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11 {
-   zoom: 65%;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11 {
-    width: 210px;
-    zoom: 100%;
+   zoom: 55%;
 }
 }
 
@@ -49,63 +31,15 @@
     left: 330px;
 }
 
-@media (max-width: 1100px) {
-  .caixa1, .caixa4, .caixa7, .caixa10 {
-    left: -23.3em;
-}
-}
-
-@media (max-width: 1100px) {
-  .caixa2, .caixa5, .caixa8, .caixa11 {
-    left: -7.3em;
-}
-}
-
-@media (max-width: 1100px) {
-  .caixa3, .caixa6, .caixa9 {
-    left: 8.8em; 
-}
-}
-
-@media (max-width: 980px) {
+@media (max-width: 999px) {
   .caixa1, .caixa3, .caixa5, .caixa7, .caixa9, .caixa11 {
-    left: -15.4em;
+    left: -17.6em;
 }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 999px) {
   .caixa2, .caixa4, .caixa6, .caixa8, .caixa10 {
     left: 0.9em; 
-}
-}
-
-@media (max-width: 979px) {
-  .caixa1, .caixa4, .caixa7, .caixa10 {
-    left: -23.3em;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa2, .caixa5, .caixa8, .caixa11 {
-    left: -7.3em;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa3, .caixa6, .caixa9 {
-    left: 8.8em; 
-}
-}
-
-@media (max-width: 601px) {
-  .caixa1, .caixa3, .caixa5, .caixa7, .caixa9, .caixa11 {
-    left: -13.7em;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa2, .caixa4, .caixa6, .caixa8, .caixa10 {
-    left: 0.7em; 
 }
 }
 
@@ -121,123 +55,39 @@
     top: 1580px;
 }
 
-@media (max-width: 1100px) {
-  .caixa1, .caixa2, .caixa3 {
-    top: 360px;
+@media (max-width: 999px) {
+  .caixa1, .caixa2 {
+    top: 600px;
 }
 }
 
-@media (max-width: 1100px) {
-  .caixa4, .caixa5, .caixa6 {
-    top: 1040px;
+@media (max-width: 999px) {
+  .caixa3, .caixa4 {
+    top: 1160px;
 }
 }
 
-@media (max-width: 1100px) {
-  .caixa7, .caixa8, .caixa9 {
+@media (max-width: 999px) {
+  .caixa5 {
     top: 1720px;
 }
 }
 
-@media (max-width: 1100px) {
-  .caixa10, .caixa11 {
-    top: 2400px;
-}
-}
-
-@media (max-width: 980px) {
-  .caixa1, .caixa2 {
-    top: 350px;
-}
-}
-
-@media (max-width: 980px) {
-  .caixa3, .caixa4 {
-    top: 910px;
-}
-}
-
-@media (max-width: 980px) {
-  .caixa5, .caixa6 {
-    top: 1475px;
-}
-}
-
-@media (max-width: 980px) {
+@media (max-width: 999px) {
   .caixa7, .caixa8 {
     top: 2400px;
 }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 999px) {
   .caixa9, .caixa10 {
     top: 3100px;
 }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 999px) {
   .caixa11 {
     top: 3800px;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa1, .caixa2, .caixa3 {
-    top: 560px;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa4, .caixa5, .caixa6 {
-    top: 1260px;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa7, .caixa8, .caixa9 {
-    top: 1960px;
-}
-}
-
-@media (max-width: 979px) {
-  .caixa10, .caixa11 {
-    top: 2650px;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa1, .caixa2 {
-    top: 360px;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa3, .caixa4 {
-    top: 1060px;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa5, .caixa6 {
-    top: 1760px;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa7, .caixa8 {
-    top: 2460px;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa9, .caixa10 {
-    top: 3160px;
-}
-}
-
-@media (max-width: 601px) {
-  .caixa11 {
-    top: 3860px;
 }
 }
 
@@ -249,10 +99,10 @@
   background-color: #745843;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 999px) {
     #corda {
-       zoom: 40%;
-       top: 660px;
+       zoom: 25%;
+       top: 1060px;
        left: -100px;
     }
 }
@@ -295,6 +145,12 @@ h4 {
     display: block;
 }
 
+@media (max-width: 999px) {
+    #loja {
+    zoom: 90%;
+}
+}
+
 #caixa img {
     width: 100%;
     height: 317px;
@@ -327,86 +183,4 @@ h4 {
     #preço1 p {
        margin: 100px 0 0 25px;
     }
-}
-
-footer {
-    position: relative;
-    width: 100%;
-    margin: auto;
-    height: 455px;
-    background-color: #EDE0D7;
-}
-
-@media (max-width: 980px) {
-  footer {
-   height: 425px;
-}  
-}
-
-@media (max-width: 979px) {
-  footer {
-   zoom: 100%;
-}  
-}
-
-@media (max-width: 801px) {
-  footer {
-   zoom: 80%;
-   height: 455px;
-}  
-}
-
-#img2, #img3 {
-    position: absolute;
-    margin: 0 50% 0 50%;
-    top: 315px;
-}
-
-#img2 {
-    left: -25px;
-    
-}
-
-@media (max-width: 980px) {
-  #img2 {
-    margin: 0 50% 0 50%;
-    top: 13.9em;
-    left: -3.0em;
-}
-}
-
-#img3 {
-    left: 35px;
-    
-}
-
-@media (max-width: 980px) {
-  #img3 {
-    margin: 0 50% 0 50%;
-    top: 13.9em;
-    left: 2.0em;
-}
-} 
-
-#texto4 a {
-    position: absolute;
-    margin: 0 50% 0 50%; 
-    color: #745843;
-    width: 338px;
-    line-height: 1.50;
-    font-size: 18px;
-    top: 372px;
-    left: -153px;
-    font-family: arial;
-    letter-spacing: .092em;
-}
-
-@media (max-width: 980px) {
-  #texto4 a {
-    margin: 0 50% 0 50%;
-    font-size: 17.5px;
-    top: 20.5em;
-    left: -9.5em;
-    width: 330px;
-} 
 }
