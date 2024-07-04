@@ -6,12 +6,6 @@
 
 @media (max-width: 1216px) {
   body {
-    zoom: 80%;
-  }
-}
-
-@media (max-width: 979px) {
-  body {
     zoom: 100%;
   }
 }
@@ -151,7 +145,6 @@ h2 {
        top: 320px;
     }
 }
-
 
 #cor-azul, #cor-branco, #cor-branco1, #cor-branco2, #cor-preto, #cor-preto1, #cor-preto2 , #cor-vermelho, #cor-vermelho1, #cor-rosa, #cor-rosa1, #cor-rosa2, #cor-amarelo, #cor-verde, #cor-laranja, #cor-roxo {
     position: absolute;
