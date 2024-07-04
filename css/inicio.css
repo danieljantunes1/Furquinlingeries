@@ -180,11 +180,11 @@ h4 {
 }
 
 #roda {
-    margin-top: 810px;
+    margin-top: 1485px;
 }
 
 @media (max-width: 980px) {
-    #roda {
-        margin-top: 535px;
-    }
+  #roda {
+    margin-top: 1585px;
+}
 }
