@@ -9,7 +9,7 @@
     background-color: #f2f3f3
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11 {
    zoom: 55%;
 }
@@ -31,13 +31,13 @@
     left: 330px;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa1, .caixa3, .caixa5, .caixa7, .caixa9, .caixa11 {
     left: -17.6em;
 }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa2, .caixa4, .caixa6, .caixa8, .caixa10 {
     left: 0.9em; 
 }
@@ -55,37 +55,37 @@
     top: 1580px;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa1, .caixa2 {
     top: 600px;
 }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa3, .caixa4 {
     top: 1160px;
 }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa5 {
     top: 1720px;
 }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa7, .caixa8 {
     top: 2400px;
 }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa9, .caixa10 {
     top: 3100px;
 }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   .caixa11 {
     top: 3800px;
 }
@@ -99,7 +99,7 @@
   background-color: #745843;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
     #corda {
        zoom: 25%;
        top: 1060px;
