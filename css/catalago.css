@@ -11,7 +11,7 @@
 
 @media (max-width: 980px) {
   .caixa1, .caixa2, .caixa3, .caixa4, .caixa5 {
-   zoom: 47%;
+   zoom: 60%;
 }
 }
 
@@ -80,9 +80,9 @@ h3 {
 
 @media (max-width: 980px) {
   h3 {
-    zoom: 65%;
-    top: 310px;
-    left: -190px;
+    zoom: 75%;
+    top: 350px;
+    left: -220px;
     width: 250px;
 }
 }
