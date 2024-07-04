@@ -80,9 +80,9 @@ h3 {
 
 @media (max-width: 980px) {
   h3 {
-    zoom: 80%;
-    top: 250px;
-    left: -150px;
+    zoom: 65%;
+    top: 310px;
+    left: -190px;
     width: 250px;
 }
 }
