@@ -223,7 +223,7 @@ button {
     width: 1350px;
     height: 500px;
     margin: 0 50% 0 50%;
-    top: 800px;
+    top: 900px;
     left: -620px;
 }
 
@@ -321,7 +321,7 @@ h5 {
 }
 
 #roda {
-    margin-top: 550px;
+    margin-top: 650px;
 }
 
 @media (max-width: 980px) {
