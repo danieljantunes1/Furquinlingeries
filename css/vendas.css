@@ -321,11 +321,11 @@ h5 {
 }
 
 #roda {
-    margin-top: 650px;
+    margin-top: 1280px;
 }
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 1850px;
+    margin-top: 2870px;
 }
 }

@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+    overflow-x: hidden;
+  }
+
 @media (max-width: 1216px) {
   body {
     zoom: 100%;
@@ -61,6 +65,7 @@ main {
   body {
     overflow-x: hidden;
   }
+
   .nav-list {
     position: absolute;
     top: 8vh;
@@ -75,6 +80,7 @@ main {
     transition: transform 0.3s ease-in;
     z-index: 2;
   }
+
   .nav-list li {
     margin-left: 0;
     opacity: 0;
