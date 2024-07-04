@@ -145,12 +145,6 @@ h4 {
     display: block;
 }
 
-@media (max-width: 999px) {
-    #loja {
-    zoom: 90%;
-}
-}
-
 #caixa img {
     width: 100%;
     height: 317px;
