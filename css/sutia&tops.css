@@ -1,16 +1,5 @@
 @charset "UTF-8";
 
-#corda {
-  left: -150px;
-  width: 565px;
-}
-
-h3 {
-    padding: 10px;
-    width: 310px;
-    left: -617px;
-}
-
 #cor-preto {
     margin: 140px 0 0 20px;
     background-color: black;
@@ -62,12 +51,17 @@ h3 {
 }
 
 #roda {
-    position: absolute;
-    margin-top: 1600px;
+    margin-top: 810px;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 980px) {
   #roda {
-    margin-top: 690px;
+    margin-top: 750px;
+}
+}
+
+@media (max-width: 979px) {
+  #roda {
+    margin-top: 250px;
 }
 }
