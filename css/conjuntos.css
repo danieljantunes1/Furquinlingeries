@@ -37,12 +37,6 @@
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 305px;
-}
-}
-
-@media (max-width: 979px) {
-  #roda {
-    margin-top: 250px;
+    margin-top: 175px;
 }
 }
