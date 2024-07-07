@@ -100,7 +100,7 @@
 }
 }
 
-h3, h4, h5 {
+h3, h4 {
     position: absolute;
     font-family: 'Helvetica', serif;
     letter-spacing: .092em;
@@ -132,10 +132,10 @@ h4 {
        left:-20px;
     }
 }
-
+        
 .mini, .mini1 {
    position: absolute;
-   margin-top: 110px;
+   margin-top: 100px;
    width: 70px;
    height: 75px;
    cursor: pointer;
@@ -155,18 +155,25 @@ h4 {
    height: 100%;
 }
 
-#tamanho  {
-    position: relative;
-    padding: 5px 10px 5px 25px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
+ .size-box {
+    width: 60px;
+    height: 40px;
+    display: inline-block;
+    margin: 195px 10px 0 0;
+    text-align: center;
+    line-height: 40px;
     cursor: pointer;
-    letter-spacing: .092em;
-    font-family: 'Helvetica', serif;
-    color:  black;
-    font-size: 18px;
-    margin-top: 200px;
-    border-radius: 30px;
+    background-color: #e9e9e9;
+}
+
+.size-box:hover {
+    background-color: #745843;
+    color: white;
+}
+
+.size-box.selected {
+    background-color: #745843;
+    color: white;
 }
 
 #ladinho p {
@@ -176,6 +183,26 @@ h4 {
     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
     margin-top: 250px;
 }
+
+#preço0 p,#preço1 p, #preço2 p, #preço3 p {
+    position: absolute;
+    letter-spacing: .092em;
+    line-height: 1.50;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+#preço0 p {
+   font-size: 18px;
+   margin-top: 292px;
+   color: #a0a0a0;
+}
+
+#preço1 p {
+   font-size: 20px;
+   margin: 290px 0 0 130px;
+   color: black;
+}
+        
 
 #preço0 p,#preço1 p, #preço2 p, #preço3 p {
     position: absolute;
@@ -210,7 +237,7 @@ button {
     background-color: #745843;
     border-radius: 30px;
     top: 350px;
-    left: 20px;
+    left: 10px;
 }
 
 @media (max-width: 980px) {

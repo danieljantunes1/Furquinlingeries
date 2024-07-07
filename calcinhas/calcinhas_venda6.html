@@ -34,22 +34,32 @@
 <article id="loja">
         <div id="fotinha1"><img src="../imagens/calcinha_preta3.jpg" width="400" height="420" /></div>
         <div id="fotinha2"><img src="../imagens/calcinha_preta4.jpg" width="400"height="420" /></div>
-
         <div id="ladinho">
-            <h3>Calcinha de Renda</h3>
-            <h4>Preta</h4>
-            <div class="mini"><a href ='calcinhas_venda5.html'><img src="../imagens/calcinha_rosa1.jpg" /></a></div>
-            <div class="mini1"><img src="../imagens/calcinha_preta3.jpg" /></a></div>
-            <p>Entregamos para toda Floripa</p>
-            <div id="preço0"><p><s>R$ &nbsp&nbsp27,22</s></p></div>
-            <div id="preço1"><p>R$ &nbsp&nbsp22,22</p></div>
+        <h3>Calcinha de Renda</h3>
+        <h4>Preta</h4>
+        <div class="mini"><a href ='calcinhas_venda5.html'><img src="../imagens/calcinha_rosa1.jpg" /></a></div>
+        <div class="mini1"><img src="../imagens/calcinha_preta3.jpg" /></a></div>
+        <p>Entregamos para toda Floripa</p>
+        <div id="preço0"><p><s>R$ &nbsp&nbsp27,22</s></p></div>
+        <div id="preço1"><p>R$ &nbsp&nbsp22,22</p></div>
+        <div class="size-selection">
+        <div class="size-box">P</div>
+        <div class="size-box">M</div>
+        <div class="size-box">G</div>
+        <div class="size-box">GG</div></div>
+        <button type="submit">Sacola</button>   
+        </form>
 
-
-        <form action="/adicionar-ao-carrinho" method="post">
-        <select name="tamanho" id="tamanho" onchange="mostrarCores()">
-            <option value="P">P</option>
-            <option value="G">G</option></select> 
-        <button onclick="adicionarNaSacola()">Sacola</button></form></div>
+    <script>
+        document.querySelectorAll('.size-box').forEach(function(box) {
+            box.addEventListener('click', function() {
+                document.querySelectorAll('.size-box').forEach(function(box) {
+                    box.classList.remove('selected');
+                });
+                box.classList.add('selected');
+            });
+        });
+    </script>
 </article>
 
 <header id="sujestao">
