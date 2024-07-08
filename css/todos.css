@@ -58,21 +58,21 @@ main {
 }
 
 #cart-icon {
-    position: absolute;
-    cursor: pointer;
-    top: 19px;
-    right: 15vw;
+  position: absolute;
+  cursor: pointer;
+  top: 19px;
+  left: 80vw; /* Muda de right para left */
 }
 
 #cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #f17ea1;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 7px;
-    font-size: 12px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #f17ea1;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 12px;
 }
 
 @media (max-width: 999px) {
@@ -81,16 +81,16 @@ main {
   }
 
   .nav-list {
-    position: fixed; 
+    position: fixed;
     top: 8vh;
-    right: 0;
+    left: 0; /* Muda de right para left */
     width: 100vw;
     height: 62vh;
     background: #745843;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    transform: translateX(100%);
+    transform: translateX(-100%); /* Muda de translateX(100%) para translateX(-100%) */
     transition: transform 0.3s ease-in;
     z-index: 2;
   }
@@ -99,14 +99,15 @@ main {
     margin-left: 0;
     opacity: 0;
   }
+
   .mobile-menu {
     display: block;
-    margin-left: 37vh;
+    margin-right: 37vh; /* Muda de margin-left para margin-right */
   }
 
   #cart-icon {
-    right: 85vw;
-}
+    left: 85vw; /* Muda de right para left */
+  }
 }
 
 .nav-list.active {
@@ -116,7 +117,7 @@ main {
 @keyframes navLinkFade {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(-50px); /* Muda de translateX(50px) para translateX(-50px) */
   }
   to {
     opacity: 1;

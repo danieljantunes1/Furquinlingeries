@@ -95,7 +95,6 @@
 
 @media (max-width: 980px) {
   #ladinho {
-  zoom: 70px;
   margin: 828px 0 0 600px;
 }
 }
@@ -124,12 +123,12 @@ h4 {
 @media (max-width: 980px) {
     h3 {
        zoom: 100%;
-       left:-20px;
+       left: -5px;
     }
 
     h4 {
-       top: -10px;
-       left:-20px;
+       top: -5px;
+       left:-5px;
     }
 }
 
@@ -221,7 +220,7 @@ button {
 @media (max-width: 980px) {
     button {
        padding: 7px 75px 7px 75px;
-       left: 30px;
+       left: 20px;
 }
 }
 
@@ -242,8 +241,8 @@ button {
 
 @media (max-width: 980px) {
     #sujestao  {
-       zoom: 90%;
-       top: 1820px;
+       zoom: 70%;
+       top: 2370px;
        left: -287px;
        width: 450px;
     }
@@ -333,6 +332,6 @@ h5 {
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 2870px;
+    margin-top: 2700px;
 }
 }
