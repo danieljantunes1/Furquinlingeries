@@ -49,19 +49,8 @@
     <div class="size-box">M</div>
     <div class="size-box">G</div>
     <div class="size-box">GG</div></div>
-    <button type="submit">Sacola</button>   
-        </form>
-
-    <script>
-        document.querySelectorAll('.size-box').forEach(function(box) {
-            box.addEventListener('click', function() {
-                document.querySelectorAll('.size-box').forEach(function(box) {
-                    box.classList.remove('selected');
-                });
-                box.classList.add('selected');
-            });
-        });
-    </script>
+    <button type="button" id="add-to-cart">Sacola</button>
+    </form>
 </article>
 
 <header id="sujestao">

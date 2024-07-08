@@ -8,96 +8,55 @@
     <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="css/todos.css">
     <link rel="shortcut icon" href="favicon.jpg">
-
-    <script>
-        // Função para atualizar o contador da sacola
-        function updateCartCount() {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const cartCount = cartItems.length;
-            document.getElementById('cart-count').innerText = cartCount;
-        }
-
-        // Função para adicionar um item ao carrinho
-        function adicionarNaSacola(event) {
-            event.preventDefault(); // Impede o envio do formulário
-
-            const tamanho = document.getElementById('tamanho').value;
-            const product = {
-                id: 1,
-                name: 'Calcinha Exemplo',
-                size: tamanho,
-                price: 22.22,
-                quantity: 1
-            };
-
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            cartItems.push(product);
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-            updateCartCount();
-            alert('Produto adicionado à sacola!');
-        }
-
-        // Chame a função ao carregar a página
-        document.addEventListener('DOMContentLoaded', updateCartCount);
-    </script>
-
-
+    <style type="text/css">
+        /* Estilos existentes... */
+    </style>
 </head>
 <body>
-<header><nav>
-    <div class="mobile-menu">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-    </div>
-    <ul class="nav-list">
-    <li><a href ='calcinhas/calcinhas.html'>Calcinhas</a></li>
-    <li><a href ='sutia&tops/sutia&tops.html'>Sutiã e Tops</a></li>
-    <li><a href ='pijamas/pijamas.html'>Pijamas</a></li>
-    <li><a href ='sexshop/sexshop.html'>Sexshop</a></li>
-    <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li>
-    </ul><div id="cart-icon">
-    <img src="imagens/sacola.png" alt="Sacola" width="27" height="30">
-    <div id="cart-count">0</div>
-    </nav></header>
 
-    <script src="js/mobile-navbar.js"></script>
-    <h1>FURQUIN</h1>
-    <h2>Moda Íntima</h2>
-    <div id="super"><p><a href ='calcinhas.html'>Calcinha de Renda</a> / Azul</p></div>
+<header>
+    <nav>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href ='calcinhas/calcinhas.html'>Calcinhas</a></li>
+            <li><a href ='sutia&tops/sutia&tops.html'>Sutiã e Tops</a></li>
+            <li><a href ='pijamas/pijamas.html'>Pijamas</a></li>
+            <li><a href ='sexshop/sexshop.html'>Sexshop</a></li>
+            <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li>
+        </ul>
+        <div id="cart-icon">
+            <img src="imagens/sacola.png" alt="Sacola" width="27" height="30">
+            <div id="cart-count">0</div>
+        </div>
+    </nav>
+</header>
+
+<h1>FURQUIN</h1>
+<h2>Moda Íntima</h2>
 
 <article id="loja">
-    <div id="fotinha1"><img src="imagens/calcinha_azul1.jpg" width="400" height="420" /></div>
-    <div id="fotinha2"><img src="imagens/calcinha_azul2.jpg" width="400"height="420" /></div>
     <form id="ladinho">
-    <h3>Calcinha de Renda</h3>
-    <h4>Azul</h4>
-    <div class="mini"><img src="imagens/calcinha_azul1.jpg" /></div>
-    <div class="mini1"><a href ='calcinhas_venda2.html'><img src="imagens/calcinha_branca1.jpg" /></a></div>
-    <p>Entregamos para toda Floripa</p>
-    <div id="preço0"><p><s>R$ &nbsp&nbsp27,22</s></p></div>
-    <div id="preço1"><p>R$ &nbsp&nbsp22,22</p></div>
-    <div class="size-selection">
-    <div class="size-box">P</div>
-    <div class="size-box">M</div>
-    <div class="size-box">G</div>
-    <div class="size-box">GG</div></div>
-    <button type="submit">Sacola</button>   
+        <h3>Calcinha de Renda</h3>
+        <h4>Azul</h4>
+        <div class="mini"><img src="imagens/calcinha_azul1.jpg" /></div>
+        <div class="mini1"><a href ='calcinhas_venda2.html'><img src="imagens/calcinha_branca1.jpg" /></a></div>
+        <p>Entregamos para toda Floripa</p>
+        <div id="preço0"><p><s>R$ &nbsp&nbsp27,22</s></p></div>
+        <div id="preço1"><p>R$ &nbsp&nbsp22,22</p></div>
+        <div class="size-selection">
+            <div class="size-box">P</div>
+            <div class="size-box">M</div>
+            <div class="size-box">G</div>
+            <div class="size-box">GG</div>
+        </div>
+        <button type="button" id="add-to-cart">Sacola</button>
     </form>
-
-    <script>
-        document.querySelectorAll('.size-box').forEach(function(box) {
-            box.addEventListener('click', function() {
-                document.querySelectorAll('.size-box').forEach(function(box) {
-                    box.classList.remove('selected');
-                });
-                box.classList.add('selected');
-            });
-        });
-    </script>
 </article>
-</body>
+<script src="js/mobile-navbar.js"></script>
 
 <footer id="roda">
     <h1>FURQUIN</h1>
