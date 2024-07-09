@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const mensagem = `Dados do Cadastro e Envio:\n\nNome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nEndereço: ${endereco}\nBairro: ${bairro}\nCidade: ${cidade}\nCEP: ${cep}\nPagamento: ${pagamento}`;
 
-        const whatsappNumber = '5548996368579';
+        const whatsappNumber = '554888779250';
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(mensagem)}`;
 
         window.open(whatsappUrl, '_blank');
