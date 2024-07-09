@@ -31,10 +31,6 @@
     });
 
     document.getElementById('add-to-cart').addEventListener('click', function () {
-        if (!selectedSize) {
-            alert('Por favor, selecione um tamanho.');
-            return;
-        }
         const item = {
             product: document.querySelector('h3').textContent,
             color: document.querySelector('h4').textContent,
@@ -57,6 +53,8 @@
 </head>
 <body>
 
+<script src="../js/mobile-navbar.js"></script>
+
 <header><nav>
     <div class="mobile-menu">
     <div class="line1"></div>
@@ -73,10 +71,9 @@
     <div id="cart-count">0</div>
 </nav></header>
 
-    <script src="../js/mobile-navbar.js"></script>
-    <a href ='../inicio.html'><h1>FURQUIN</h1></a>
-    <a href ='../inicio.html'><h2>Moda Íntima</h2></a>
-    <div id="super"><p><a href ='sexshop.html'>Sexshop</a> / Rosa</p></div>
+    <h1>FURQUIN</h1>
+    <h2>Moda Íntima</h2>
+    <div id="super"><p><a href ='sexshop.html'>Sexshop</a> / Lubrificante</p></div>
 
 <article id="loja">
     <div id="fotinha1"><img src="../imagens/lubrificante1.jpg" width="465" height="380" /></div>
@@ -85,6 +82,7 @@
     <h3>Lubrificante</h3>
     <h4>200 ml</h4>
     <div class="mini"><img src="../imagens/lubrificante1.jpg" /></div>
+    <p>Entregamos para toda Floripa</p>
     <div id="preço0"><p><s>R$ &nbsp&nbsp27,22</s></p></div>
     <div id="preço1"><p>R$ &nbsp&nbsp22,22</p></div>
     <button type="button" id="add-to-cart">Sacola</button>
