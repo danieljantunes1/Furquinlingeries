@@ -1,7 +1,7 @@
 main {
     padding: 20px 20px 70px 20px;
     max-width: 1000px;
-    margin: 250px auto;
+    margin: 50px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #f2f3f3
@@ -9,11 +9,18 @@ main {
 
 h3 {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin: 300px 0 0 270px;
     color: #745843;
     font-family: 'calisto MT', sans-serif;
     letter-spacing: .092em;
-    margin-left: 30px;
+}
+
+@media (max-width: 980px) {
+  h3 {
+    zoom: 75%;
+    margin: 250px 0 0 50px;
+    width: 400px;
+}
 }
 
 label {

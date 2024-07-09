@@ -1,48 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cartIcon = document.getElementById('cart-icon');
-    const cartCount = document.getElementById('cart-count');
-    const sizeBoxes = document.querySelectorAll('.size-box');
-    const addToCartButton = document.getElementById('add-to-cart');
+    const submitButton = document.getElementById('submit-button');
     
-    if (!cartIcon || !cartCount || !addToCartButton) {
-        console.error('Um ou mais elementos necessários não foram encontrados!');
+    if (!submitButton) {
+        console.error('O botão de envio não foi encontrado!');
         return;
     }
 
-    let selectedSize = null;
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    function updateCartCount() {
-        cartCount.textContent = cart.length;
-    }
+    submitButton.addEventListener('click', function() {
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const endereco = document.getElementById('endereco').value;
+        const bairro = document.getElementById('bairro').value;
+        const cidade = document.getElementById('cidade').value;
+        const cep = document.getElementById('cep').value;
+        const pagamento = document.getElementById('pagamento').value;
 
-    sizeBoxes.forEach(box => {
-        box.addEventListener('click', function() {
-            sizeBoxes.forEach(b => b.classList.remove('selected'));
-            box.classList.add('selected');
-            selectedSize = box.textContent;
-        });
-    });
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    addToCartButton.addEventListener('click', function() {
-        if (!selectedSize) {
-            alert('Por favor, selecione um tamanho.');
+        if (!nome || !email || !telefone || !endereco || !bairro || !cidade || !cep || !pagamento) {
+            alert('Por favor, preencha todos os campos do formulário.');
             return;
         }
-        const item = {
-            product: document.querySelector('h3').textContent,
-            color: document.querySelector('h4').textContent,
-            size: selectedSize,
-            price: parseFloat(document.querySelector('#preço1 p').textContent.replace('R$ ', ''))
-        };
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-    });
 
-    cartIcon.addEventListener('click', function() {
-        window.location.href = '../sacola.html'; // Ajuste o caminho conforme necessário
-    });
+        let cartItemsMessage = cart.map(item => {
+            return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
+        }).join('\n');
 
-    updateCartCount();
+        let message = `Dados do Cadastro e Envio:
+        
+Nome: ${nome}
+Email: ${email}
+Telefone: ${telefone}
+Endereço: ${endereco}
+Bairro: ${bairro}
+Cidade: ${cidade}
+CEP: ${cep}
+Pagamento: ${pagamento}
+
+Itens da Sacola:
+${cartItemsMessage}`;
+
+        let whatsappUrl = `https://wa.me/5548996368579?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    });
 });
