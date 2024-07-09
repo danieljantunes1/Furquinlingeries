@@ -1,20 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const submitButton = document.getElementById('submit-button');
-    const form = document.getElementById('checkout-form');
+    document.getElementById('submit-button').addEventListener('click', function () {
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const endereco = document.getElementById('endereco').value;
+        const bairro = document.getElementById('bairro').value;
+        const cidade = document.getElementById('cidade').value;
+        const cep = document.getElementById('cep').value;
+        const pagamento = document.getElementById('pagamento').value;
 
-    submitButton.addEventListener('click', function () {
-        const formData = new FormData(form);
+        // Monta a mensagem
+        const message = `Dados do Cadastro e Envio:\n\n` +
+                        `nome: ${nome}\n` +
+                        `email: ${email}\n` +
+                        `telefone: ${telefone}\n` +
+                        `endereco: ${endereco}\n` +
+                        `bairro: ${bairro}\n` +
+                        `cidade: ${cidade}\n` +
+                        `cep: ${cep}\n` +
+                        `pagamento: ${pagamento}`;
 
-        // Convert FormData to a query string
-        const formEntries = [...formData.entries()];
-        const queryString = formEntries.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
+        // Número de telefone do destinatário
+        const phoneNumber = '5548996368579';
+        // Codifica a mensagem para a URL
+        const encodedMessage = encodeURIComponent(message);
+        // Cria a URL para WhatsApp Web
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-        // URL do WhatsApp com a mensagem formatada
-        const phoneNumber = '+5548996368579'; // Seu número de WhatsApp
-        const message = `Dados do Cadastro e Envio:\n\n${formEntries.map(([key, value]) => `${key}: ${value}`).join('\n')}`;
-        const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-
-        // Redireciona para o WhatsApp
-        window.location.href = whatsappURL;
+        // Abre a URL em uma nova aba
+        window.open(whatsappURL, '_blank');
     });
 });
