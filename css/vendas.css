@@ -217,6 +217,10 @@ button {
     border-radius: 30px;
 }
 
+button:hover {
+    background-color: #5a3b1a;
+}
+
 @media (max-width: 980px) {
     button {
        padding: 7px 75px 7px 75px;
