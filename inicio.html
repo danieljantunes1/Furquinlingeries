@@ -8,54 +8,77 @@
     <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="css/todos.css">
     <link rel="shortcut icon" href="favicon.jpg">
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    function updateCartCount() {
+        cartCount.textContent = cart.length;
+    }
+
+    cartIcon.addEventListener('click', function () {
+        window.location.href = '../sacola.html'; // Ajuste o caminho conforme necessário
+    });
+
+    updateCartCount();
+});
+    </script>
+
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-            <li><a href ='calcinhas/calcinhas.html'>Calcinhas</a></li>
-            <li><a href ='sutia&tops/sutia&tops.html'>Sutiã e Tops</a></li>
-            <li><a href ='pijamas/pijamas.html'>Pijamas</a></li>
-            <li><a href ='sexshop/sexshop.html'>Sexshop</a></li>
-            <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li>
-        </ul>
-        <div id="cart-icon">
-            <img src="imagens/sacola.png" alt="Sacola" width="27" height="30">
-            <div id="cart-count">0</div>
-        </div>
-    </nav>
-</header>
+<header><nav>
+    <div class="mobile-menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div></div>
+    <ul class="nav-list">
+    <li><a href ='calcinhas/calcinhas.html'>Calcinhas</a></li>
+    <li><a href ='sutia&tops/sutia&tops.html'>Sutiã e Tops</a></li>
+    <li><a href ='pijamas/pijamas.html'>Pijamas</a></li>
+    <li><a href ='sexshop/sexshop.html'>Sexshop</a></li>
+    <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li>
+    </ul><div id="cart-icon">
+    <img src="imagens/sacola.png" alt="Sacola" width="27" height="30">
+    <div id="cart-count">0</div>
+</nav></header>
 
-<h1>FURQUIN</h1>
-<h2>Moda Íntima</h2>
+    <script src="js/mobile-navbar.js"></script>
+    <a href ='inicio.html'><h1>FURQUIN</h1></a>
+    <a href ='inicio.html'><h2>Moda Íntima</h2></a>
+    <h3>Calcinhas</h3> 
+    
+<article id="loja"><ul id="caixa">
+    <a href ='calcinhas/calcinhas_venda1.html'><li class="caixa1"><img src="imagens/calcinha_azul1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-azul"></div>
+    <div id="cor-branco"></div></li></a>
 
-<article id="loja">
-    <form id="ladinho">
-        <h3>Calcinha de Renda</h3>
-        <h4>Azul</h4>
-        <div class="mini"><img src="imagens/calcinha_azul1.jpg" /></div>
-        <div class="mini1"><a href ='calcinhas_venda2.html'><img src="imagens/calcinha_branca1.jpg" /></a></div>
-        <p>Entregamos para toda Floripa</p>
-        <div id="preço0"><p><s>R$ &nbsp&nbsp27,22</s></p></div>
-        <div id="preço1"><p>R$ &nbsp&nbsp22,22</p></div>
-        <div class="size-selection">
-            <div class="size-box">P</div>
-            <div class="size-box">M</div>
-            <div class="size-box">G</div>
-            <div class="size-box">GG</div>
-        </div>
-        <button type="button" id="add-to-cart">Sacola</button>
-    </form>
+    <a href ='calcinhas/calcinhas_venda3.html'><li class="caixa2"><img src="imagens/calcinha_preta1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></s></div>
+    <div id="cor-preto"></div>
+    <div id="cor-vermelho"></div></li></a>
+
+    <a href ='calcinhas/calcinhas_venda5.html'><li class="caixa3"><img src="imagens/calcinha_rosa1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</s></p></div>
+    <div id="cor-rosa"></div>
+    <div id="cor-preto1"></div></li></a>
+
+    <a href ='calcinhas/calcinhas_venda7.html'><li class="caixa4"><img src="imagens/calcinha_amarela1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-amarelo"></div>
+    <div id="cor-branco"></div></li></a>
+
+    <a href ='calcinhas/calcinhas_venda9.html'><li class="caixa5"><img src="imagens/calcinha_verde1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-verde"></div>
+    <div id="cor-laranja"></div></li></a></ul>
 </article>
-
-<script src="js/envio.js"></script>
-<script src="js/mobile-navbar.js"></script>
 
 <footer id="roda">
     <h1>FURQUIN</h1>

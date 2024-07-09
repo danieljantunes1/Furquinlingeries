@@ -1,258 +1,192 @@
 @charset "UTF-8";
 
-#super {
+.caixa1, .caixa2, .caixa3, .caixa4, .caixa5 {
     position: absolute;
-    margin: 0 50% 0 50% 0;
-    top: 330px;
-    left: 160px;
-    width: 165vh;
-    height: 38px;
-    background-color: #e9e9e9;
-    border-radius: 20px;
-}
-
-#super p {
-    position: absolute;
-    padding: 11px 20px 7px 20px;
-    color: black;
-    width: 338px;
-    font-size: 16px;
-    font-family: arial;
-    letter-spacing: .092em;
+    width: 270px;
+    height: 530px;
+    margin: 0 50% 0 50%;
+    cursor: pointer;
+    background-color: #f2f3f3
 }
 
 @media (max-width: 980px) {
-    #super {
-       top: 275px;
-       left: 0px;
-       width: 100%;
-       height: 38px;
-       border-radius: 0;
+  .caixa1, .caixa2, .caixa3, .caixa4, .caixa5 {
+   zoom: 60%;
+}
+}
+
+.caixa1, .caixa5 {
+    left: -572px;
+}
+
+.caixa2 {
+    left: -270px;
+}
+
+.caixa3 {
+    left: 30px;
+}
+
+.caixa4 {
+    left: 330px;
+}
+
+@media (max-width: 980px) {
+    .caixa1, .caixa3, .caixa5 {
+        left: -17.6em;
     }
 
-    #super p {
-    padding: 11px 0 0 40px;
-}
-}
-
-#super a {
-    color: black;
+    .caixa2, .caixa4 {
+        left: 0.9em; 
+    }
 }
 
-#super a:hover {
-    color: #2c2c2c;
+.caixa1, .caixa2, .caixa3, .caixa4 {
+    top: 420px;
 }
 
-#loja  {
-    position: absolute;
-    margin: 0 50% 0 50%;
-    top: 400px;
-    left: -750px;
-    width: 1350px;
-    height: 600px;
+.caixa5 {
+    top: 980px;
 }
 
 @media (max-width: 980px) {
-   #loja  {
-       width: 950px;
-       top: 350px;
-}
-}
-
-#loja img {
-    position: absolute;
-    margin: 0 50% 0 50%;
-}
-
-#fotinha1 img {
-   left: -525px;
-}
-
-#fotinha2 img {
-   left: -105px;
-}
-
-@media (max-width: 980px) {
-   #fotinha1 img {
-      zoom: 90% ;
-      top: 5px;
-      left: 107px;
+   .caixa1, .caixa2 {
+    top: 520px;
    }
 
-   #fotinha2 img {
-      zoom: 90% ;
-      top: 450px;
-      left: 107px;
+   .caixa3, .caixa4 {
+    top: 1080px;
    }
-}
 
-#ladinho {
-  position: absolute;;
-  height: 400px;
-  width: 300px;
-  margin: 8px 0 0 1040px;
-}
-
-@media (max-width: 980px) {
-  #ladinho {
-  zoom: 70px;
-  margin: 828px 0 0 600px;
-}
+   .caixa5 {
+    top: 1640px;
+   }
 }
 
 h3, h4 {
     position: absolute;
-    font-family: 'Helvetica', serif;
-    letter-spacing: .092em;
     color: #745843;
+    font-weight: 500;
 }
 
 h3 {
-    font-size: 30px;
-    margin-top: 10px;
-    width: 325px;
-    font-weight: 700;
+     margin: 0 50% 0 50%;
+    font-size: 36px;
+    top: 340px;
+    left: -550px;
+    font-family: 'calisto MT', sans-serif;
+    letter-spacing: .092em;
+}
+
+@media (max-width: 980px) {
+  h3 {
+    zoom: 75%;
+    top: 350px;
+    left: -220px;
+    width: 250px;
+}
 }
 
 h4 {
-    font-size: 20px;
-    color:  #708090;
-    margin-top: 55px;
-    font-weight: 500;
-}
-
-@media (max-width: 980px) {
-    h3 {
-       zoom: 100%;
-       left:-20px;
-    }
-
-    h4 {
-       top: -10px;
-       left:-20px;
-    }
-}
-        
-.mini, .mini1 {
-   position: absolute;
-   margin-top: 100px;
-   width: 70px;
-   height: 75px;
-   cursor: pointer;
-}
-
-.mini:hover, .mini1:hover, .caixa1:hover, .caixa2:hover, .caixa3:hover, .caixa4:hover  {
-   opacity: 70%;
-}
-
-.mini1 {
-  left: 90px;
-}
-
-.mini img, .mini1 img {
-   left: -35px;
-   width: 100%;
-   height: 100%;
-}
-
- .size-box {
-    width: 60px;
-    height: 40px;
-    display: inline-block;
-    margin: 195px 10px 0 0;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-    background-color: #e9e9e9;
-}
-
-.size-box:hover {
-    background-color: #745843;
-    color: white;
-}
-
-.size-box.selected {
-    background-color: #745843;
-    color: white;
-}
-
-#ladinho p {
-  position: absolute;
-    letter-spacing: .092em;
-    line-height: 1.50;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    margin-top: 250px;
-}
-
-#preço0 p,#preço1 p, #preço2 p, #preço3 p {
-    position: absolute;
-    letter-spacing: .092em;
-    line-height: 1.50;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-}
-
-#preço0 p {
-   font-size: 18px;
-   margin-top: 292px;
-   color: #a0a0a0;
-}
-
-#preço1 p {
-   font-size: 20px;
-   margin: 290px 0 0 130px;
-   color: black;
-}
-        
-
-#preço0 p,#preço1 p, #preço2 p, #preço3 p {
-    position: absolute;
-    letter-spacing: .092em;
-    line-height: 1.50;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-}
-
-#preço0 p {
-   font-size: 18px;
-   margin-top: 292px;
-   color: #a0a0a0;
-}
-
-#preço1 p {
-   font-size: 20px;
-   margin: 290px 0 0 130px;
-   color: black;
-}
-
-button {
-    position: absolute;
-    padding: 10px 73px 10px 73px;
-    font-size: 20px;
-    letter-spacing: .192em;
-    line-height: 1.50;
-    font-weight: 500;
-    color:  white;
     font-family: 'Helvetica', serif;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    background-color: #745843;
-    border-radius: 30px;
-    top: 350px;
-    left: 10px;
+    font-size: 25px;
+    letter-spacing: .042em;
+    margin: 25px 0 0 25px;
+}
+
+#loja ul li {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+}
+
+#caixa img {
+    width: 100%;
+    height: 317px;
+}
+
+#preço p, #preço1 p {
+    position: absolute;
+    letter-spacing: .092em;
+    line-height: 1.50;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+#preço p {
+    font-size: 20px;
+    color: black;
+    margin: 80px 0 0 25px;
+}
+
+#preço1 p {
+    margin: 87px 0 0 165px;
+    font-size: 15px;
+    color: #a0a0a0;
 }
 
 @media (max-width: 980px) {
-    button {
-       padding: 7px 75px 7px 75px;
-       left: 30px;
+    #preço p {
+      margin: 70px 0 0 25px;
+    }
+
+    #preço1 p {
+       margin: 100px 0 0 25px;
+    }
 }
+
+@charset "UTF-8";
+
+#cor-azul {
+    margin: 140px 0 0 20px;
+    background-color: blue;
+}
+
+#cor-branco {
+    margin: 140px 0 0 60px;
+    background-color: white;
+}
+
+#cor-preto {
+    margin: 140px 0 0 20px;
+    background-color: black;
+}
+
+#cor-vermelho {
+    margin: 140px 0 0 60px;
+    background-color: red;
+}
+
+#cor-rosa {
+     margin: 140px 0 0 20px;
+    background-color: pink;
+}
+
+#cor-amarelo {
+    margin: 140px 0 0 20px;
+    background-color: yellow;
+}
+
+#cor-verde {
+    margin: 140px 0 0 20px;
+    background-color: green;
+}
+
+#cor-laranja {
+    margin: 140px 0 0 60px;
+    background-color: orange;
+}
+
+#cor-preto1 {
+    margin: 140px 0 0 60px;
+    background-color: black;
 }
 
 #roda {
-    margin-top: 1280px;
+    margin-top: 1485px;
 }
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 2870px;
+    margin-top: 1585px;
 }
 }
