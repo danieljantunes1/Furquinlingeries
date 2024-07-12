@@ -1,52 +1,5 @@
-@charset "UTF-8";
-
-#cor-azul {
-    margin: 140px 0 0 20px;
-    background-color: blue;
-}
-
-#cor-branco {
-    margin: 140px 0 0 60px;
-    background-color: white;
-}
-
-#cor-preto {
-    margin: 140px 0 0 20px;
-    background-color: black;
-}
-
-#cor-vermelho {
-    margin: 140px 0 0 60px;
-    background-color: red;
-}
-
-#cor-rosa {
-     margin: 140px 0 0 20px;
-    background-color: pink;
-}
-
-#cor-amarelo {
-    margin: 140px 0 0 20px;
-    background-color: yellow;
-}
-
-#cor-verde {
-    margin: 140px 0 0 20px;
-    background-color: green;
-}
-
-#cor-laranja {
-    margin: 140px 0 0 60px;
-    background-color: orange;
-}
-
-#cor-preto1 {
-    margin: 140px 0 0 60px;
-    background-color: black;
-}
-
 #roda {
-    margin-top: 1485px;
+    margin-top: 1425px;
 }
 
 @media (max-width: 980px) {

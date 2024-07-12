@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 #super {
     position: absolute;
     margin: 0 50% 0 50% 0;
@@ -165,6 +163,14 @@ h4 {
     background-color: #e9e9e9;
 }
 
+.size-box1 {
+    width: 60px;
+    height: 40px;
+    display: inline-block;
+    margin: 195px 10px 0 0;
+    line-height: 40px;
+}
+
 .size-box:hover {
     background-color: #745843;
     color: white;
@@ -215,6 +221,7 @@ button {
     cursor: pointer;
     background-color: #745843;
     border-radius: 30px;
+    margin-top: 110px;
 }
 
 button:hover {

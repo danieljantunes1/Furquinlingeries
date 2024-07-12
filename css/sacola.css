@@ -1,4 +1,3 @@
-
 main {
     padding: 20px;
     max-width: 1000px;
@@ -19,6 +18,15 @@ h3 {
     font-family: 'calisto MT', sans-serif;
     letter-spacing: .092em;
     margin-left: 30px;
+}
+
+.bar {
+    position: absolute;
+    height: 1px; 
+    background-color: #745843;
+    top: 54%; 
+    left: 31%;
+    width: 780px;
 }
 
 #cart-items-container {
@@ -88,11 +96,11 @@ footer {
 }
 
 #roda {
-    margin-top: 1vh;
+    margin-top: 1100px;
 }
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 50vh;
+    margin-top: 1100px;
 }
 }

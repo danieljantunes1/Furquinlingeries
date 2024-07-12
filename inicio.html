@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>FURQUIN Moda Íntima</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/todos.css">
+    <link rel="shortcut icon" href="favicon.jpg">
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    function updateCartCount() {
+        cartCount.textContent = cart.length;
+    }
+
+    cartIcon.addEventListener('click', function () {
+        window.location.href = '../sacola.html'; // Ajuste o caminho conforme necessário
+    });
+
+    updateCartCount();
+});
+    </script>
+
+</head>
+<body> 
+
+<script src="js/mobile-navbar.js"></script>
+<script src="js/sacola.js"></script>
+
+<header><nav>
+    <div class="mobile-menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div></div>
+    <ul class="nav-list">
+    <li><a href ='inicio.html'>Inicio</a></li>
+    <li><a href ='calcinhas/calcinhas.html'>Calcinhas</a></li>
+    <li><a href ='sutia&tops/sutia&tops.html'>Sutiã e Tops</a></li>
+    <li><a href ='pijamas/pijamas.html'>Pijamas</a></li>
+    <li><a href ='sexshop/sexshop.html'>Sexshop</a></li>
+    <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li>
+    </ul><div id="cart-icon">
+    <img src="imagens/sacola.png" alt="Sacola" width="27" height="30">
+    <div id="cart-count">0</div>
+</nav></header>
+
+    <h1>FURQUIN</h1>
+    <h2>Moda Íntima</h2>
+    <div class="banner1"></div>
+    <div class="banner2"></div>
+    <div class="banner3"></div>
+    <div class="banner4"></div>
+    <div class="banner5"></div>
+    
+<article id="loja">
+    
+    <ul id="caixa">
+    <li class="caixa1"><a href ='calcinhas_venda1.html'><img src="imagens/calcinha_azul1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-azul"></div>
+    <div id="cor-branco"></div></a></li>
+
+    <li class="caixa2"><a href ='calcinhas_venda3.html'><img src="imagens/calcinha_preta1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></s></div>
+    <div id="cor-preto"></div>
+    <div id="cor-vermelho"></div></a></li>
+
+    <li class="caixa3"><a href ='calcinhas_venda5.html'><img src="imagens/calcinha_rosa1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</s></p></div>
+    <div id="cor-rosa"></div>
+    <div id="cor-preto1"></div></a></li>
+
+    <li class="caixa4"><a href ='calcinhas_venda9.html'><img src="imagens/calcinha_verde1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-verde"></div>
+    <div id="cor-laranja"></div></a></li>
+
+    <li class="caixa5"><a href ='sutia&tops_venda1.html'><img src="imagens/sutia&tops_preto1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-preto"></div>
+    <div id="cor-vermelho"></div></a></li>
+    
+    <li class="caixa6"><a href ='sutia&tops_venda3.html'><img src="imagens/sutia&tops_rosa1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></div>
+    <div id="cor-rosa"></div>
+    <div id="cor-vermelho1"></div></a></a></li>
+
+    <li class="caixa7"><a href ='sutia&tops_venda7.html'><img src="imagens/sutia&tops_verde1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-verde"></div>
+    <div id="cor-branco1"></div></a></li>
+
+    <li class="caixa8"><a href ='sutia&tops_venda9.html'><img src="imagens/sutia&tops_azul1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-azul"></div>
+    <div id="cor-rosa2"></div></a></li>
+
+    <li class="caixa9"><a href ='pijamas_venda1.html'><img src="imagens/pijama_preto1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-preto"></div></a></li>
+
+    <li class="caixa10"><a href ='pijamas_venda2.html'><img src="imagens/pijama_verde1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></div>
+    <div id="cor-verde"></div>
+    <div id="cor-rosa"></div></a></li>
+
+    <li class="caixa11"><a href ='pijamas_venda4.html'><img src="imagens/pijama_azul1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</s></p></div>
+    <div id="cor-azul"></div>
+    <div id="cor-rosa1"></div></a></li>
+
+    <li class="caixa12"><a href ='pijamas_venda6.html'><img src="imagens/pijama_rosa5.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-rosa2"></div></a></li>
+
+    <li class="caixa13"><a href ='sexshop_venda1.html'><img src="imagens/vibrador_rosa1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-rosa"></div>
+    <div id="cor-roxo"></div></a></li>
+
+    <li class="caixa14"><a href ='sexshop_venda3.html'><img src="imagens/lubrificante1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></div></a></li>
+
+    <li class="caixa15"><a href ='sexshop_venda1.html'><img src="imagens/vibrador_rosa1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-rosa"></div>
+    <div id="cor-roxo"></div></a></li>
+
+    <li class="caixa16"><a href ='sexshop_venda3.html'><img src="imagens/lubrificante1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></div></a></li>
+
+    <li class="caixa17"><a href ='conjuntos_venda1.html'><img src="imagens/conjunto_preto1.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-preto"></div>
+    <div id="cor-branco"></div></a></li>
+
+    <li class="caixa18"><a href ='conjuntos_venda3.html'><img src="imagens/conjunto_branca3.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</p></div>
+    <div id="cor-branco1"></div>
+    <div id="cor-preto1"></div></a></li>
+
+    <li class="caixa19"><a href ='conjuntos_venda5.html'><img src="imagens/conjunto_preto5.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="preço1"><p><s>R$ XX,XX</s></p></div>
+    <div id="cor-preto2"></div></a></li>
+
+    <li class="caixa20"><a href ='conjuntos_venda6.html'><img src="imagens/conjunto_branca5.jpg" /><h4>Calcinha de renda</h4>
+    <div id="preço"><p>R$ XX,XX</p></div>
+    <div id="cor-branco2"></div></a></li>
+</article>
+
+<footer id="roda">
+    <h1>FURQUIN</h1>
+    <h2>Moda Íntima</h2>
+    <div id="img2"><a href =https://www.instagram.com/furquinlingeries/ target="_blank"><img src="imagens/instagram.png" width="30" height="30" /></a></div>
+    <div id="img3"><a href =https://www.instagram.com/furquinlingeries/ target="_blank"><img src="imagens/whats.png" width="30" height="30" /></a></div>
+    <div id="texto4"><a href ='https://www.google.com.br/maps/@-27.6641169,-48.5032426,3a,75y,251.22h,84.91t/data=!3m6!1e1!3m4!1sVBbXg7b3Cv0Ztm82yTAjlg!2e0!7i13312!8i6656?entry=ttu' target="_blank"><p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
+</footer>
+</body>
+</html>

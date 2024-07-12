@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +8,7 @@
     zoom: 100%;
   }
 }
-
+ 
 a {
   color: #fff;
   text-decoration: none;
@@ -25,7 +24,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: #745843;
+  background: #5a3b1a;
   height: 8vh;
 }
 
@@ -60,19 +59,34 @@ main {
 #cart-icon {
   position: absolute;
   cursor: pointer;
-  top: 19px;
-  left: 80vw; /* Muda de right para left */
+  top: 16px;
+  left: 80vw; /* Ajuste conforme necessário */
 }
 
 #cart-count {
   position: absolute;
-  top: -10px;
+  top: 12px;
   right: -10px;
-  background-color: #f17ea1;
-  color: white;
+  background-color: white;
+  color: #745843;
   border-radius: 50%;
-  padding: 2px 7px;
-  font-size: 12px;
+  padding: 1px 6px 2px 7px;
+  font-size: 11px;
+  display: none; /* Inicialmente escondido */
+}
+
+/* Mostrar o contador somente se o valor for diferente de zero */
+#cart-count:empty {
+  display: none;
+}
+
+#cart-count:not(:empty) {
+  display: block;
+}
+
+/* Alternativamente, se você estiver usando o JavaScript para definir o conteúdo */
+#cart-count.hidden {
+  display: none;
 }
 
 @media (max-width: 999px) {
@@ -82,16 +96,15 @@ main {
 
   .nav-list {
     position: fixed;
-    top: 8vh;
-    left: 0; /* Muda de right para left */
+    top: -100%; /* Mudança de top: 8vh para top: -100% */
+    left: 0;
     width: 100vw;
-    height: 62vh;
-    background: #745843;
+    height: 52vh;
+    background: #5a3b1a;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    transform: translateX(-100%); /* Muda de translateX(100%) para translateX(-100%) */
-    transition: transform 0.3s ease-in;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Aumenta a duração e ajusta a função de tempo */
     z-index: 2;
   }
 
@@ -102,26 +115,26 @@ main {
 
   .mobile-menu {
     display: block;
-    margin-right: 37vh; /* Muda de margin-left para margin-right */
+    margin-left: 35vh;
   }
 
   #cart-icon {
-    left: 85vw; /* Muda de right para left */
+    left: 65vw;
   }
 }
 
 .nav-list.active {
-  transform: translateX(0);
+  top: 7.9vh; /* Mudança de transform: translateX(0) para top: 8vh */
 }
 
 @keyframes navLinkFade {
   from {
     opacity: 0;
-    transform: translateX(-50px); /* Muda de translateX(50px) para translateX(-50px) */
+    transform: translateY(-50px); /* Mudança de translateX para translateY */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -139,7 +152,7 @@ main {
 
 h1, h2 {
     position: absolute;
-    color: #745843;
+    color: #5a3b1a;
     margin: 0 50% 0 50%;
     font-family: 'calisto MT', sans-serif;
     letter-spacing: .092em;
@@ -171,12 +184,97 @@ h2 {
     }
 }
 
-#cor-azul, #cor-branco, #cor-branco1, #cor-branco2, #cor-preto, #cor-preto1, #cor-preto2 , #cor-vermelho, #cor-vermelho1, #cor-rosa, #cor-rosa1, #cor-rosa2, #cor-amarelo, #cor-verde, #cor-laranja, #cor-roxo {
+#cor1, #cor2, #cor3, #cor4, #cor5, #cor6, #cor7 , #cor8, #cor9, #cor10, #cor11, #cor12, #cor13, #cor14, #cor15, #cor16, #cor17 {
     position: absolute;
-    width: 27px;
-    height: 27px;
+    width: 20px;
+    height: 20px;
     border-radius: 100px;
     border: 1px solid black;
+}
+
+#cor1 {
+  background-color: black;
+  margin: 120px 0 0 20px;
+}
+
+#cor2 {
+  background-color: black;
+  margin: 120px 0 0 55px;
+}
+
+#cor3 {
+  background-color: blue;
+  margin: 120px 0 0 20px;
+}
+
+#cor4 {
+  background-color: blue;
+  margin: 120px 0 0 55px;
+}
+
+#cor5 {
+  background-color: yellow;
+  margin: 120px 0 0 20px;
+}
+
+#cor6 {
+  background-color: yellow;
+  margin: 120px 0 0 55px;
+}
+
+#cor7 {
+  background-color: white;
+  margin: 120px 0 0 20px;
+}
+
+#cor8 {
+  background-color: white;
+  margin: 120px 0 0 55px;
+}
+
+#cor9 {
+  background-color: green;
+  margin: 120px 0 0 20px;
+}
+
+#cor10 {
+  background-color: green;
+  margin: 120px 0 0 55px;
+}
+
+#cor11 {
+  background-color: red;
+  margin: 120px 0 0 20px;
+}
+
+#cor12 {
+  background-color: red;
+  margin: 120px 0 0 55px;
+}
+
+#cor13 {
+  background-color: orange;
+  margin: 120px 0 0 20px;
+}
+
+#cor14 {
+  background-color: orange;
+  margin: 120px 0 0 55px;
+}
+
+#cor15 {
+  background-color: pink;
+  margin: 120px 0 0 20px;
+}
+
+#cor16 {
+  background-color: pink;
+  margin: 120px 0 0 55px;
+}
+
+#cor17 {
+  background-color: purple;
+  margin: 120px 0 0 55px;
 }
 
 footer {
@@ -210,12 +308,10 @@ footer h2 {
 
 #img2 {
     left: -25px;
-    
 }
 
 #img3 {
     left: 35px;
-    
 }
 
 @media (max-width: 980px) {
@@ -233,7 +329,7 @@ footer h2 {
 #texto4 a {
     position: absolute;
     margin: 0 50% 0 50%; 
-    color: #745843;
+    color: #5a3b1a;
     width: 338px;
     line-height: 1.50;
     font-size: 18px;

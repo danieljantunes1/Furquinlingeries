@@ -1,35 +1,3 @@
-@charset "UTF-8";
-
-#cor-preto {
-    margin: 140px 0 0 20px;
-    background-color: black;
-}
-
-#cor-branco {
-    margin: 140px 0 0 60px;
-    background-color: white;
-}
-
-#cor-branco1 {
-    margin: 140px 0 0 20px;
-    background-color: white;
-}
-
-#cor-preto1 {
-    margin: 140px 0 0 60px;
-    background-color: black;
-}
-
-#cor-preto2 {
-    margin: 140px 0 0 20px;
-    background-color: black;
-}
-
-#cor-branco2 {
-    margin: 140px 0 0 20px;
-    background-color: white;
-}
-
 #roda {
     position: absolute;
     margin-top: 920px;

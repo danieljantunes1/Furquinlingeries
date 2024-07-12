@@ -29,6 +29,15 @@ h3 {
 }
 }
 
+.bar {
+    position: absolute;
+    height: 1px; 
+    background-color: #745843;
+    top: 51.5%; 
+    left: 30%;
+    width: 820px;
+}
+
 label {
     display: block;
     margin-top: 10px;
