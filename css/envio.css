@@ -1,7 +1,7 @@
 main {
     padding: 20px 20px 70px 20px;
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 30px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #f2f3f3
@@ -36,6 +36,15 @@ h3 {
     top: 51.5%; 
     left: 30%;
     width: 820px;
+}
+
+@media (max-width: 980px) {
+  .bar {
+    height: 1px; 
+    top: 32.2%; 
+    left: 54%;
+    width: 155px;
+}
 }
 
 label {
@@ -91,5 +100,5 @@ background-color: #5a3b1a;
 }
 
 #roda {
-    margin-top: 70px;
+    margin-top: 50px;
 }

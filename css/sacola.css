@@ -29,6 +29,15 @@ h3 {
     width: 780px;
 }
 
+@media (max-width: 980px) {
+  .bar {
+    height: 1px; 
+    top: 36.4%; 
+    left: 54%;
+    width: 155px;
+}
+}
+
 #cart-items-container {
     background: #fff;
     border-radius: 10px;
