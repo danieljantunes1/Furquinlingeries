@@ -115,11 +115,11 @@ main {
 
   .mobile-menu {
     display: block;
-    margin-left: 35vh;
+    margin-left: 40vh;
   }
 
   #cart-icon {
-    left: 65vw;
+    left: 75vw;
   }
 }
 

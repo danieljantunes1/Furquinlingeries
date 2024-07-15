@@ -29,7 +29,7 @@
 }
 
  .banner2, .banner3, .banner4, .banner5 {
-    margin: 620px 0 0 190px;
+    margin: 580px 0 0 190px;
     background-image: url('../imagens/6664336.jpg');
 }
 
@@ -78,7 +78,7 @@
 .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11, .caixa12, .caixa13, .caixa14, .caixa15, .caixa16, .caixa17, .caixa18, .caixa19, .caixa20 {
     position: absolute;
     width: 270px;
-    height: 530px;
+    height: 500px;
     margin: 0 50% 0 50%;
     background-color: #f2f3f3
 }
@@ -124,19 +124,19 @@
 }
 
 .caixa5, .caixa6, .caixa7, .caixa8 {
-    top: 1970px;
+    top: 1925px;
 }
 
 .caixa9, .caixa10, .caixa11, .caixa12 {
-    top: 3090px;
+    top: 3005px;
 }
 
 .caixa13, .caixa14, .caixa15, .caixa16 {
-    top: 4210px;
+    top: 4075px;
 }
 
 .caixa17, .caixa18, .caixa19, .caixa20 {
-    top: 5330px;
+    top: 5155px;
 }
 
 @media (max-width: 980px) {
@@ -275,7 +275,7 @@ h4 {
 }
 
 #roda {
-    margin-top: 610px;
+    margin-top: 565px;
 }
 
 @media (max-width: 980px) {
