@@ -62,27 +62,46 @@
     margin: 0 50% 0 50%;
 }
 
+/* Adicione este estilo para a imagem pequena */
 #fotinha1 img {
-   left: -525px;
+    width: 400px;
+    height: 420px;
+    margin-left: 150px;
 }
 
 #fotinha2 img {
-   left: -105px;
+    width: 400px;
+    height: 420px;
+    margin-left: 570px;
 }
 
 @media (max-width: 980px) {
-   #fotinha1 img {
-      zoom: 90% ;
-      top: 135px;
-      left: 107px;
-   }
+    #fotinha1 {
+        position: relative;
+        margin-left:400px;
 
-   #fotinha2 img {
-      zoom: 90% ;
-      top: 570px;
-      left: 107px;
-   }
+    }
+
+    #fotinha1 img {
+        margin-top: 110px;
+        
+    }
+
+    #fotinha2 {
+        position: absolute;
+        top: 550px; /* Colocando a imagem pequena abaixo da imagem grande */
+        left: 10px; /* Centralizando a imagem pequena */
+        transform: translateX(-50%);
+    }
+
+    #fotinha2 img {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+    }
 }
+
+
 
 #ladinho {
   position: absolute;;
@@ -93,7 +112,7 @@
 
 @media (max-width: 980px) {
   #ladinho {
-  margin: 828px 0 0 600px;
+  margin: 600px 0 0 600px;
 }
 }
 
@@ -122,11 +141,11 @@ h4 {
     h3 {
        zoom: 80%;
        left: -25px;
-       top: -1070px;
+       top: -800px;
     }
 
     h4 {
-       top: -868px;
+       top: -655px;
        left: -15px;
     }
 }
@@ -217,11 +236,11 @@ h4 {
 
 @media (max-width: 980px) {
     #preço1 p {
-       margin: -772px 0 0 -15px;
+       margin: -555px 0 0 -15px;
 }
 
    #preço0 p {
-      margin: -765px 0 0 180px;
+      margin: -555px 0 0 130px;
 }
 }
 
@@ -271,7 +290,7 @@ button:hover {
 @media (max-width: 980px) {
     #sujestao  {
        zoom: 70%;
-       top: 2270px;
+       top: 1950px;
        left: -287px;
        width: 450px;
     }
@@ -361,6 +380,6 @@ h5 {
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 2600px;
+    margin-top: 2320px;
 }
 }
