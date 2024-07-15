@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const encodedMessage = encodeURIComponent(message);
 
         // Abrindo o WhatsApp
-        window.open(`https://wa.me/55488877-9250?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/554888779250?text=${encodedMessage}`, '_blank');
 
         // Zerando a sacola após o envio
         localStorage.removeItem('cart');

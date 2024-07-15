@@ -41,7 +41,7 @@ Pagamento: ${pagamento}
 Itens da Sacola:
 ${cartItemsMessage}`;
 
-        let whatsappUrl = `https://wa.me/55488877-9250?text=${encodeURIComponent(message)}`;
+        let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
 });
