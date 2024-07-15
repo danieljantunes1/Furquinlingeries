@@ -41,7 +41,7 @@ h3 {
 @media (max-width: 980px) {
   .bar {
     height: 1px; 
-    top: 32.2%; 
+    top: 270px; 
     left: 54%;
     width: 155px;
 }

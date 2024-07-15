@@ -30,26 +30,3 @@ document.addEventListener('DOMContentLoaded', function () {
             selectedSize = box.textContent;
         });
     });
-
-    document.getElementById('add-to-cart').addEventListener('click', function () {
-        if (!selectedSize) {
-            alert('Por favor, selecione um tamanho de pijama.');
-            return;
-        }
-        const item = {
-            product: document.querySelector('h3').textContent,
-            color: document.querySelector('h4').textContent,
-            size: selectedSize,
-            price: parseFloat(document.querySelector('#preço1 p').textContent.replace('R$ ', ''))
-        };
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-    });
-
-    cartIcon.addEventListener('click', function () {
-        window.location.href = '../sacola.html';
-    });
-
-    updateCartCount();
-});
