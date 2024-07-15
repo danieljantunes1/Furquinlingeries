@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Seleciona as imagens
     const imgGrande = document.querySelector('#fotinha1 img');
     const imgPequena = document.querySelector('#fotinha2 img');
 
+    // Adiciona o evento de clique à imagem pequena para trocar as imagens
     imgPequena.addEventListener('click', function () {
         // Armazena o src das imagens
         const grandeSrc = imgGrande.src;
@@ -30,3 +32,23 @@ document.addEventListener('DOMContentLoaded', function () {
             selectedSize = box.textContent;
         });
     });
+
+    document.getElementById('add-to-cart').addEventListener('click', function () {
+        
+        const item = {
+            product: document.querySelector('h3').textContent,
+            color: document.querySelector('h4').textContent,
+            size: selectedSize,
+            price: parseFloat(document.querySelector('#preço1 p').textContent.replace('R$ ', ''))
+        };
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+    });
+
+    cartIcon.addEventListener('click', function () {
+        window.location.href = '../sacola.html'; // Ajuste o caminho conforme necessário
+    });
+
+    updateCartCount();
+});
