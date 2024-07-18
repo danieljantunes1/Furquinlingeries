@@ -1,7 +1,8 @@
 main {
     padding: 20px 20px 70px 20px;
     max-width: 1000px;
-    margin: 30px auto;
+    max-height: 670px;
+    margin: 220px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #f2f3f3
@@ -13,20 +14,17 @@ main {
 }
 }
 
-h3 {
-    font-size: 30px;
-    margin: 300px 0 0 270px;
-    color: #745843;
+h4 {
+    position: absolute;
+    color: #5a3b1a;
+    font-weight: 500;
+    margin: 0 50% 0 50%;
+    font-size: 56px;
+    top: 190px;
+    left: -150px;
     font-family: 'calisto MT', sans-serif;
     letter-spacing: .092em;
-}
-
-@media (max-width: 980px) {
-  h3 {
-    zoom: 75%;
-    margin: 250px 0 0 50px;
-    width: 400px;
-}
+    width: 390px;
 }
 
 .bar {
@@ -100,5 +98,5 @@ background-color: #5a3b1a;
 }
 
 #roda {
-    margin-top: 50px;
+    margin-top: -150px;
 }
