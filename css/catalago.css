@@ -74,7 +74,6 @@ h4 {
     margin: 0 50% 0 50%;
     font-size: 56px;
     top: 190px;
-    left: -150px;
     font-family: 'calisto MT', sans-serif;
     letter-spacing: .092em;
     width: 390px;
@@ -84,8 +83,7 @@ h4 {
   h4 {
     zoom: 75%;
     top: 230px;
-    left: -130px;
-    width: 250px;
+    width: 380px;
 }
 }
 
