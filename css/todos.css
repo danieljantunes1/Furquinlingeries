@@ -221,7 +221,8 @@ h3 {
 
 @media (max-width: 980px) {
     #super p {;
-    animation: marquee 15s linear infinite;
+        animation: marquee 15s ;
+    }
 }
 
 @keyframes marquee {

@@ -1,47 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const submitButton = document.getElementById('submit-button');
-    
-    if (!submitButton) {
-        console.error('O botão de envio não foi encontrado!');
-        return;
+document.addEventListener('DOMContentLoaded', function () {
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCartCount() {
+        if (cart.length > 0) {
+            cartCount.textContent = cart.length;
+            cartCount.classList.remove('hidden');
+        } else {
+            cartCount.textContent = '';
+            cartCount.classList.add('hidden');
+        }
     }
 
-    submitButton.addEventListener('click', function() {
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
-        const endereco = document.getElementById('endereco').value;
-        const bairro = document.getElementById('bairro').value;
-        const cidade = document.getElementById('cidade').value;
-        const cep = document.getElementById('cep').value;
-        const pagamento = document.getElementById('pagamento').value;
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        if (!nome || !email || !telefone || !endereco || !bairro || !cidade || !cep || !pagamento) {
-            alert('Por favor, preencha todos os campos do formulário.');
-            return;
-        }
-
-        let cartItemsMessage = cart.map(item => {
-            return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
-        }).join('\n');
-
-        let message = `Dados do Cadastro e Envio:
-        
-Nome: ${nome}
-Email: ${email}
-Telefone: ${telefone}
-Endereço: ${endereco}
-Bairro: ${bairro}
-Cidade: ${cidade}
-CEP: ${cep}
-Pagamento: ${pagamento}
-
-Itens da Sacola:
-${cartItemsMessage}`;
-
-        let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+    cartIcon.addEventListener('click', function () {
+        window.location.href = '../sacola.html'; // Ajuste o caminho conforme necessário
     });
+
+    updateCartCount();
 });
