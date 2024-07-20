@@ -11,20 +11,20 @@
 
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
-    const cartIcon = document.getElementById('cart-icon');
-    const cartCount = document.getElementById('cart-count');
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    function updateCartCount() {
-        cartCount.textContent = cart.length;
-    }
+            const cartIcon = document.getElementById('cart-icon');
+            const cartCount = document.getElementById('cart-count');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    cartIcon.addEventListener('click', function () {
-        window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
-    });
+            function updateCartCount() {
+                cartCount.textContent = cart.length;
+            }
 
-    updateCartCount();
-});
+            cartIcon.addEventListener('click', function () {
+                window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
+            });
+
+            updateCartCount();
+        });
     </script>
 </head>
 <body>
