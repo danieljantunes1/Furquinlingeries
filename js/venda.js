@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
     let selectedSize = null;
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+     // Seleciona as imagens
+    const imgGrande = document.querySelector('#fotinha1 img');
+    const imgPequena = document.querySelector('#fotinha2 img');
+
+    // Adiciona o evento de clique à imagem pequena para trocar as imagens
+    imgPequena.addEventListener('click', function () {
+        const grandeSrc = imgGrande.src;
+        const pequenaSrc = imgPequena.src;
+
+        imgGrande.src = pequenaSrc;
+        imgPequena.src = grandeSrc;
+    });
+
     function updateCartCount() {
         cartCount.textContent = cart.length;
         if (cart.length > 0) {
