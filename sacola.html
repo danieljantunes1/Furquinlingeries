@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/sacola.css">
     <link rel="stylesheet" href="css/todos.css">
     <link rel="shortcut icon" href="favicon.jpg">
+
 </head>
 <body>
 
@@ -34,12 +35,32 @@
     
     <div id="super"><p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p></div>
     <h4>Compras</h4>
+    <h5>Seu carrinho</h5>
     
 <main>
+    <p>Os itens do seu carrinho não estão reservados. Finalize esta compra para torná-los seus itens pessoais.</p>
+    <div class="tela1">
     <div id="cart-items-container">
     <!-- Os itens serão adicionados aqui pelo JavaScript -->
+    </div></div>
+
+    <!-- Seção para exibir total, desconto e taxa de entrega -->
+    <div class="tela2">
+    <div class="total-section">
+    <div>Valor Final: R$ <span id="valor-final"></span></div>
+    <div>Total dos Produtos: R$ <span id="total-produtos"></span></div>
+    <div>Desconto: R$ <span id="desconto"></span></div>
+    <div>Taxa de Entrega: R$ <span id="taxa-entrega"></span></div>
+    </div></div>
+
+    <div id="botao">
+    <a href="envio.html" id="checkout-button">Finalizar Compra</a>
     </div>
-     <a href="envio.html" id="checkout-button">Finalizar Compra</a>
+
+    <div class="tela3">
+    <h6>COMPRE AGORA COM FRETE FIXO 🚛</h6>
+    <p>Frete fixo nas suas compras, somente para a cidade de florianópolis.</p>
+    </div>
 </main>
 
 <footer id="roda">
