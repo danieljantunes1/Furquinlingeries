@@ -2,9 +2,9 @@
     position: absolute;
     background-color: #fff;
     display: flex;
-    width: 489px;
+    width: 719px;
     top: 530px;
-    left: 360px;
+    left: 190px;
     overflow-y: auto;
 }
 
@@ -13,25 +13,36 @@
     padding: 20px;
     display: flex;
     width: 400px;
-    top: 400px;
-    left: 890px;
+    top: 445px;
+    left: 942px;
 }
 
 .tela3 {
     position: absolute;
     padding: 20px;
     display: flex;
-    width: 335px;
+    width: 315px;
     height: 100px;
-    top: 630px;
-    left: 890px;
+    top: 660px;
+    left: 960px;
     background-color: #e9e9e9;
+}
+
+.tela2 p {
+    font-size: 23px;
+    top: -28px;
+    left: -200px;
+    width: 60%;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    position: absolute;
+    font-weight: 500;
+    letter-spacing: .072em;
 }
 
 .tela3 p, h6 {
     position: absolute;
     margin: 0 50% 0 50%;
-    font-family: 'calisto MT', sans-serif;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     letter-spacing: .100em;
     left: -155px;
 }
@@ -46,18 +57,18 @@ h6 {
     font-size: 14px;
     top: 57px;
     width: 80%;
-    color: #575757;
+    color: #282829;
 }
 
 main p {
     position: absolute;
     margin: 0 50% 0 50%;
-    font-family: 'calisto MT', sans-serif;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     letter-spacing: .100em;
-    left: -390px;
+    left: -567px;
     top: 430px;
-    width: 480px;
-    font-size: 16px;
+    width: 700px;
+    font-size: 15px;
     color: black;
     line-height: 1.5em;
 }
@@ -66,42 +77,39 @@ h4, h5 {
     position: absolute;
     font-weight: 500;
     margin: 0 50% 0 50%;
-    font-family: 'calisto MT', sans-serif;
     letter-spacing: .092em;
     width: 390px;
-    z-index: 2;
 }
 
 h4 {
     font-size: 56px;
     top: 190px;
-    left: -150px;
+    left: -110px;
     color: #5a3b1a;
+    font-family: 'calisto MT', sans-serif;
 }
 
 h5 {
     font-size: 26px;
     top: 327px;
-    left: -400px;
-    padding: 20px 80px 20px 20px;
+    left: -570px;
+    padding: 20px 310px 20px 20px;
     background-color: #e9e9e9;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
 }
 
 .total-section {
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: .092em;
-    font-family: 'calisto MT', sans-serif;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     line-height: 2em;
-    font-weight: 700;
 }
 
 #cart-items-container {
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
     background-color: #e9e9e9;
-    width: 489px;
+    width: 719px;
 }
 
 .cart-item {
@@ -110,6 +118,7 @@ h5 {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    width: 652px;
 }
 
 .cart-item:last-child {
@@ -119,7 +128,7 @@ h5 {
 .cart-item span {
     color: black;
     font-size: 16px;
-    font-family: arial;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     letter-spacing: .092em;
 }
 
@@ -127,16 +136,17 @@ h5 {
     background-color: #5a3b1a;
     color: #5a3b1a;
     border: none;
-    padding: 15px 0 15px 15px;
+    padding: 13px 0 17px 15px;
     font-size: 18px;
     cursor: pointer;
     width: 230px;
     height: 20px;
     display: block;
     top: 330px;
-    left: 900px;
+    left: 955px;
     position: absolute;
     letter-spacing: .092em;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
 }
 
 #botao:hover {
