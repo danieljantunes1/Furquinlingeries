@@ -61,7 +61,7 @@ main {
 #cart-icon {
   position: absolute;
   cursor: pointer;
-  top: 26px;
+  top: 30px;
   left: 85vw; /* Ajuste conforme necessário */
 }
 
