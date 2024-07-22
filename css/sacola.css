@@ -12,7 +12,7 @@
     .tela1 {
         top: 960px;
         left: 20px;
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -29,7 +29,7 @@
     .tela2 {
         top: 660px;
         left: 20px;
-        width: 100%;
+        width: 310px;
     }
 }
 
@@ -61,6 +61,13 @@
     position: absolute;
     font-weight: 500;
     letter-spacing: .072em;
+}
+
+@media (max-width: 980px) {
+    .tela2 p {
+        width: 70%;
+        left: -170px;
+    }
 }
 
 .tela3 p, h6 {
@@ -246,6 +253,6 @@ footer {
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 2100px;
+    margin-top: 1800px;
 }
 }
