@@ -8,6 +8,14 @@
     overflow-y: auto;
 }
 
+@media (max-width: 980px) {
+    .tela1 {
+        top: 960px;
+        left: 20px;
+        width: 100%;
+    }
+}
+
 .tela2 {
     position: absolute;
     padding: 20px;
@@ -15,6 +23,14 @@
     width: 400px;
     top: 445px;
     left: 942px;
+}
+
+@media (max-width: 980px) {
+    .tela2 {
+        top: 660px;
+        left: 20px;
+        width: 100%;
+    }
 }
 
 .tela3 {
@@ -26,6 +42,14 @@
     top: 660px;
     left: 960px;
     background-color: #e9e9e9;
+}
+
+@media (max-width: 980px) {
+    .tela3 {
+        top: 450px;
+        left: 20px;
+        width: 310px;
+    }
 }
 
 .tela2 p {
@@ -73,6 +97,14 @@ main p {
     line-height: 1.5em;
 }
 
+@media (max-width: 980px) {
+    main p {
+       left: -167px;
+       top: 350px;
+       width: 350px;
+    }
+}
+
 h4, h5 {
     position: absolute;
     font-weight: 500;
@@ -89,6 +121,15 @@ h4 {
     font-family: 'calisto MT', sans-serif;
 }
 
+@media (max-width: 980px) {
+    h4 {
+      left: -140px;
+      zoom: 75%;
+      top: 230px;
+      width: 290px;
+    }
+}
+
 h5 {
     font-size: 26px;
     top: 327px;
@@ -96,6 +137,15 @@ h5 {
     padding: 20px 310px 20px 20px;
     background-color: #e9e9e9;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 980px) {
+    h5 {
+      left: -240px;
+      top: 347px;
+      zoom: 75%;
+      padding: 20px 70px 20px 20px;
+    }
 }
 
 .total-section {
@@ -112,6 +162,12 @@ h5 {
     width: 719px;
 }
 
+@media (max-width: 980px) {
+    #cart-items-container {
+      width: 310px;
+    }
+}
+
 .cart-item {
     display: flex;
     justify-content: space-between;
@@ -119,6 +175,12 @@ h5 {
     padding: 10px;
     border-bottom: 1px solid #ccc;
     width: 652px;
+}
+
+@media (max-width: 980px) {
+    .cart-item {
+      width: 310px;
+    }
 }
 
 .cart-item:last-child {
@@ -149,6 +211,13 @@ h5 {
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
 }
 
+@media (max-width: 980px) {
+    #botao {
+        top: 850px;
+        left: 20px;
+    }
+}
+
 #botao:hover {
     background-color: #745843;
 }
@@ -177,6 +246,6 @@ footer {
 
 @media (max-width: 980px) {
   #roda {
-    margin-top: 1100px;
+    margin-top: 2100px;
 }
 }
