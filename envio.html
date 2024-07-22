@@ -29,13 +29,15 @@
 </head>
 <body>
 <script src="js/mobile-navbar.js"></script>
-<script src="js/sacola.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/envio.js"></script>
 
-<header><nav>
-    <a href ='inicio.html'><h1>FURQUIN</h1>
-    <h2>Moda</h2><h3> Íntima</h3></a>
+<header>
+    <nav>
+    <a href ='inicio.html'>
+    <h1>FURQUIN</h1>
+    <h2>Moda</h2>
+    <h3>Íntima</h3></a>
     <div class="mobile-menu">
     <div class="line1"></div>
     <div class="line2"></div>
@@ -45,56 +47,75 @@
     <li><a href ='sutia&tops/sutia&tops.html'>Sutiã e Tops</a></li>
     <li><a href ='pijamas/pijamas.html'>Pijamas</a></li>
     <li><a href ='sexshop/sexshop.html'>Sexshop</a></li>
-    <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li>
-    </ul><div id="cart-icon">
+    <li><a href ='conjuntos/conjuntos.html'>Conjuntos</a></li></ul>
+    <div id="cart-icon">
     <img src="imagens/sacola.png" alt="Sacola" width="27" height="30">
-    <div id="cart-count">0</div>
-</nav></header>
+    <div id="cart-count">0</div></div></nav>
+</header>
     
-    <div id="super"><p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p></div>
-    <h4>Cadastro</h4>
+<div id="super">
+    <p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p>
+</div>
+
+<h4>Cadastro</h4>
 
 <main>
     <form id="checkout-form">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" autocomplete="name" required>
+    <div class="input-container">
+    <input type="text" id="nome" name="nome" autocomplete="name" required>
+    <label for="nome">Nome Completo:</label></div>
         
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" autocomplete="email" required>
+    <div class="input-container">
+    <input type="email" id="email" name="email" autocomplete="email" required>
+    <label for="email">E-mail:</label></div>
         
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" autocomplete="tel" required>
+    <div class="input-container">
+    <input type="tel" id="telefone" name="telefone" autocomplete="tel" required>
+    <label for="telefone">Telefone:</label></div>
         
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" autocomplete="street-address" required>
+    <div class="input-container">
+    <input type="text" id="endereco" name="endereco" autocomplete="street-address" required>
+    <label for="endereco">Endereço:</label></div>
 
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro" autocomplete="address-level2" required>
+    <div class="input-container">
+    <input type="text" id="bairro" name="bairro" autocomplete="address-level2" required>
+    <label for="bairro">Bairro:</label></div>
         
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required>
+    <div class="input-container">
+    <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required>
+    <label for="cidade">Cidade:</label></div>
         
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" autocomplete="postal-code" required>
+    <div class="input-container">
+    <input type="text" id="cep" name="cep" autocomplete="postal-code" required>
+    <label for="cep">CEP:</label></div>
         
-        <label for="pagamento">Forma de Pagamento:</label>
-        <select id="pagamento" name="pagamento" autocomplete="off" required>
-            <option value="dinheiro">Dinheiro</option>
-            <option value="debito">Débito</option>
-            <option value="credito">Crédito</option>
-            <option value="pix">Pix</option>
-        </select>
+    <div class="input-container">
+    <select id="pagamento" name="pagamento" autocomplete="off" required>
+    <option value="" disabled selected>Selecione a forma de pagamento</option>
+    <option value="dinheiro">Dinheiro</option>
+    <option value="debito">Débito</option>
+    <option value="credito">Crédito</option>
+    <option value="pix">Pix</option>
+    </select>
+    <label for="pagamento">Forma de Pagamento:</label></div>
         
-        <button type="button" id="submit-button">Enviar</button>
-    </form>
+    <button type="submit" id="submit-button">Enviar</button></form>
 </main>
 
 <footer id="roda">
     <h1>FURQUIN</h1>
     <h2>Moda Íntima</h2>
-    <div id="img2"><a href="https://www.instagram.com/furquinlingeries/" target="_blank"><img src="imagens/instagram.png" width="30" height="30" /></a></div>
-    <div id="img3"><a href="https://www.instagram.com/furquinlingeries/" target="_blank"><img src="imagens/whats.png" width="30" height="30" /></a></div>
-    <div id="texto4"><a href="https://www.google.com.br/maps/@-27.6641169,-48.5032426,3a,75y,251.22h,84.91t/data=!3m6!1e1!3m4!1sVBbXg7b3Cv0Ztm82yTAjlg!2e0!7i13312!8i6656?entry=ttu" target="_blank"><p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
+    <div id="img2">
+    <a href="https://www.instagram.com/furquinlingeries/" target="_blank">
+    <img src="imagens/instagram.png" width="30" height="30" /></a></div>
+
+    <div id="img3">
+    <a href="https://www.instagram.com/furquinlingeries/" target="_blank">
+    <img src="imagens/whats.png" width="30" height="30" /></a></div>
+
+    <div id="texto4">
+    <a href="https://www.google.com.br/maps/@-27.6641169,-48.5032426,3a,75y,251.22h,84.91t/data=!3m6!1e1!3m4!1sVB+Xg7b3Cv0Ztm82yTAjlg!2e0!7i13312!8i6656?entry=ttu" target="_blank">
+    <p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
 </footer>
 </body>
 </html>

@@ -16,85 +16,78 @@ main {
 
 h4 {
     position: absolute;
-    color: #5a3b1a;
     font-weight: 500;
     margin: 0 50% 0 50%;
+    letter-spacing: .092em;
+    width: 390px;
     font-size: 56px;
     top: 190px;
     left: -110px;
+    color: #5a3b1a;
     font-family: 'calisto MT', sans-serif;
-    letter-spacing: .092em;
-    width: 390px;
-}
-
-.bar {
-    position: absolute;
-    height: 1px; 
-    background-color: #745843;
-    top: 51.5%; 
-    left: 30%;
-    width: 820px;
 }
 
 @media (max-width: 980px) {
-  .bar {
-    height: 1px; 
-    top: 270px; 
-    left: 54%;
-    width: 155px;
-}
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    font-family: 'Helvetica', serif;
-    letter-spacing: .092em;
-    padding: 10px 0 0 10px;
+    h4 {
+      left: -140px;
+      zoom: 75%;
+      top: 230px;
+      width: 290px;
+    }
 }
 
-input, select {
-    width: 100%;
+.input-container {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-container input, 
+.input-container select {
     padding: 10px;
-    margin-top: 5px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
-    border-radius: 30px;
+    font-size: 16px;
 }
 
-.radio-group {
-    display: flex;
-    
-    margin-top: 10px;
+.input-container label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s ease-out;
 }
 
-.radio-group label {
-    font-weight: normal;
-    padding: 0 50px 30px 0;
-    margin-left: 30px;
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label,
+.input-container select:focus + label,
+.input-container select:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+    background-color: #fff;
+    padding: 0 5px;
 }
 
-.radio-group input {
-    width: auto;
-    margin-right: 5px;
-}
-
-button {
-    background-color: #745843;
+/* Estilos para o botão de enviar */
+#submit-button {
+    padding: 12px 20px;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 18px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 30px;
-    margin-top: 20px;
-    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-background-color: #5a3b1a;
+#submit-button:hover {
+    background-color: #0056b3;
 }
 
 #roda {
