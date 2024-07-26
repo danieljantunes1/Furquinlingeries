@@ -9,24 +9,6 @@
     <link rel="stylesheet" href="css/envio.css">
     <link rel="stylesheet" href="css/todos.css">
     <link rel="shortcut icon" href="favicon.jpg">
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            const cartIcon = document.getElementById('cart-icon');
-            const cartCount = document.getElementById('cart-count');
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            function updateCartCount() {
-                cartCount.textContent = cart.length;
-            }
-
-            cartIcon.addEventListener('click', function () {
-                window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
-            });
-
-            updateCartCount();
-        });
-    </script>
 </head>
 <body>
 
@@ -118,13 +100,30 @@
     <div id="social-icons">
     <a href="https://www.instagram.com/furquinlingeries/" target="_blank" class="social-icon">
     <i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/1234567890" target="_blank" class="social-icon">
+    <a href="https://wa.me/554888779250" target="_blank" class="social-icon">
     <i class="fab fa-whatsapp"></i></a></div>
     <div id="texto4">
     <a href="https://www.google.com.br/maps/@-27.6641169,-48.5032426,3a,75y,251.22h,84.91t/data=!3m6!1e1!3m4!1sVB+Xg7b3Cv0Ztm82yTAjlg!2e0!7i13312!8i6656?entry=ttu" target="_blank">
     <p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
 </footer>
 
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartCount() {
+            cartCount.textContent = cart.length;
+        }
+
+        cartIcon.addEventListener('click', function () {
+            window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
+        });
+
+        updateCartCount();
+    });
+</script>
 
 <script src="js/mobile-navbar.js"></script>
 <script src="js/cart.js"></script>
