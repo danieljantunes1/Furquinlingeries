@@ -13,74 +13,101 @@
 <body> 
 
 <header>
-    <nav><a href="inicio.html">
-    <h1>FURQUIN</h1>
-    <h2>Moda</h2>
-    <h3>Íntima</h3></a>
-    <div class="mobile-menu">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div></div>
-    <ul class="nav-list">
-    <li><a href="calcinhas/calcinhas.html">Calcinhas</a></li>
-    <li><a href="sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
-    <li><a href="pijamas/pijamas.html">Pijamas</a></li>
-    <li><a href="sexshop/sexshop.html">Sexshop</a></li>
-    <li><a href="conjuntos/conjuntos.html">Conjuntos</a></li></ul>
-    <div id="cart-icon">
-    <i class="fa-solid fa-bag-shopping"></i> <!-- Substitua a imagem por um ícone Font Awesome -->
-    <div id="cart-count">0</div></div></nav>
+    <nav>
+        <a href="inicio.html">
+            <h1>FURQUIN</h1>
+            <h2>Moda</h2>
+            <h3>Íntima</h3>
+        </a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="calcinhas/calcinhas.html">Calcinhas</a></li>
+            <li><a href="sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
+            <li><a href="pijamas/pijamas.html">Pijamas</a></li>
+            <li><a href="sexshop/sexshop.html">Sexshop</a></li>
+            <li><a href="conjuntos/conjuntos.html">Conjuntos</a></li>
+        </ul>
+        <div id="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i> <!-- Substitua a imagem por um ícone Font Awesome -->
+            <div id="cart-count">0</div>
+        </div>
+    </nav>
 </header>
     
-    <div id="super"><p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p></div>
-    <h4>Compras</h4>
-    <h5>Seu carrinho</h5>
-    
+<div id="super">
+    <p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p>
+</div>
+
+<h4>Compras</h4>
+<h5>Seu carrinho</h5>
+
 <main>
     <p>Os itens do seu carrinho não estão reservados. Finalize esta compra para torná-los seus itens pessoais.</p>
     <div class="tela1">
-    <div id="cart-items-container">
-    <!-- Os itens serão adicionados aqui pelo JavaScript -->
-    </div></div>
+        <div id="cart-items-container">
+            <!-- Os itens serão adicionados aqui pelo JavaScript -->
+        </div>
+    </div>
 
     <!-- Seção para exibir total, desconto e taxa de entrega -->
-  <!-- Seção para exibir total, desconto e taxa de entrega -->
-<div class="tela2">
-    <p>Resumo do pedido</p>
-    <div class="discount-section">
-    <label for="discount-code">Código de Desconto:</label>
-    <input type="text" id="discount-code" placeholder="Insira o código">
-    <button id="apply-discount">Aplicar</button></div>
-    <div class="total-section">
-    <div><div class="label">Total dos Produtos:</div>
-    <div class="value"><span>R$</span> <span id="total-produtos"></span></div></div>
-    <div><div class="label">Desconto:</div>
-    <div class="value"><span>R$</span> <span id="desconto"></span></div></div>
-    <div><div class="label">Taxa de Entrega:</div>
-    <div class="value"><span>R$</span> <span id="taxa-entrega"></span></div></div>
-    <div><div class="label">Valor Final:</div>
-    <div class="value"><span>R$</span> <span id="valor-final"></span></div></div></div>
-</div>
+    <div class="tela2">
+        <p>Resumo do pedido</p>
+        <div class="discount-section">
+            <label for="discount-code">Código de Desconto:</label>
+            <input type="text" id="discount-code" placeholder="Insira o código">
+            <button id="apply-discount">Aplicar</button>
+            <div id="discount-error" style="color: red; margin-top: 5px;"></div> <!-- Adicionado aqui -->
+        </div>
+        <div class="total-section">
+            <div>
+                <div class="label">Total dos Produtos:</div>
+                <div class="value"><span>R$</span> <span id="total-produtos"></span></div>
+            </div>
+            <div>
+                <div class="label">Desconto:</div>
+                <div class="value"><span>R$</span> <span id="desconto"></span></div>
+            </div>
+            <div>
+                <div class="label">Taxa de Entrega:</div>
+                <div class="value"><span>R$</span> <span id="taxa-entrega"></span></div>
+            </div>
+            <div>
+                <div class="label">Valor Final:</div>
+                <div class="value"><span>R$</span> <span id="valor-final"></span></div>
+            </div>
+        </div>
+    </div>
 
-
-    <div id="botao"><a href="envio.html" id="checkout-button">Finalizar Compra</a></div>
+    <div id="botao">
+        <a href="envio.html" id="checkout-button">Finalizar Compra</a>
+    </div>
 
     <div class="tela3">
-    <h6>COMPRE AGORA COM FRETE FIXO 🚛</h6>
-    <p>Frete fixo nas suas compras, somente para a cidade de florianópolis.</p></div>
+        <h6>COMPRE AGORA COM FRETE FIXO 🚛</h6>
+        <p>Frete fixo nas suas compras, somente para a cidade de florianópolis.</p>
+    </div>
 </main>
 
 <footer id="roda">
     <h1>FURQUIN</h1>
     <h2>Moda Íntima</h2>
     <div id="social-icons">
-    <a href="https:/www.instagram.com/furquinlingeries/" target="_blank" class="social-icon">
-    <i class="fab fa-instagram"></i></a>
-    <a href="https:/wa.me/554888779250" target="_blank" class="social-icon">
-    <i class="fab fa-whatsapp"></i></a></div>
+        <a href="https:/www.instagram.com/furquinlingeries/" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https:/wa.me/554888779250" target="_blank" class="social-icon">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     <div id="texto4">
-    <a href="https:/www.google.com.br/maps/@-27.6641169,-48.5032426,3a,75y,251.22h,84.91t/data=!3m6!1e1!3m4!1sVB+Xg7b3Cv0Ztm82yTAjlg!2e0!7i13312!8i6656?entry=ttu" target="_blank">
-    <p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
+        <a href="https:/www.google.com.br/maps/@-27.6641169,-48.5032426,3a,75y,251.22h,84.91t/data=!3m6!1e1!3m4!1sVB+Xg7b3Cv0Ztm82yTAjlg!2e0!7i13312!8i6656?entry=ttu" target="_blank">
+            <p>Rodovia SC-405, 356 - Rio Tavares</p>
+        </a>
+    </div>
 </footer>
 
 <script src="js/sacola.js"></script>
