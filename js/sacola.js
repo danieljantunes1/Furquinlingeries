@@ -102,3 +102,5 @@ function updateCartCount() {
         cartCount.classList.add('hidden');
     }
 }
+
+
