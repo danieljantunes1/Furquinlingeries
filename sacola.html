@@ -44,22 +44,30 @@
     </div></div>
 
     <!-- Seção para exibir total, desconto e taxa de entrega -->
-    <div class="tela2"> <p>Resumo do pedido</p>
+  <!-- Seção para exibir total, desconto e taxa de entrega -->
+<div class="tela2">
+    <p>Resumo do pedido</p>
+    <div class="discount-section">
+    <label for="discount-code">Código de Desconto:</label>
+    <input type="text" id="discount-code" placeholder="Insira o código">
+    <button id="apply-discount">Aplicar</button></div>
     <div class="total-section">
-    <div>Total dos Produtos: R$ <span id="total-produtos"></span></div>
-    <div>Desconto: R$ <span id="desconto"></span></div>
-    <div>Taxa de Entrega: R$ <span id="taxa-entrega"></span></div>
-    <div>Valor Final: R$ <span id="valor-final"></span></div>
-    </div></div>
+    <div><div class="label">Total dos Produtos:</div>
+    <div class="value"><span>R$</span> <span id="total-produtos"></span></div></div>
+    <div><div class="label">Desconto:</div>
+    <div class="value"><span>R$</span> <span id="desconto"></span></div></div>
+    <div><div class="label">Taxa de Entrega:</div>
+    <div class="value"><span>R$</span> <span id="taxa-entrega"></span></div></div>
+    <div><div class="label">Valor Final:</div>
+    <div class="value"><span>R$</span> <span id="valor-final"></span></div></div></div>
+</div>
 
-    <div id="botao">
-    <a href="envio.html" id="checkout-button">Finalizar Compra</a>
-    </div>
+
+    <div id="botao"><a href="envio.html" id="checkout-button">Finalizar Compra</a></div>
 
     <div class="tela3">
     <h6>COMPRE AGORA COM FRETE FIXO 🚛</h6>
-    <p>Frete fixo nas suas compras, somente para a cidade de florianópolis.</p>
-    </div>
+    <p>Frete fixo nas suas compras, somente para a cidade de florianópolis.</p></div>
 </main>
 
 <footer id="roda">

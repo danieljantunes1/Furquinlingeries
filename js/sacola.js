@@ -1,127 +1,104 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const cartItemsContainer = document.getElementById('cart-items-container');
     const cartCount = document.getElementById('cart-count');
+    const totalProdutosElem = document.getElementById('total-produtos');
+    const descontoElem = document.getElementById('desconto');
+    const taxaEntregaElem = document.getElementById('taxa-entrega');
+    const valorFinalElem = document.getElementById('valor-final');
+    const discountCodeInput = document.getElementById('discount-code');
+    const applyDiscountButton = document.getElementById('apply-discount');
+    const discountErrorElem = document.getElementById('discount-error');
+    const discountRemoveButton = document.createElement('button');
+    
+    discountRemoveButton.id = 'discount-remove';
+    discountRemoveButton.textContent = '✖';
+    discountRemoveButton.style.display = 'none';
+    discountRemoveButton.style.color = 'red';
+    descontoElem.appendChild(discountRemoveButton);
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let discount = parseFloat(localStorage.getItem('discount')) || 0;
 
     function updateCartDisplay() {
-        cartItemsContainer.innerHTML = ''; // Limpa o conteúdo existente
+        cartItemsContainer.innerHTML = '';
+        let totalProdutos = 0;
         cart.forEach((item, index) => {
             const itemElement = document.createElement('div');
             itemElement.className = 'cart-item';
-            itemElement.innerHTML = `
-                <span>${item.product} - ${item.color} - ${item.size} - R$ ${item.price.toFixed(2)}</span>
-                <button data-index="${index}">X</button>
-            `;
-            cartItemsContainer.appendChild(itemElement);
-        });
-        cartCount.textContent = cart.length;
 
-        // Atualiza a posição do rodapé
-        const footer = document.getElementById('roda');
-        if (cartItemsContainer.offsetHeight + cartItemsContainer.offsetTop + 100 > window.innerHeight) {
-            footer.style.position = 'relative';
-        } else {
-            footer.style.position = 'absolute';
-            footer.style.bottom = '0';
-        }
+            const itemDetails = document.createElement('span');
+            itemDetails.textContent = `${item.product} - ${item.color} - ${item.size} - R$ ${item.price.toFixed(2)}`;
+            itemElement.appendChild(itemDetails);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'X';
+            removeButton.addEventListener('click', function() {
+                removeItem(index);
+            });
+            itemElement.appendChild(removeButton);
+
+            cartItemsContainer.appendChild(itemElement);
+            totalProdutos += item.price;
+        });
+
+        totalProdutosElem.textContent = totalProdutos.toFixed(2);
+
+        const taxaEntrega = 13.00;
+
+        descontoElem.textContent = discount.toFixed(2);
+        taxaEntregaElem.textContent = taxaEntrega.toFixed(2);
+
+        const valorFinal = totalProdutos - discount + taxaEntrega;
+        valorFinalElem.textContent = valorFinal.toFixed(2);
+
+        discountRemoveButton.style.display = discount > 0 ? 'inline' : 'none';
+        discountErrorElem.style.display = 'none'; // Esconde a mensagem de erro
     }
 
     function removeItem(index) {
-        cart.splice(index, 1); // Remove o item do array
+        cart.splice(index, 1);
         localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartDisplay(); // Atualiza a exibição após a remoção
+        updateCartDisplay();
     }
 
-    cartItemsContainer.addEventListener('click', function (event) {
-        if (event.target.tagName === 'BUTTON') {
-            const index = event.target.getAttribute('data-index');
-            removeItem(index);
+    function applyDiscount() {
+        const code = discountCodeInput.value.trim();
+        if (code === 'FURQUIN10') {
+            discount = 10;
+            discountErrorElem.textContent = ''; // Limpa a mensagem de erro
+        } else if (code === 'FURQUIN20') {
+            discount = 20;
+            discountErrorElem.textContent = ''; // Limpa a mensagem de erro
+        } else {
+            discount = 0;
+            discountErrorElem.textContent = 'Código inválido'; // Exibe a mensagem de erro
         }
-    });
+        localStorage.setItem('discount', discount);
+        updateCartDisplay();
+    }
 
+    function removeDiscount() {
+        discount = 0;
+        localStorage.removeItem('discount');
+        updateCartDisplay();
+    }
+
+    applyDiscountButton.addEventListener('click', applyDiscount);
+    discountRemoveButton.addEventListener('click', removeDiscount);
+
+    updateCartCount();
     updateCartDisplay();
 });
 
-
-
-// Em cart.js ou no arquivo específico para o carrinho de compras
-
 function updateCartCount() {
-  const cartCount = document.getElementById('cart-count');
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-  if (cart.length > 0) {
-    cartCount.textContent = cart.length;
-    cartCount.classList.remove('hidden');
-  } else {
-    cartCount.textContent = '';
-    cartCount.classList.add('hidden');
-  }
+    const cartCount = document.getElementById('cart-count');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length > 0) {
+        cartCount.textContent = cart.length;
+        cartCount.classList.remove('hidden');
+    } else {
+        cartCount.textContent = '';
+        cartCount.classList.add('hidden');
+    }
 }
-
-// Atualizar o contador ao carregar a página
-document.addEventListener('DOMContentLoaded', updateCartCount);
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const cartItemsContainer = document.getElementById('cart-items-container');
-            const totalProdutosElem = document.getElementById('total-produtos');
-            const descontoElem = document.getElementById('desconto');
-            const taxaEntregaElem = document.getElementById('taxa-entrega');
-            const valorFinalElem = document.getElementById('valor-final');
-
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            function updateCartDisplay() {
-                cartItemsContainer.innerHTML = ''; // Limpa o conteúdo existente
-
-                let totalProdutos = 0;
-                cart.forEach((item, index) => {
-                    const itemElement = document.createElement('div');
-                    itemElement.className = 'cart-item';
-
-                    // Adiciona detalhes do item
-                    const itemDetails = document.createElement('span');
-                    itemDetails.textContent = `${item.product} - ${item.color} - ${item.size} - R$ ${item.price.toFixed(2)}`;
-                    itemElement.appendChild(itemDetails);
-
-                    // Botão de Remover Item
-                    const removeButton = document.createElement('button');
-                    removeButton.textContent = 'X';
-                    removeButton.addEventListener('click', function() {
-                        removeItem(index);
-                    });
-                    itemElement.appendChild(removeButton);
-
-                    // Adiciona o elemento do item ao container
-                    cartItemsContainer.appendChild(itemElement);
-
-                    // Adiciona o preço do item ao total dos produtos
-                    totalProdutos += item.price;
-                });
-
-                // Exibe o total dos produtos
-                totalProdutosElem.textContent = totalProdutos.toFixed(2);
-
-                // Simula desconto e taxa de entrega (ajuste conforme necessário)
-                const desconto = 0; // Exemplo de desconto
-                const taxaEntrega = 13.00; // Exemplo de taxa de entrega
-
-                // Exibe o desconto e a taxa de entrega (opcional)
-                descontoElem.textContent = desconto.toFixed(2);
-                taxaEntregaElem.textContent = taxaEntrega.toFixed(2);
-
-                // Calcula o valor final (total dos produtos - desconto + taxa de entrega)
-                const valorFinal = totalProdutos - desconto + taxaEntrega;
-                valorFinalElem.textContent = valorFinal.toFixed(2);
-            }
-
-            function removeItem(index) {
-                cart.splice(index, 1); // Remove o item do array
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCartDisplay(); // Atualiza a exibição após a remoção
-            }
-
-            updateCartDisplay(); // Atualiza a exibição ao carregar a página
-        });
