@@ -230,7 +230,7 @@ h3 {
     100% { transform: translateX(-100%); }
 }
 
-#cor1, #cor2, #cor3, #cor4, #cor5, #cor6, #cor7 , #cor8, #cor9, #cor10, #cor11, #cor12, #cor13, #cor14, #cor15, #cor16, #cor17 {
+.cor1, .cor2, .cor3, .cor4, .cor5, .cor6, .cor7 , .cor8, .cor9, .cor10, .cor11, .cor12, .cor13, .cor14, .cor15, .cor16, .cor17 {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -238,87 +238,87 @@ h3 {
     border: 1px solid black;
 }
 
-#cor1 {
+.cor1 {
   background-color: black;
   margin: 120px 0 0 20px;
 }
 
-#cor2 {
+.cor2 {
   background-color: black;
   margin: 120px 0 0 55px;
 }
 
-#cor3 {
+.cor3 {
   background-color: blue;
   margin: 120px 0 0 20px;
 }
 
-#cor4 {
+.cor4 {
   background-color: blue;
   margin: 120px 0 0 55px;
 }
 
-#cor5 {
+.cor5 {
   background-color: yellow;
   margin: 120px 0 0 20px;
 }
 
-#cor6 {
+.cor6 {
   background-color: yellow;
   margin: 120px 0 0 55px;
 }
 
-#cor7 {
+.cor7 {
   background-color: white;
   margin: 120px 0 0 20px;
 }
 
-#cor8 {
+.cor8 {
   background-color: white;
   margin: 120px 0 0 55px;
 }
 
-#cor9 {
+.cor9 {
   background-color: green;
   margin: 120px 0 0 20px;
 }
 
-#cor10 {
+.cor10 {
   background-color: green;
   margin: 120px 0 0 55px;
 }
 
-#cor11 {
+.cor11 {
   background-color: red;
   margin: 120px 0 0 20px;
 }
 
-#cor12 {
+.cor12 {
   background-color: red;
   margin: 120px 0 0 55px;
 }
 
-#cor13 {
+.cor13 {
   background-color: orange;
   margin: 120px 0 0 20px;
 }
 
-#cor14 {
+.cor14 {
   background-color: orange;
   margin: 120px 0 0 55px;
 }
 
-#cor15 {
+.cor15 {
   background-color: pink;
   margin: 120px 0 0 20px;
 }
 
-#cor16 {
+.cor16 {
   background-color: pink;
   margin: 120px 0 0 55px;
 }
 
-#cor17 {
+.cor17 {
   background-color: purple;
   margin: 120px 0 0 20px;
 }

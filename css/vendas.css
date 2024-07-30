@@ -1,22 +1,4 @@
-.cart-item {
-    animation: none;
-}
 
-.cart-item.animated {
-    animation: popIn 0.5s ease;
-}
-
-#cart-count {
-    display: none; /* Oculta por padrão */
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 14px;
-}
 
 #loja  {
     position: absolute;
@@ -189,7 +171,31 @@ h5 {
     letter-spacing: .092em;
     line-height: 1.50;
     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    margin-top: 250px;
+    margin-top: 245px;
+}
+
+.discount-badge, .discount-badges {
+    position: absolute;
+    color: rgb(241, 0, 0); /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+.discount-badge {
+    position: absolute;
+    top: 280px; /* Ajuste a posição vertical para ficar em cima do preço riscado */
+    left: 190px; /* Ajuste a posição horizontal para alinhar com o preço riscado */
+    color: rgb(241, 0, 0); /* Cor do texto */
+    font-size: 13px; /* Tamanho da fonte grande */
+}
+
+.discount-badges {
+    top: 260px; /* Ajuste conforme necessário */
+    right: 0; /* Ajuste conforme necessário */
+    background-color: rgba(242, 243, 243); /* Cor de fundo com opacidade */
+    padding: 5px 15px; /* Padding para dar espaço ao redor do texto */
+    border-radius: 5px 0; /* Bordas arredondadas */
+    font-size: 17px; /* Tamanho da fonte grande */
 }
 
 #preço0 p,#preço1 p, #preço2 p, #preço3 p {
@@ -199,15 +205,15 @@ h5 {
     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
-#preço0 p {
-   font-size: 18px;
-   margin-top: 292px;
+#preço1 p {
+   font-size: 16px;
+   margin: 295px 0 0 160px;
    color: #a0a0a0;
 }
 
-#preço1 p {
+#preço0 p {
    font-size: 20px;
-   margin: 290px 0 0 130px;
+   margin: 290px 0;
    color: black;
 }
 

@@ -3,7 +3,7 @@
     width: 270px;
     height: 500px;
     margin: 0 50% 0 50%;
-    background-color: #f2f3f3
+    background-color: #f2f3f3;
 }
 
 .caixa1 a, .caixa2 a, .caixa3 a, .caixa4 a, .caixa5 a {
@@ -105,7 +105,7 @@ h5 {
     height: 317px;
 }
 
-#preço p, #preço1 p {
+.preço p, .preço1 p {
     position: absolute;
     letter-spacing: .092em;
     line-height: 1.50;
@@ -113,24 +113,39 @@ h5 {
     padding: 0 10px 0 0;
 }
 
-#preço p {
+.preço p {
     font-size: 20px;
     margin: 80px 0 0 25px;
     color: black;
 }
 
-#preço1 p {
+.preço1 p {
     margin: 87px 0 0 165px;
     font-size: 15px;
     color: #a0a0a0;
 }
 
 @media (max-width: 980px) {
-    #preço p {
+    .preço p {
       margin: 70px 0 0 25px;
     }
 
-    #preço1 p {
+    .preço1 p {
        margin: 75px 0 0 165px;
     }
 }
+
+/* CSS para o selo de desconto simples */
+.discount-badge {
+    position: absolute;
+    top: 290px; /* Ajuste conforme necessário */
+    right: 0; /* Ajuste conforme necessário */
+    background-color: rgba(242, 243, 243); /* Cor de fundo com opacidade */
+    color: rgb(241, 0, 0); /* Cor do texto */
+    padding: 5px 15px; /* Padding para dar espaço ao redor do texto */
+    border-radius: 5px 0; /* Bordas arredondadas */
+    font-size: 17px; /* Tamanho da fonte grande */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
