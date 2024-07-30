@@ -100,6 +100,9 @@ main {
 
   nav {
   height: 9vh;
+  position: fixed;
+   z-index: 2;
+  width: 100%;
 }
 
   .nav-list {
@@ -123,6 +126,7 @@ main {
   }
 
   .mobile-menu {
+    
     display: block;
     margin-left: 40vh;
   }
