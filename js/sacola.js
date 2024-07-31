@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', function () {
         taxaEntregaElem.textContent = '13.00'; // Valor fixo
         valorFinalElem.textContent = (totalProdutos - discount + 13.00).toFixed(2);
 
+        // Salva o resumo da compra no localStorage
+        localStorage.setItem('purchaseSummary', JSON.stringify({
+            totalProdutos: totalProdutos,
+            desconto: discount,
+            taxaEntrega: 13.00,
+            valorFinal: (totalProdutos - discount + 13.00)
+        }));
+
         discountRemoveButton.style.display = discount > 0 ? 'inline' : 'none';
         discountErrorElem.style.display = 'none'; // Esconde a mensagem de erro
     }

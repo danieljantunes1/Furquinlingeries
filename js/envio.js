@@ -1,9 +1,12 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('checkout-form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        
-        // Obtendo os dados do formulário
+document.addEventListener('DOMContentLoaded', function() {
+    const submitButton = document.getElementById('submit-button');
+    
+    if (!submitButton) {
+        console.error('O botão de envio não foi encontrado!');
+        return;
+    }
+
+    submitButton.addEventListener('click', function() {
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
         const telefone = document.getElementById('telefone').value;
@@ -11,34 +14,50 @@ document.addEventListener('DOMContentLoaded', function () {
         const bairro = document.getElementById('bairro').value;
         const cidade = document.getElementById('cidade').value;
         const cep = document.getElementById('cep').value;
-        const pagamento = document.querySelector('input[name="pagamento"]:checked').value;
+        const pagamento = document.getElementById('pagamento').value;
 
-        // Obtendo os itens do carrinho
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let cartDetails = cart.map(item => `${item.product} - ${item.color} - ${item.size} - R$ ${item.price.toFixed(2)}`).join('\n');
+        if (!nome || !email || !telefone || !endereco || !bairro || !cidade || !cep || !pagamento) {
+            alert('Por favor, preencha todos os campos do formulário.');
+            return;
+        }
 
-        // Criando a mensagem
-        const message = `Dados do Cadastro e Envio:
-        
-        Nome: ${nome}
-        Email: ${email}
-        Telefone: ${telefone}
-        Endereço: ${endereco}
-        Bairro: ${bairro}
-        Cidade: ${cidade}
-        CEP: ${cep}
-        Pagamento: ${pagamento}
-        
-        Itens:
-        ${cartDetails}`;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
 
-        // Codificando a mensagem para URL
-        const encodedMessage = encodeURIComponent(message);
+        let cartItemsMessage = cart.map(item => {
+            return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
+        }).join('\n');
 
-        // Abrindo o WhatsApp
-        window.open(`https://wa.me/554888779250?text=${encodedMessage}`, '_blank');
+        let resumoCompra = `
+Resumo da Compra:
+
+Total dos Produtos: R$ ${purchaseSummary.totalProdutos.toFixed(2)}
+Desconto: R$ ${purchaseSummary.desconto.toFixed(2)}
+Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega.toFixed(2)}
+Valor Final: R$ ${purchaseSummary.valorFinal.toFixed(2)}
+        `;
+
+        let message = `Dados do Cadastro e Envio:
+
+Nome: ${nome}
+Email: ${email}
+Telefone: ${telefone}
+Endereço: ${endereco}
+Bairro: ${bairro}
+Cidade: ${cidade}
+CEP: ${cep}
+Pagamento: ${pagamento}
+
+Itens da Sacola:
+${cartItemsMessage}
+
+${resumoCompra}`;
+
+        let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
 
         // Zerando a sacola após o envio
         localStorage.removeItem('cart');
+        localStorage.removeItem('purchaseSummary');
     });
 });
