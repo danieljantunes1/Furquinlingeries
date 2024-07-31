@@ -27,12 +27,12 @@
 @media (max-width: 980px) {
     .banner1, .banner2 {
         background-position: top center; /* Alinha o background ao topo e ao centro */
-        height: 160px; /* Ajusta a altura automaticamente com base no conteúdo */
+        height: 170px; /* Ajusta a altura automaticamente com base no conteúdo */
         margin-top: 0; /* Garante que o banner esteja logo abaixo do menu */
     }
 
     .banner2 {
-        margin-top: 1300px; /* Ajuste a margem para garantir que o banner2 não se sobreponha ao banner1 */
+        margin-top: 1290px; /* Ajuste a margem para garantir que o banner2 não se sobreponha ao banner1 */
     }
 }
 
