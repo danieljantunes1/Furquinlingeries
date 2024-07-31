@@ -10,7 +10,7 @@
 @media (max-width: 980px) {
     #loja {
         width: 950px;
-        top: 200px;
+        top: 230px;
     }
 }
 
@@ -18,7 +18,7 @@
     position: absolute;
     margin: 0 50% 0 50%;
 }
-
+ 
 /* Adicione este estilo para a imagem pequena */
 #fotinha1 img {
     width: 400px;
@@ -67,7 +67,7 @@
 
 @media (max-width: 980px) {
     #ladinho {
-        margin: 600px 0 0 600px;
+        margin: 600px 0 0 590px;
     }
 }
 
@@ -187,6 +187,13 @@ h5 {
     font-size: 13px;
 }
 
+@media (max-width: 980px) {
+    .discount-badge {
+        top: -568px;
+        left: 165px;
+    }
+}
+
 .discount-badges {
     top: 260px;
     right: 0;
@@ -217,11 +224,11 @@ h5 {
 
 @media (max-width: 980px) {
     #preço1 p {
-        margin: -555px 0 0 -15px;
+        margin: -550px 0 0 130px;
     }
 
     #preço0 p {
-        margin: -555px 0 0 130px;
+        margin: -555px 0 0 -15px;
     }
 }
 
