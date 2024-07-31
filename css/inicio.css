@@ -20,7 +20,7 @@
 .banner2 {
     height: 550px; /* Altura do banner */
     background-image: url('../imagens/6664336.png'); /* Imagem do banner */
-    margin-top: 0; /* Garante que o banner esteja logo abaixo do banner1 */
+    margin-top: 1090px; /* Garante que o banner esteja logo abaixo do banner1 */
 }
 
 /* Ajustes para dispositivos móveis */
