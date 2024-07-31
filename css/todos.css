@@ -230,98 +230,61 @@ h3 {
     100% { transform: translateX(-100%); }
 }
 
-.cor1, .cor2, .cor3, .cor4, .cor5, .cor6, .cor7 , .cor8, .cor9, .cor10, .cor11, .cor12, .cor13, .cor14, .cor15, .cor16, .cor17 {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 100px;
-    border: 1px solid black;
+.bolinha-container {
+  display: flex;
+  justify-content: flex-start; /* Alinha bolinhas horizontalmente */
+  margin: 120px 0 0 25px; /* Espaçamento vertical entre bolinhas e outros elementos */
 }
 
-.cor1 {
-  background-color: black;
-  margin: 120px 0 0 20px;
+.bolinha {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px; /* Espaço entre bolinhas */
+  border: 1px solid black; /* Borda opcional, ajuste conforme necessário */
 }
 
-.cor2 {
-  background-color: black;
-  margin: 120px 0 0 55px;
+.bolinha.rosa {
+  background-color: pink; 
 }
 
-.cor3 {
-  background-color: blue;
-  margin: 120px 0 0 20px;
+.bolinha.azul {
+  background-color: blue; 
 }
 
-.cor4 {
-  background-color: blue;
-  margin: 120px 0 0 55px;
+.bolinha.preto {
+  background-color: black; 
 }
 
-.cor5 {
-  background-color: yellow;
-  margin: 120px 0 0 20px;
+.bolinha.vermelho {
+  background-color: red; 
 }
 
-.cor6 {
-  background-color: yellow;
-  margin: 120px 0 0 55px;
+.bolinha.branco {
+  background-color: white; 
 }
 
-.cor7 {
-  background-color: white;
-  margin: 120px 0 0 20px;
+.bolinha.verde {
+  background-color: rgb(24, 93, 16);
 }
 
-.cor8 {
-  background-color: white;
-  margin: 120px 0 0 55px;
+.bolinha.laranja {
+  background-color: rgb(225, 94, 0); 
 }
 
-.cor9 {
-  background-color: green;
-  margin: 120px 0 0 20px;
+.bolinha.roxo {
+  background-color: rgb(183, 8, 177); 
 }
 
-.cor10 {
-  background-color: green;
-  margin: 120px 0 0 55px;
+/* Para dispositivos menores */
+@media (max-width: 980px) {
+  .bolinha {
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+  }
 }
 
-.cor11 {
-  background-color: red;
-  margin: 120px 0 0 20px;
-}
-
-.cor12 {
-  background-color: red;
-  margin: 120px 0 0 55px;
-}
-
-.cor13 {
-  background-color: orange;
-  margin: 120px 0 0 20px;
-}
-
-.cor14 {
-  background-color: orange;
-  margin: 120px 0 0 55px;
-}
-
-.cor15 {
-  background-color: pink;
-  margin: 120px 0 0 20px;
-}
-
-.cor16 {
-  background-color: pink;
-  margin: 120px 0 0 55px;
-}
-
-.cor17 {
-  background-color: purple;
-  margin: 120px 0 0 20px;
-}
 
 footer {
   position: relative;
