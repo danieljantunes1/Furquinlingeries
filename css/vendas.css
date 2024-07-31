@@ -1,6 +1,4 @@
-
-
-#loja  {
+#loja {
     position: absolute;
     margin: 0 50% 0 50%;
     top: 225px;
@@ -10,10 +8,10 @@
 }
 
 @media (max-width: 980px) {
-   #loja  {
-       width: 950px;
-       top: 200px;
-}
+    #loja {
+        width: 950px;
+        top: 200px;
+    }
 }
 
 #loja img {
@@ -37,21 +35,19 @@
 @media (max-width: 980px) {
     #fotinha1 {
         position: relative;
-        margin-left:400px;
-
+        margin-left: 400px;
     }
 
     #fotinha1 img {
         width: 360px;
         left: 20px;
         margin-top: 110px;
-        
     }
 
     #fotinha2 {
         position: absolute;
-        top: 550px; /* Colocando a imagem pequena abaixo da imagem grande */
-        left: 10px; /* Centralizando a imagem pequena */
+        top: 550px;
+        left: 10px;
         transform: translateX(-50%);
     }
 
@@ -63,16 +59,16 @@
 }
 
 #ladinho {
-  position: absolute;;
-  height: 400px;
-  width: 300px;
-  margin: 8px 0 0 1040px;
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    margin: 8px 0 0 1040px;
 }
 
 @media (max-width: 980px) {
-  #ladinho {
-  margin: 600px 0 0 600px;
-}
+    #ladinho {
+        margin: 600px 0 0 600px;
+    }
 }
 
 h4, h5, h6 {
@@ -98,41 +94,44 @@ h5 {
 
 @media (max-width: 980px) {
     h4 {
-       zoom: 80%;
-       left: -25px;
-       top: -800px;
+        zoom: 80%;
+        left: -25px;
+        top: -800px;
     }
 
     h5 {
-       top: -655px;
-       left: -15px;
+        top: -655px;
+        left: -15px;
     }
 }
 
-.mini, .mini1 {
-   position: absolute;
-   margin-top: 110px;
-   width: 70px;
-   height: 75px;
-   cursor: pointer;
+/* Contêiner para miniaturas */
+.mini-container {
+  position: absolute;
+  display: flex;
+  margin: 120px 0 0 -155px; /* Espaçamento vertical entre bolinhas e outros elementos */
+  gap: 40px; /* Espaçamento entre as miniaturas */
+  justify-content: space-around; /* Distribui espaço ao redor das miniaturas */
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 100%;
 }
 
-.mini:hover, .mini1:hover, .caixa1:hover, .caixa2:hover, .caixa3:hover, .caixa4:hover  {
-   opacity: 70%;
+.mini {
+  width: 70px;
+  height: 75px;
 }
 
-.mini1 {
-  left: 90px;
-}
+.mini a:hover {
+    opacity: 80%;
+  }
 
-.mini img, .mini1 img {
-   left: -35px;
-   width: 100%;
-   height: 100%;
+.mini img {
+    width: 20%;
+    height: 15%;
 }
 
 @media (max-width: 980px) {
-    .mini img, .mini1 img {
+    .mini img {
         top: -10px;
     }
 }
@@ -167,7 +166,7 @@ h5 {
 }
 
 #ladinho p {
-  position: absolute;
+    position: absolute;
     letter-spacing: .092em;
     line-height: 1.50;
     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
@@ -176,29 +175,28 @@ h5 {
 
 .discount-badge, .discount-badges {
     position: absolute;
-    color: rgb(241, 0, 0); /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
-    text-align: center; /* Alinha o texto ao centro */
+    color: rgb(241, 0, 0);
+    font-weight: bold;
+    text-align: center;
 }
 
 .discount-badge {
-    position: absolute;
-    top: 280px; /* Ajuste a posição vertical para ficar em cima do preço riscado */
-    left: 190px; /* Ajuste a posição horizontal para alinhar com o preço riscado */
-    color: rgb(241, 0, 0); /* Cor do texto */
-    font-size: 13px; /* Tamanho da fonte grande */
+    top: 280px;
+    left: 190px;
+    color: rgb(241, 0, 0);
+    font-size: 13px;
 }
 
 .discount-badges {
-    top: 260px; /* Ajuste conforme necessário */
-    right: 0; /* Ajuste conforme necessário */
-    background-color: rgba(242, 243, 243); /* Cor de fundo com opacidade */
-    padding: 5px 15px; /* Padding para dar espaço ao redor do texto */
-    border-radius: 5px 0; /* Bordas arredondadas */
-    font-size: 17px; /* Tamanho da fonte grande */
+    top: 260px;
+    right: 0;
+    background-color: rgba(242, 243, 243);
+    padding: 5px 15px;
+    border-radius: 5px 0;
+    font-size: 17px;
 }
 
-#preço0 p,#preço1 p, #preço2 p, #preço3 p {
+#preço0 p, #preço1 p, #preço2 p, #preço3 p {
     position: absolute;
     letter-spacing: .092em;
     line-height: 1.50;
@@ -206,30 +204,30 @@ h5 {
 }
 
 #preço1 p {
-   font-size: 16px;
-   margin: 295px 0 0 160px;
-   color: #a0a0a0;
+    font-size: 16px;
+    margin: 295px 0 0 160px;
+    color: #a0a0a0;
 }
 
 #preço0 p {
-   font-size: 20px;
-   margin: 290px 0;
-   color: black;
+    font-size: 20px;
+    margin: 290px 0;
+    color: black;
 }
 
 @media (max-width: 980px) {
     #preço1 p {
-       margin: -555px 0 0 -15px;
-}
+        margin: -555px 0 0 -15px;
+    }
 
-   #preço0 p {
-      margin: -555px 0 0 130px;
-}
+    #preço0 p {
+        margin: -555px 0 0 130px;
+    }
 }
 
 button {
     position: absolute;
-    padding: 7px 73px 7px 73px;
+    padding: 7px 73px;
     font-size: 25px;
     letter-spacing: .192em;
     line-height: 1.50;
@@ -249,13 +247,13 @@ button:hover {
 
 @media (max-width: 980px) {
     button {
-       padding: 7px 75px 7px 75px;
-       left: 20px;
-       top: 180px;
-}
+        padding: 7px 75px;
+        left: 20px;
+        top: 180px;
+    }
 }
 
-#sujestao  {
+#sujestao {
     position: absolute;
     display: flex;
     margin: 0 50% 0 50%;
@@ -270,16 +268,16 @@ button:hover {
 }
 
 @media (max-width: 980px) {
-    #sujestao  {
-       zoom: 70%;
-       top: 1750px;
-       left: -287px;
-       width: 450px;
+    #sujestao {
+        zoom: 70%;
+        top: 1750px;
+        left: -287px;
+        width: 450px;
     }
 
     #sujestao h4 {
-       left: 100px;
-}
+        left: 100px;
+    }
 }
 
 .caixa1, .caixa2, .caixa3, .caixa4 {
@@ -313,21 +311,21 @@ button:hover {
 
 @media (max-width: 980px) {
     .caixa1 {
-       left: -200px;
+        left: -200px;
     }
 
     .caixa2 {
-       left: 110px;
+        left: 110px;
     }
 
     .caixa3 {
-       left: -200px;
-       top: 620px;
+        left: -200px;
+        top: 620px;
     }
 
     .caixa4 {
-       left: 110px;
-       top: 620px;
+        left: 110px;
+        top: 620px;
     }
 }
 
@@ -361,7 +359,7 @@ h6 {
 }
 
 @media (max-width: 980px) {
-  #roda {
-    margin-top: 2100px;
-}
+    #roda {
+        margin-top: 2100px;
+    }
 }
