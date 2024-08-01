@@ -113,12 +113,8 @@ h5 {
   gap: 40px; /* Espaçamento entre as miniaturas */
   justify-content: space-around; /* Distribui espaço ao redor das miniaturas */
   width: 100%; /* Ocupa toda a largura disponível */
-  height: 100%;
-}
-
-.mini {
-  width: 70px;
-  height: 75px;
+  height: 60px;
+  left: -10px;
 }
 
 .mini a:hover {
@@ -127,7 +123,7 @@ h5 {
 
 .mini img {
     width: 20%;
-    height: 15%;
+    height: 100%;
 }
 
 @media (max-width: 980px) {
