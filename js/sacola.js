@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const discountCodeInput = document.getElementById('discount-code');
     const applyDiscountButton = document.getElementById('apply-discount');
     const discountErrorElem = document.getElementById('discount-error');
+    const checkoutButton = document.getElementById('botao'); // Obtém o botão de finalizar compra
 
     // Verifique se todos os elementos necessários existem
-    if (!cartItemsContainer || !cartCount || !totalProdutosElem || !descontoElem || !taxaEntregaElem || !valorFinalElem || !discountCodeInput || !applyDiscountButton || !discountErrorElem) {
+    if (!cartItemsContainer || !cartCount || !totalProdutosElem || !descontoElem || !taxaEntregaElem || !valorFinalElem || !discountCodeInput || !applyDiscountButton || !discountErrorElem || !checkoutButton) {
         console.error('Um ou mais elementos necessários não foram encontrados no DOM.');
         return;
     }
@@ -75,6 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         discountRemoveButton.style.display = discount > 0 ? 'inline' : 'none';
         discountErrorElem.style.display = 'none'; // Esconde a mensagem de erro
+
+        // Atualiza a visibilidade e clicabilidade do botão de finalizar compra
+        updateCheckoutButtonVisibility();
     }
 
     function removeItem(index) {
@@ -120,6 +124,14 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             cartCount.textContent = '';
             cartCount.style.display = 'none'; // Esconde o contador
+        }
+    }
+
+    function updateCheckoutButtonVisibility() {
+        if (cart.length > 0) {
+            checkoutButton.classList.remove('disabled');
+        } else {
+            checkoutButton.classList.add('disabled');
         }
     }
 

@@ -1,12 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submit-button');
+    const cartSummaryElement = document.getElementById('cart-summary');
     
-    if (!submitButton) {
-        console.error('O botão de envio não foi encontrado!');
+    if (!submitButton || !cartSummaryElement) {
+        console.error('Elementos necessários não encontrados no DOM.');
         return;
     }
 
-    submitButton.addEventListener('click', function() {
+    function updateCartSummary() {
+        const purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
+        
+        let resumoCompra = `
+        <h2>Resumo da Compra</h2>
+        <p>Total dos Produtos: R$ ${purchaseSummary.totalProdutos.toFixed(2)}</p>
+        <p>Desconto: R$ ${purchaseSummary.desconto.toFixed(2)}</p>
+        <p>Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega.toFixed(2)}</p>
+        <p>Valor Final: R$ ${purchaseSummary.valorFinal.toFixed(2)}</p>
+        `;
+
+        cartSummaryElement.innerHTML = resumoCompra;
+    }
+
+    function sendToWhatsApp() {
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
         const telefone = document.getElementById('telefone').value;
@@ -28,17 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
         }).join('\n');
 
-        let resumoCompra = `
-Resumo da Compra:
-
-Total dos Produtos: R$ ${purchaseSummary.totalProdutos.toFixed(2)}
-Desconto: R$ ${purchaseSummary.desconto.toFixed(2)}
-Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega.toFixed(2)}
-Valor Final: R$ ${purchaseSummary.valorFinal.toFixed(2)}
-        `;
-
         let message = `Dados do Cadastro e Envio:
-
+        
 Nome: ${nome}
 Email: ${email}
 Telefone: ${telefone}
@@ -51,7 +57,12 @@ Pagamento: ${pagamento}
 Itens da Sacola:
 ${cartItemsMessage}
 
-${resumoCompra}`;
+Resumo da Compra:
+Total dos Produtos: R$ ${purchaseSummary.totalProdutos.toFixed(2)}
+Desconto: R$ ${purchaseSummary.desconto.toFixed(2)}
+Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega.toFixed(2)}
+Valor Final: R$ ${purchaseSummary.valorFinal.toFixed(2)}
+        `;
 
         let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
@@ -59,5 +70,9 @@ ${resumoCompra}`;
         // Zerando a sacola após o envio
         localStorage.removeItem('cart');
         localStorage.removeItem('purchaseSummary');
-    });
+    }
+
+    submitButton.addEventListener('click', sendToWhatsApp);
+
+    updateCartSummary(); // Atualiza o resumo da compra ao carregar a página
 });

@@ -123,6 +123,28 @@
 
         updateCartCount();
     });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const cartCountElement = document.getElementById('cart-count');
+  
+  function updateCartCount(value) {
+    if (value > 0) {
+      cartCountElement.textContent = value;
+      cartCountElement.setAttribute('data-content', value);
+      cartCountElement.style.display = 'flex';
+    } else {
+      cartCountElement.textContent = '';
+      cartCountElement.setAttribute('data-content', '0');
+      cartCountElement.style.display = 'none';
+    }
+  }
+
+  // Simular a atualização do contador
+  // Substitua este valor pelo valor real do seu carrinho
+  const cartValue = 0; // Altere para testar diferentes valores
+  updateCartCount(cartValue);
+});
 </script>
 
 <script src="js/mobile-navbar.js"></script>
