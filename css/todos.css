@@ -315,14 +315,14 @@ footer h1, footer h2 {
 
 footer h1 {
   top: 100px;
-  left: -150px;
+  left: -170px;
   font-size: 67px;
 }
 
 footer h2 {
   top: 180px;
   font-size: 37px;
-  left: -100px;
+  left: -120px;
   width: 250px;
 }
 
@@ -366,7 +366,7 @@ footer h2 {
   line-height: 1.50;
   font-size: 18px;
   top: 372px;
-  left: -153px;
+  left: -134px;
   font-family: arial;
   letter-spacing: .092em;
 }
