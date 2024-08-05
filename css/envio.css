@@ -18,6 +18,14 @@ h4 {
     margin: 52px 0 0 520px;
 }
 
+@media (max-width: 980px) {
+    h4 {
+      margin: 62px 0 0 140px;
+      zoom: 75%;
+      width: 290px;
+    }
+}
+
 h5 {
     margin: 105px 0 0 240px;
     font-size: 26px;
@@ -64,6 +72,13 @@ main {
     top: 420px;
     left: 942px;
     background-color: #fff;
+}
+
+@media (max-width: 980px) {
+    .tela2, .tela3 {
+        margin: -40px 0 0 -900px;
+        width: 310px;
+    }
 }
 
 .tela2 p {
