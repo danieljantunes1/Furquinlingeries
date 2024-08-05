@@ -1,9 +1,51 @@
+body, p, h4, h5, label, input, select, span {
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    letter-spacing: .092em;
+}
+
+p {
+    line-height: 1.5;
+}
+
+h4, h5 {
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 56px;
+    color: #5a3b1a;
+    font-family: 'calisto MT', sans-serif;
+    margin: 52px 0 0 520px;
+}
+
+h5 {
+    margin: 105px 0 0 240px;
+    font-size: 26px;
+}
+
+.total-section div .label {
+    text-align: left;
+    flex-basis: 50%;
+}
+
+.total-section div .value {
+    text-align: right;
+    flex-basis: 50%;
+}
+
+p, .card-icons p, .total-section div .value, .total-section div .label {
+    font-size: 16px;
+}
+
+.discount-section label, .discount-section input, .discount-section button {
+    font-size: 16px;
+}
+
 main {
     padding: 20px 20px 70px 20px;
     width: 679px;
-    max-height: 580px;
-    margin: 300px 0 0 190px;
-    background-color: #e9e9e9;
+    max-height: 500px;
+    margin: 25px 0 0 190px;
 }
 
 @media (max-width: 980px) {
@@ -15,164 +57,96 @@ main {
 
 .tela2 {
     position: absolute;
-    padding: 20px;
+    padding: 10px 0 0 0;
     display: flex;
-    width: 300px;
-    top: 437px;
+    flex-direction: column;
+    width: 400px;
+    top: 420px;
     left: 942px;
-    height: 200px;
-    background-color: #e9e9e9;
-}
-
-@media (max-width: 980px) {
-    .tela2 {
-        top: 400px;
-        left: 20px;
-        width: 310px;
-    }
-}
-
-h4, h5, h6 {
-    position: absolute;
-    font-weight: 500;
-    margin: 0 50% 0 50%;
-    letter-spacing: .092em;
-}
-
-h4 {
-    width: 590px;
-    font-size: 56px;
-    top: 190px;
-    left: -240px;
-    color: #5a3b1a;
-    font-family: 'calisto MT', sans-serif;
-}
-
-@media (max-width: 980px) {
-    h4 {
-      left: -140px;
-      zoom: 75%;
-      top: 230px;
-      width: 290px;
-    }
-}
-
-h5, h6 {
-    font-size: 26px;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    
-}
-
-h5 {
-    top: 357px;
-    left: -530px;
-}
-
-@media (max-width: 980px) {
-    h5 {
-      left: -170px;
-      top: 720px;
-    }
-}
-
-h6 {
-    top: -70px;
-    left: -160px;
-    width: 300px;
-}
-
-@media (max-width: 980px) {
-    h6 {
-       left: -170px;
-       top: -70px;
-    }
+    background-color: #fff;
 }
 
 .tela2 p {
     font-size: 25px;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    top: 20px;
-    left: 40px;
-    position: absolute;
-    letter-spacing: .100em;
-}
-
-.card-icons p {
-    position: absolute;
-    font-size: 16px;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    margin: 120px 0 0 -15px;
-    letter-spacing: .100em;
-    line-height: 1.5;
     font-weight: 500;
-}
-
-.card-icons {
-    display: inline-block;
-    margin-top: 60px;
-}
-
-.card-icon {
-    margin-right: 10px; /* Espaçamento entre os ícones */
-    font-size: 34px;
+    top: -60px;
+    left: 20px;
+    position: absolute;
 }
 
 .total-section {
+    margin-top: 10px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.total-section div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.tela3 {
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    width: 300px;
+    top: 637px;
+    left: 942px;
+    height: 200px;
+}
+
+.tela3 p {
+    font-size: 25px;
+    font-weight: 500;
+    top: 20px;
+    left: 15px;
+    position: absolute;
+}
+
+.card-icons p {
     font-size: 16px;
-    letter-spacing: .092em;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    line-height: 2em;
+    margin: 120px 0 0 -15px;
+}
+
+.card-icon {
+    display: inline-block;
+    margin-top: 60px;
+    margin-right: 20px;
+    font-size: 34px;
+}
+
+.input-group {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 0px;
+    width: 652px;
 }
 
 .input-container {
-    margin-bottom: 2rem;
+    flex: 1;
     position: relative;
-    margin-top: 20px;
-}
-
-@media (max-width: 980px) {
-    .input-container {
-        margin-top: 40px;
-    }
+    margin-bottom: 30px;
 }
 
 .input-container input, .input-container select {
-    padding: 10px;
-    width: 650px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 13px;
+    padding: 20px;
+    width: 93%;
+    border: 1px solid #000000;
+    background-color: #e9e9e9;
 }
 
 @media (max-width: 980px) {
     .input-container input, .input-container select {
-        width: 290px;
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 30px;
     }
 }
 
-.input-container label {
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    background-color: white;
-    color: black;
-    transition: 0.2s ease-out;
-}
-
-.input-container input:focus + label, .input-container input:not(:placeholder-shown) + label, .input-container select:focus + label, .input-container select:not(:placeholder-shown) + label {
-    top: -15px;
-    left: 10px;
-    font-size: 16px;
-    padding: 5px 10px 5px 10px;
-}
-
-@media (max-width: 980px) {
-    .input-container input:focus + label, .input-container input:not(:placeholder-shown) + label, .input-container select:focus + label, .input-container select:not(:placeholder-shown) + label {
-        top: -30px;
-    }
-}
-
-/* Estilos para o botão de enviar */
 #submit-button {
     padding: 12px 20px;
     background-color: #5a3b1a;
@@ -185,6 +159,52 @@ h6 {
     transition: background-color 0.3s ease;
 }
 
+#botao {
+    background-color: #5a3b1a;
+    border: none;
+    padding: 13px 0 17px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 230px;
+    height: 20px;
+    display: block;
+    top: 330px;
+    left: 955px;
+    position: absolute;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    letter-spacing: .092em;
+}
+
+#botao.disabled {
+    background-color: #d79752;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#botao:hover {
+    background-color: #745843;
+}
+
+button {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    color: #e9e9e9;
+}
+
 #roda {
     margin-top: 60px;
+}
+
+@media (max-width: 980px) {
+    #roda {
+        margin-top: 1000px;
+    }
 }

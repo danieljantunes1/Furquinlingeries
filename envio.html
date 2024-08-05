@@ -26,7 +26,7 @@
     <li><a href="sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
     <li><a href="pijamas/pijamas.html">Pijamas</a></li>
     <li><a href="sexshop/sexshop.html">Sexshop</a></li>
-    <li><a href="conjuntos/conjuntos.html">Conjuntos</a></li></ul>
+    <li><a href="conjuntos/conjuntos.html">Conjuntos</a></ul>
     <div id="cart-icon">
         <i class="fa-solid fa-bag-shopping"></i> 
     <div id="cart-count">0</div></div></nav>
@@ -42,69 +42,64 @@
 
 <main>
     <form id="checkout-form">
+    <div class="input-group">
     <div class="input-container">
-    <input type="text" id="nome" name="nome" autocomplete="name" required>
-    <label for="nome">Nome Completo:</label></div>
+    <input type="text" id="nome" name="nome" autocomplete="given-name" required placeholder="Nome"></div>
+    <div class="input-container">
+    <input type="text" id="sobrenome" name="sobrenome" autocomplete="family-name" required placeholder="Sobrenome"></div></div>
         
     <div class="input-container">
-    <input type="email" id="email" name="email" autocomplete="email" required>
-    <label for="email">E-mail:</label></div>
+    <input type="email" id="email" name="email" autocomplete="email" required placeholder="E-mail"></div>
+        
+    <div class="input-group">
+    <div class="input-container">
+    <input type="tel" id="telefone" name="telefone" autocomplete="tel" required placeholder="Telefone"></div>
+    <div class="input-container">
+    <input type="text" id="cep" name="cep" autocomplete="postal-code" required placeholder="CEP"></div></div>
         
     <div class="input-container">
-    <input type="tel" id="telefone" name="telefone" autocomplete="tel" required>
-    <label for="telefone">Telefone:</label></div>
-        
-    <div class="input-container">
-    <input type="text" id="endereco" name="endereco" autocomplete="street-address" required>
-    <label for="endereco">Endereço:</label></div>
+    <input type="text" id="endereco" name="endereco" autocomplete="street-address" required placeholder="Endereço"></div>
 
     <div class="input-container">
-    <input type="text" id="bairro" name="bairro" autocomplete="address-level2" required>
-    <label for="bairro">Bairro:</label></div>
+    <input type="text" id="bairro" name="bairro" autocomplete="address-level2" required placeholder="Bairro"></div>
         
     <div class="input-container">
-    <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required>
-    <label for="cidade">Cidade:</label></div>
-        
-    <div class="input-container">
-    <input type="text" id="cep" name="cep" autocomplete="postal-code" required>
-    <label for="cep">CEP:</label></div>
-        
-    <div class="input-container">
-    <select id="pagamento" name="pagamento" autocomplete="off" required>
-    <option value="" disabled selected>Selecione a forma de pagamento</option>
-    <option value="dinheiro">Dinheiro</option>
-    <option value="debito">Débito</option>
-    <option value="credito">Crédito</option>
-    <option value="pix">Pix</option>
-    </select>
-    <label for="pagamento">Forma de Pagamento:</label></div>
+    <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required placeholder="Cidade"></div>
         
     <button type="submit" id="submit-button">Enviar</button></form>
 
     <div class="tela2">
-    <h6>Informações</h6>
-    <div class="total-section">
+    <p>Resumo do pedido</p>
+    <div class="total-section"><div>
+    <div class="label">Total dos Produtos:</div>
+    <div class="value"><span>R$</span> <span id="total-produtos"></span></div></div><div>
+    <div class="label">Desconto:</div>
+    <div class="value"><span>R$</span> <span id="desconto"></span></div></div><div>
+    <div class="label">Taxa de Entrega:</div>
+    <div class="value"><span>R$</span> <span id="taxa-entrega"></span></div></div><div>
+    <div class="label">Valor Final:</div>
+    <div class="value"><span>R$</span> <span id="valor-final"></span></div></div></div></div>
+
+    <div class="tela3">
     <p>Aceitamos</p>
     <div class="card-icons">
-    <span class="card-icon"><i class="fa-brands fa-cc-visa" style="color: #003a9e;"></i></i></span>
-    <span class="card-icon"><i class="fa-brands fa-cc-mastercard" style="color: #f50505;"></i></span>
-    <span class="card-icon"><i class="fa-brands fa-pix" style="color: #008f11;"></i></i></span>
-    <span class="card-icon"><i class="fa-solid fa-money-bill-1" style="color: #00571e;"></i></i></span>
-    <p>Forma de entrega e prazo serão combinados em seguida</p></div></div></div>
+    <span class="card-icon"><i class="fa-brands fa-cc-visa" style="color: #b4b4b4;"></i></span>
+    <span class="card-icon"><i class="fa-brands fa-cc-mastercard" style="color: #b4b4b4;"></i></span>
+    <span class="card-icon"><i class="fa-brands fa-pix" style="color: #b4b4b4;"></i></span></div></div></div>
 </main>
 
 <footer id="roda">
     <h1>FURQUIN</h1>
     <h2>Moda Íntima</h2>
     <div id="social-icons">
-    <a href="https://www.instagram.com/furquinlingeries/" target="_blank" class="social-icon">
-    <i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/554888779250" target="_blank" class="social-icon">
-    <i class="fab fa-whatsapp"></i></a></div>
+        <a href="https://www.instagram.com/furquinlingeries/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/554888779250" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
     <div id="texto4">
-    <a href="https://www.google.com.br/maps/@-27.663118,-48.5021449,3a,75y,330.47h,86.29t/data=!3m6!1e1!3m4!1sIA-5Zwcm3JifJrK_t2T3Sg!2e0!7i16384!8i8192?coh=205409&entry=ttu" target="_blank">
-    <p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
+        <a href="https://www.google.com.br/maps/@-27.663118,-48.5021449,3a,75y,330.47h,86.29t/data=!3m6!1e1!3m4!1sIA-5Zwcm3JifJrK_t2T3Sg!2e0!7i16384!8i8192?coh=205409&entry=ttu" target="_blank">
+            <p>Rodovia SC-405, 356 - Rio Tavares</p>
+        </a>
+    </div>
 </footer>
 
 <script type="text/javascript">
@@ -124,27 +119,24 @@
         updateCartCount();
     });
 
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
 
-    document.addEventListener('DOMContentLoaded', function() {
-  const cartCountElement = document.getElementById('cart-count');
-  
-  function updateCartCount(value) {
-    if (value > 0) {
-      cartCountElement.textContent = value;
-      cartCountElement.setAttribute('data-content', value);
-      cartCountElement.style.display = 'flex';
-    } else {
-      cartCountElement.textContent = '';
-      cartCountElement.setAttribute('data-content', '0');
-      cartCountElement.style.display = 'none';
-    }
-  }
+        const nome = document.getElementById('nome').value;
+        const sobrenome = document.getElementById('sobrenome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const cep = document.getElementById('cep').value;
+        const endereco = document.getElementById('endereco').value;
+        const bairro = document.getElementById('bairro').value;
+        const cidade = document.getElementById('cidade').value;
 
-  // Simular a atualização do contador
-  // Substitua este valor pelo valor real do seu carrinho
-  const cartValue = 0; // Altere para testar diferentes valores
-  updateCartCount(cartValue);
-});
+        const whatsappMessage = `Nome: ${nome}%0ASobrenome: ${sobrenome}%0AEmail: ${email}%0ATelefone: ${telefone}%0ACEP: ${cep}%0AEndereço: ${endereco}%0ABairro: ${bairro}%0ACidade: ${cidade}`;
+
+        const whatsappURL = `https://wa.me/554888779250?text=${whatsappMessage}`;
+        
+        window.open(whatsappURL, '_blank');
+    });
 </script>
 
 <script src="js/mobile-navbar.js"></script>
