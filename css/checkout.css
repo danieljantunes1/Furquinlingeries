@@ -78,8 +78,8 @@ main {
 
 @media (max-width: 980px) {
     main {
-        margin: 10px 0 0 20px;
-        width: 260px;
+        margin: -540px 0 0 20px;
+        width: 290px;
     }
 }
 
@@ -104,17 +104,12 @@ main {
 
 @media (max-width: 980px) {
     .tela2, .tela3 {
-        margin: -40px 0 0 -900px;
+        margin: 700px 0 0 -900px;
         width: 310px;
     }
 
     .tela3 {
-        margin: -10px 0 0 -900px;
-        width: 310px;
-    }
-
-    .tela2 p {
-        margin-left: -20px;
+        margin-left: -920px;;
     }
 }
 
@@ -172,19 +167,19 @@ main {
         flex-direction: column;
         gap: 5px; /* Espaçamento vertical entre campos em dispositivos móveis */
         width: 100%; /* Ajusta a largura dos grupos de campos em telas menores */
-        margin-bottom: 5px; /* Espaçamento entre os campos em telas menores */
+        margin-bottom: 1px; /* Espaçamento entre os campos em telas menores */
     }
 }
 
 .input-container {
     flex: 1;
     position: relative;
-    margin-bottom: 20px; /* Espaçamento entre os campos */
+    margin-bottom: 10px; /* Espaçamento entre os campos */
 }
 
 @media (max-width: 980px) {
     .input-container {
-        margin-bottom: 30px; /* Espaçamento entre os campos em telas menores */
+        margin-bottom: 20px; /* Espaçamento entre os campos em telas menores */
     }
 }
 
@@ -252,6 +247,6 @@ button:hover {
 
 @media (max-width: 980px) {
     #roda {
-        margin-top: 1000px;
+        margin-top: 900px;
     }
 }
