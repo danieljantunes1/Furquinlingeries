@@ -76,3 +76,28 @@ Valor Final: R$ ${purchaseSummary.valorFinal.toFixed(2)}
 
     updateCartSummary(); // Atualiza o resumo da compra ao carregar a página
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const totalProdutosElem = document.getElementById('total-produtos');
+    const descontoElem = document.getElementById('desconto');
+    const taxaEntregaElem = document.getElementById('taxa-entrega');
+    const valorFinalElem = document.getElementById('valor-final');
+
+    // Verifica se todos os elementos necessários existem
+    if (!totalProdutosElem || !descontoElem || !taxaEntregaElem || !valorFinalElem) {
+        console.error('Um ou mais elementos necessários não foram encontrados no DOM.');
+        return;
+    }
+
+    // Obtém o resumo da compra do localStorage
+    const purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary'));
+
+    if (purchaseSummary) {
+        totalProdutosElem.textContent = purchaseSummary.totalProdutos.toFixed(2);
+        descontoElem.textContent = purchaseSummary.desconto.toFixed(2);
+        taxaEntregaElem.textContent = purchaseSummary.taxaEntrega.toFixed(2);
+        valorFinalElem.textContent = purchaseSummary.valorFinal.toFixed(2);
+    } else {
+        console.error('Resumo da compra não encontrado no localStorage.');
+    }
+});
