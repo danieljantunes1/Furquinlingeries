@@ -131,9 +131,9 @@ main {
 
 .input-group {
     display: flex;
-    gap: 40px;
+    gap: 35px;
     margin-bottom: 1px;
-    width: 652px;
+    width: 656px;
 }
 
 @media (max-width: 980px) {
