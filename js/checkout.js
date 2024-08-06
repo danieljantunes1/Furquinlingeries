@@ -27,7 +27,82 @@ document.addEventListener('DOMContentLoaded', function () {
         cartSummaryElement.innerHTML = resumoCompra;
     }
 
+    function validateForm() {
+        const nome = document.getElementById('nome');
+        const sobrenome = document.getElementById('sobrenome');
+        const email = document.getElementById('email');
+        const telefone = document.getElementById('telefone');
+        const endereco = document.getElementById('endereco');
+        const bairro = document.getElementById('bairro');
+        const cidade = document.getElementById('cidade');
+        const cep = document.getElementById('cep');
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^\d{10,11}$/;
+        const cepPattern = /^\d{5}-\d{3}$/;
+
+        let errors = false;
+
+        // Clear previous errors
+        const inputs = [nome, sobrenome, email, telefone, endereco, bairro, cidade, cep];
+        inputs.forEach(input => {
+            input.style.borderColor = '';
+            input.style.backgroundColor = '';
+        });
+
+        if (!nome.value) {
+            nome.style.borderColor = 'red';
+            nome.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!sobrenome.value) {
+            sobrenome.style.borderColor = 'red';
+            sobrenome.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!emailPattern.test(email.value)) {
+            email.style.borderColor = 'red';
+            email.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!phonePattern.test(telefone.value)) {
+            telefone.style.borderColor = 'red';
+            telefone.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!cepPattern.test(cep.value)) {
+            cep.style.borderColor = 'red';
+            cep.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!endereco.value) {
+            endereco.style.borderColor = 'red';
+            endereco.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!bairro.value) {
+            bairro.style.borderColor = 'red';
+            bairro.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+        if (!cidade.value) {
+            cidade.style.borderColor = 'red';
+            cidade.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
+
+        if (errors) {
+            alert('Por favor, corrija os campos destacados em vermelho.');
+            return false;
+        }
+        return true;
+    }
+
     function sendToWhatsApp() {
+        if (!validateForm()) {
+            return;
+        }
+
         const nome = document.getElementById('nome').value;
         const sobrenome = document.getElementById('sobrenome').value;
         const email = document.getElementById('email').value;
@@ -36,11 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const bairro = document.getElementById('bairro').value;
         const cidade = document.getElementById('cidade').value;
         const cep = document.getElementById('cep').value;
-
-        if (!nome || !sobrenome || !email || !telefone || !endereco || !bairro || !cidade || !cep) {
-            alert('Por favor, preencha todos os campos do formulário.');
-            return;
-        }
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};

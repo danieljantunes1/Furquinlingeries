@@ -43,31 +43,37 @@
 
 <main>
     <form id="checkout-form">
-    <div class="input-group">
-    <div class="input-container">
-    <input type="text" id="nome" name="nome" autocomplete="given-name" required placeholder="Nome"></div>
-    <div class="input-container">
-    <input type="text" id="sobrenome" name="sobrenome" autocomplete="family-name" required placeholder="Sobrenome"></div></div>
-        
-    <div class="input-container">
-    <input type="email" id="email" name="email" autocomplete="email" required placeholder="E-mail"></div>
-        
-    <div class="input-group">
-    <div class="input-container">
-    <input type="tel" id="telefone" name="telefone" autocomplete="tel" required placeholder="Telefone"></div>
-    <div class="input-container">
-    <input type="text" id="cep" name="cep" autocomplete="postal-code" required placeholder="CEP"></div></div>
-        
-    <div class="input-container">
-    <input type="text" id="endereco" name="endereco" autocomplete="street-address" required placeholder="Endereço"></div>
-
-    <div class="input-container">
-    <input type="text" id="bairro" name="bairro" autocomplete="address-level2" required placeholder="Bairro"></div>
-        
-    <div class="input-container">
-    <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required placeholder="Cidade"></div>
-        
-    <button type="submit" id="submit-button">Enviar</button></form>
+        <div class="input-group">
+            <div class="input-container">
+                <input type="text" id="nome" name="nome" autocomplete="given-name" required minlength="2" placeholder="Nome">
+            </div>
+            <div class="input-container">
+                <input type="text" id="sobrenome" name="sobrenome" autocomplete="family-name" required minlength="2" placeholder="Sobrenome">
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="E-mail" title="Por favor, insira um e-mail válido">
+        </div>
+        <div class="input-group">
+            <div class="input-container">
+                <input type="tel" id="telefone" name="telefone" autocomplete="tel" required pattern="[0-9]{10,11}" placeholder="Telefone" title="Telefone deve ter 10 ou 11 dígitos">
+            </div>
+            <div class="input-container">
+                <input type="text" id="cep" name="cep" autocomplete="postal-code" required pattern="\d{5}-\d{3}" placeholder="CEP" title="CEP no formato 12345-678">
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="endereco" name="endereco" autocomplete="address-line1" required placeholder="Endereço">
+        </div>
+        <div class="input-container">
+            <input type="text" id="bairro" name="bairro" autocomplete="address-line2" required placeholder="Bairro">
+        </div>
+        <div class="input-container">
+            <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required placeholder="Cidade">
+        </div>
+        <button type="submit" id="submit-button">Enviar</button>
+        <div id="error-messages" style="color: red; margin-top: 10px;"></div>
+    </form>
 
     <div class="tela2">
     <div class="total-section"><div>
