@@ -39,6 +39,7 @@
 
 <h4>Finalizar Compra</h4>
 <h5>Contato</h5>
+<h6>Pedido</h6>
 
 <main>
     <form id="checkout-form">
@@ -69,7 +70,6 @@
     <button type="submit" id="submit-button">Enviar</button></form>
 
     <div class="tela2">
-    <p>Pedido</p>
     <div class="total-section"><div>
     <div class="label">Total dos Produtos:</div>
     <div class="value"><span>R$</span> <span id="total-produtos"></span></div></div><div>
@@ -109,33 +109,25 @@
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         function updateCartCount() {
-            cartCount.textContent = cart.length;
+            const cartLength = cart.length;
+            if (cartLength > 0) {
+                cartCount.textContent = cartLength;
+                cartCount.style.display = 'flex';
+            } else {
+                cartCount.textContent = '';
+                cartCount.style.display = 'none';
+            }
         }
 
-        cartIcon.addEventListener('click', function () {
-            window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
-        });
+        if (cartIcon) {
+            cartIcon.addEventListener('click', function () {
+                window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
+            });
+        } else {
+            console.error('Ícone do carrinho não encontrado.');
+        }
 
-        updateCartCount();
-    });
-
-    document.getElementById('checkout-form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
-
-        const nome = document.getElementById('nome').value;
-        const sobrenome = document.getElementById('sobrenome').value;
-        const email = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
-        const cep = document.getElementById('cep').value;
-        const endereco = document.getElementById('endereco').value;
-        const bairro = document.getElementById('bairro').value;
-        const cidade = document.getElementById('cidade').value;
-
-        const whatsappMessage = `Nome: ${nome}%0ASobrenome: ${sobrenome}%0AEmail: ${email}%0ATelefone: ${telefone}%0ACEP: ${cep}%0AEndereço: ${endereco}%0ABairro: ${bairro}%0ACidade: ${cidade}`;
-
-        const whatsappURL = `https://wa.me/554888779250?text=${whatsappMessage}`;
-        
-        window.open(whatsappURL, '_blank');
+        updateCartCount(); // Atualiza o contador ao carregar a página
     });
 </script>
 

@@ -1,47 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const submitButton = document.getElementById('submit-button');
-    
-    if (!submitButton) {
-        console.error('O botão de envio não foi encontrado!');
+// checkout.js
+document.addEventListener('DOMContentLoaded', function () {
+    const totalProdutos = document.getElementById('total-produtos');
+    const desconto = document.getElementById('desconto');
+    const taxaEntrega = document.getElementById('taxa-entrega');
+    const valorFinal = document.getElementById('valor-final');
+
+    // Verifica se os elementos existem no DOM
+    if (!totalProdutos || !desconto || !taxaEntrega || !valorFinal) {
+        console.error("Elementos do resumo do carrinho não encontrados.");
         return;
     }
 
-    submitButton.addEventListener('click', function() {
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
-        const endereco = document.getElementById('endereco').value;
-        const bairro = document.getElementById('bairro').value;
-        const cidade = document.getElementById('cidade').value;
-        const cep = document.getElementById('cep').value;
-        const pagamento = document.getElementById('pagamento').value;
+    // Função para atualizar os valores do resumo do carrinho
+    function updateResumo() {
+        // Aqui você deve ter a lógica para obter e atualizar os valores
+        // Exemplo de valores fixos, substitua com sua lógica real
+        totalProdutos.textContent = '150,00'; // Exemplo
+        desconto.textContent = '30,00'; // Exemplo
+        taxaEntrega.textContent = '10,00'; // Exemplo
+        valorFinal.textContent = '130,00'; // Exemplo
+    }
 
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        if (!nome || !email || !telefone || !endereco || !bairro || !cidade || !cep || !pagamento) {
-            alert('Por favor, preencha todos os campos do formulário.');
-            return;
-        }
-
-        let cartItemsMessage = cart.map(item => {
-            return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
-        }).join('\n');
-
-        let message = `Dados do Cadastro e Envio:
-        
-Nome: ${nome}
-Email: ${email}
-Telefone: ${telefone}
-Endereço: ${endereco}
-Bairro: ${bairro}
-Cidade: ${cidade}
-CEP: ${cep}
-Pagamento: ${pagamento}
-
-Itens da Sacola:
-${cartItemsMessage}`;
-
-        let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    });
+    updateResumo();
 });

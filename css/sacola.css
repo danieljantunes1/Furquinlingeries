@@ -55,7 +55,8 @@
 
 @media (max-width: 980px) {
     .discount-section input {
-        width: 265px;
+        width: 305px;
+        left: 10px;
     }
 }
 
@@ -74,7 +75,7 @@
 
 @media (max-width: 980px) {
     .discount-section button {
-        left: 220px;
+        left: 252px;
     }
 }
 
@@ -211,7 +212,7 @@ h5 {
       padding: 20px 70px 20px 20px;
     }
 }
-
+ 
 .total-section {
     position: absolute;
     top: 120px;
