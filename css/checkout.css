@@ -224,3 +224,61 @@ button:hover {
         margin-top: 900px;
     }
 }
+
+
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed; /* Fixa o modal na tela */
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa toda a tela */
+    height: 100%; /* Ocupa toda a tela */
+    overflow: auto; /* Adiciona rolagem se necessário */
+    background-color: rgb(0,0,0); /* Cor de fundo */
+    background-color: rgba(0,0,0,0.4); /* Fundo com opacidade */
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centraliza o modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    max-width: 600px; /* Largura máxima */
+}
+
+/* Botão de Fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Botões do Modal */
+button {
+    background-color: #4CAF50; /* Verde padrão */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+}
+
+#cancel-button {
+    background-color: #f44336; /* Vermelho */
+}

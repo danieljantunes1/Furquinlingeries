@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submit-button');
-    const cartSummaryElement = document.querySelector('.tela2'); // Alterado para selecionar pela classe
+    const cartSummaryElement = document.querySelector('.tela2');
+    const confirmationModal = document.getElementById('confirmation-modal');
+    const closeModal = document.querySelector('.modal .close');
+    const confirmButton = document.getElementById('confirm-button');
+    const cancelButton = document.getElementById('cancel-button');
+    const confirmationMessage = document.getElementById('confirmation-message');
 
     if (!submitButton) {
         console.error('O botão de envio não foi encontrado!');
@@ -98,11 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return true;
     }
 
-    function sendToWhatsApp() {
-        if (!validateForm()) {
-            return;
-        }
-
+    function prepareConfirmationMessage() {
         const nome = document.getElementById('nome').value;
         const sobrenome = document.getElementById('sobrenome').value;
         const email = document.getElementById('email').value;
@@ -143,11 +144,22 @@ ${cartItemsMessage}
 
 ${resumoCompra}`;
 
-        console.log('Mensagem para WhatsApp:', message);
+        return message;
+    }
 
+    function showModal(message) {
+        confirmationMessage.textContent = message;
+        confirmationModal.style.display = 'block';
+    }
+
+    function hideModal() {
+        confirmationModal.style.display = 'none';
+    }
+
+    function sendToWhatsApp() {
+        let message = prepareConfirmationMessage();
         let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
-
         clearCart(); // Limpa o carrinho após o envio
     }
 
@@ -160,7 +172,17 @@ ${resumoCompra}`;
 
     submitButton.addEventListener('click', function(e) {
         e.preventDefault(); // Impede o envio padrão do formulário
+        if (validateForm()) {
+            let message = prepareConfirmationMessage();
+            showModal(message);
+        }
+    });
+
+    closeModal.addEventListener('click', hideModal);
+    cancelButton.addEventListener('click', hideModal);
+    confirmButton.addEventListener('click', function() {
         sendToWhatsApp();
+        hideModal();
     });
 
     updateCartSummary(); // Atualiza o resumo da compra ao carregar a página
