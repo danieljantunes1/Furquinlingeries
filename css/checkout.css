@@ -243,7 +243,7 @@ button:hover {
 /* Conteúdo do Modal */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* Centraliza o modal verticalmente */
+    margin: 100px auto; /* Centraliza o modal verticalmente */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Largura do modal */
@@ -281,4 +281,18 @@ button {
 
 #cancel-button {
     background-color: #f44336; /* Vermelho */
+}
+
+/* Estilos do conteúdo do modal */
+#confirmation-message {
+    font-size: 16px;
+}
+
+.modal-content p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.modal-content div {
+    margin-bottom: 20px;
 }

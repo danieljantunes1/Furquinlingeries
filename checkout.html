@@ -64,17 +64,20 @@
     <div id="error-messages" style="color: red; margin-top: 10px;"></div>
     </form>
 
-    <div id="confirmation-modal" class="modal">
+    <!-- Modal -->
+<div id="confirmation-modal" class="modal">
     <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="confirmation-message"><!-- Mensagem de confirmação será inserida aqui pelo JavaScript --></div>
-    <button id="confirm-button" class="modal-button">Confirmar</button>
-    <button id="cancel-button" class="modal-button">Cancelar</button></div></div>
+        <span class="close">&times;</span>
+        <p id="confirmation-message"></p>
+        <button id="confirm-button">Confirmar e Enviar</button>
+        <button id="cancel-button">Cancelar</button>
+    </div>
+</div>
 
     <div class="tela2">
     <div class="total-section"><div>
     <div class="label">Total dos Produtos:</div>
-    <div class="value"><span>R$</span> <span id="total-produtos"></span></div></div><div>
+    <div class="value"><span>R$</span> <span id="Resumo da Compra"total-produtos"></span></div></div><div>
     <div class="label">Desconto:</div>
     <div class="value"><span>R$</span> <span id="desconto"></span></div></div><div>
     <div class="label">Taxa de Entrega:</div>

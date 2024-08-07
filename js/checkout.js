@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
 
         let resumoCompra = `
-        <h2>Resumo da Compra</h2>
         <p>Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}</p>
         <p>Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}</p>
         <p>Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}</p>
@@ -118,37 +117,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let cartItemsMessage = cart.map(item => {
             return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
-        }).join('\n');
+        }).join('<br>');
 
         let resumoCompra = `
-Resumo da Compra:
-Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}
-Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}
-Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}
-Valor Final: R$ ${purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00'}
+        Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}<br>
+        Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}<br>
+        Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}<br>
+        Valor Final: R$ ${purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00'}
         `;
 
-        let message = `Dados do Cadastro e Envio:
-        
-Nome: ${nome}
-Sobrenome: ${sobrenome}
-Email: ${email}
-Telefone: ${telefone}
-CEP: ${cep}
-Endereço: ${endereco}
-Bairro: ${bairro}
-Cidade: ${cidade}
-
-Itens da Sacola:
-${cartItemsMessage}
-
-${resumoCompra}`;
+        let message = `
+            Contato
+            <p>Nome: ${nome}</p>
+            <p>Sobrenome: ${sobrenome}</p>
+            <p>Email: ${email}</p>
+            <p>Telefone: ${telefone}</p>
+            <p>CEP: ${cep}</p>
+            <p>Endereço: ${endereco}</p>
+            <p>Bairro: ${bairro}</p>
+            <p>Cidade: ${cidade}</p>
+        </div>
+        <div>
+            Itens da Sacola
+            ${cartItemsMessage}
+        </div>
+        <div>
+            Resumo da Compra
+            ${resumoCompra}
+        </div>
+        `;
 
         return message;
     }
 
     function showModal(message) {
-        confirmationMessage.textContent = message;
+        confirmationMessage.innerHTML = message; // Use innerHTML to render HTML
         confirmationModal.style.display = 'block';
     }
 
@@ -187,3 +190,4 @@ ${resumoCompra}`;
 
     updateCartSummary(); // Atualiza o resumo da compra ao carregar a página
 });
+
