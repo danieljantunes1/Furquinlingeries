@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmButton = document.getElementById('confirm-button');
     const cancelButton = document.getElementById('cancel-button');
     const confirmationMessage = document.getElementById('confirmation-message');
+    const paymentMethodSelect = document.getElementById('payment-method');
 
     if (!submitButton) {
         console.error('O botão de envio não foi encontrado!');
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let errors = false;
 
         // Clear previous errors
-        const inputs = [nome, sobrenome, email, telefone, endereco, bairro, cidade, cep];
+        const inputs = [nome, sobrenome, email, telefone, endereco, bairro, cidade, cep, paymentMethodSelect];
         inputs.forEach(input => {
             input.style.borderColor = '';
             input.style.backgroundColor = '';
@@ -94,6 +95,11 @@ document.addEventListener('DOMContentLoaded', function () {
             cidade.style.backgroundColor = '#ffe6e6'; // Light red
             errors = true;
         }
+        if (!paymentMethodSelect.value) {
+            paymentMethodSelect.style.borderColor = 'red';
+            paymentMethodSelect.style.backgroundColor = '#ffe6e6'; // Light red
+            errors = true;
+        }
 
         if (errors) {
             alert('Por favor, corrija os campos destacados em vermelho.');
@@ -111,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const bairro = document.getElementById('bairro').value;
         const cidade = document.getElementById('cidade').value;
         const cep = document.getElementById('cep').value;
+        const paymentMethod = paymentMethodSelect.options[paymentMethodSelect.selectedIndex].text;
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
@@ -127,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
 
         let message = `
-            Contato
+            <strong>Contato</strong><br>
             <p>Nome: ${nome}</p>
             <p>Sobrenome: ${sobrenome}</p>
             <p>Email: ${email}</p>
@@ -136,15 +143,13 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Endereço: ${endereco}</p>
             <p>Bairro: ${bairro}</p>
             <p>Cidade: ${cidade}</p>
-        </div>
-        <div>
-            Itens da Sacola
+            <p>Método de Pagamento: ${paymentMethod}</p>
+            <br>
+            <strong>Itens da Sacola</strong><br>
             ${cartItemsMessage}
-        </div>
-        <div>
-            Resumo da Compra
+            <br>
+            <strong>Resumo da Compra</strong><br>
             ${resumoCompra}
-        </div>
         `;
 
         return message;
@@ -190,4 +195,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateCartSummary(); // Atualiza o resumo da compra ao carregar a página
 });
-
