@@ -76,3 +76,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateCartCount(); // Atualiza o contador ao carregar a página
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const shareToggle = document.getElementById('share-toggle');
+    const shareMenu = document.getElementById('share-menu');
+    const copyLinkButton = document.getElementById('copy-link');
+    
+    // Função para alternar a exibição do menu de compartilhamento
+    function toggleShareMenu() {
+        const isVisible = shareMenu.style.display === 'block';
+        shareMenu.style.display = isVisible ? 'none' : 'block';
+    }
+
+    // Adiciona o evento de clique ao ícone de compartilhamento
+    if (shareToggle) {
+        shareToggle.addEventListener('click', toggleShareMenu);
+    }
+
+    // Adiciona o evento de clique ao botão de copiar link
+    if (copyLinkButton) {
+        copyLinkButton.addEventListener('click', () => {
+            const link = window.location.href; // Obtém o URL da página atual
+            navigator.clipboard.writeText(link).then(() => {
+                alert('Link copiado para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar o link: ', err);
+            });
+        });
+    }
+});
