@@ -383,6 +383,17 @@ h6 {
     align-items: center;
 }
 
+@media (max-width: 980px) {
+    .share-container {
+        margin-top: -660px;
+    }
+
+    #copy-link  {
+        top: 100px;
+        left: 7px;
+    }
+}
+
 .share-icon {
     font-size: 22px;
     color:  #708090;
@@ -404,7 +415,7 @@ h6 {
     
 }
 
-.share-item {
+.share-item { 
     display: block;
     margin: 15px 0;
     text-align: center;
@@ -428,4 +439,3 @@ h6 {
 #copy-link i {
     font-size: 20px;
 }
-
