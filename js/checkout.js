@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let errors = false;
 
-        // Clear previous errors
         const inputs = [nome, sobrenome, email, telefone, endereco, bairro, cidade, cep, paymentMethodSelect];
         inputs.forEach(input => {
             input.style.borderColor = '';
@@ -57,47 +56,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!nome.value) {
             nome.style.borderColor = 'red';
-            nome.style.backgroundColor = '#ffe6e6'; // Light red
+            nome.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!sobrenome.value) {
             sobrenome.style.borderColor = 'red';
-            sobrenome.style.backgroundColor = '#ffe6e6'; // Light red
+            sobrenome.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!emailPattern.test(email.value)) {
             email.style.borderColor = 'red';
-            email.style.backgroundColor = '#ffe6e6'; // Light red
+            email.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!phonePattern.test(telefone.value)) {
             telefone.style.borderColor = 'red';
-            telefone.style.backgroundColor = '#ffe6e6'; // Light red
+            telefone.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!cepPattern.test(cep.value)) {
             cep.style.borderColor = 'red';
-            cep.style.backgroundColor = '#ffe6e6'; // Light red
+            cep.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!endereco.value) {
             endereco.style.borderColor = 'red';
-            endereco.style.backgroundColor = '#ffe6e6'; // Light red
+            endereco.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!bairro.value) {
             bairro.style.borderColor = 'red';
-            bairro.style.backgroundColor = '#ffe6e6'; // Light red
+            bairro.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!cidade.value) {
             cidade.style.borderColor = 'red';
-            cidade.style.backgroundColor = '#ffe6e6'; // Light red
+            cidade.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
         if (!paymentMethodSelect.value) {
             paymentMethodSelect.style.borderColor = 'red';
-            paymentMethodSelect.style.backgroundColor = '#ffe6e6'; // Light red
+            paymentMethodSelect.style.backgroundColor = '#ffe6e6'; 
             errors = true;
         }
 
@@ -124,39 +123,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let cartItemsMessage = cart.map(item => {
             return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
-        }).join('<br>');
+        }).join('\n');
 
         let resumoCompra = `
-        Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}<br>
-        Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}<br>
-        Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}<br>
-        Valor Final: R$ ${purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00'}
+Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}
+Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}
+Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}
+Valor Final: R$ ${purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00'}
         `;
 
         let message = `
-            <strong>Contato</strong><br>
-            <p>Nome: ${nome}</p>
-            <p>Sobrenome: ${sobrenome}</p>
-            <p>Email: ${email}</p>
-            <p>Telefone: ${telefone}</p>
-            <p>CEP: ${cep}</p>
-            <p>Endereço: ${endereco}</p>
-            <p>Bairro: ${bairro}</p>
-            <p>Cidade: ${cidade}</p>
-            <p>Método de Pagamento: ${paymentMethod}</p>
-            <br>
-            <strong>Itens da Sacola</strong><br>
-            ${cartItemsMessage}
-            <br>
-            <strong>Resumo da Compra</strong><br>
-            ${resumoCompra}
+CONTATO
+Nome: ${nome}
+Sobrenome: ${sobrenome}
+Email: ${email}
+Telefone: ${telefone}
+CEP: ${cep}
+Endereço: ${endereco}
+Bairro: ${bairro}
+Cidade: ${cidade}
+Método de Pagamento: ${paymentMethod}
+
+ITENS DA SACOLA
+${cartItemsMessage}
+
+RESUMO DA COMPRA
+${resumoCompra}
         `;
 
-        return message;
+        return message.trim();
     }
 
     function showModal(message) {
-        confirmationMessage.innerHTML = message; // Use innerHTML to render HTML
+        confirmationMessage.innerHTML = message.replace(/\n/g, '<br>'); 
         confirmationModal.style.display = 'block';
     }
 
@@ -168,18 +167,16 @@ document.addEventListener('DOMContentLoaded', function () {
         let message = prepareConfirmationMessage();
         let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
-        clearCart(); // Limpa o carrinho após o envio
+        clearCart(); 
     }
 
     function clearCart() {
         localStorage.removeItem('cart');
         localStorage.removeItem('purchaseSummary');
-        // Atualiza o contador no ícone do carrinho se necessário
-        // Pode ser necessário adicionar algum código para atualizar a UI do carrinho em outras páginas
     }
 
     submitButton.addEventListener('click', function(e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
+        e.preventDefault(); 
         if (validateForm()) {
             let message = prepareConfirmationMessage();
             showModal(message);
@@ -193,5 +190,5 @@ document.addEventListener('DOMContentLoaded', function () {
         hideModal();
     });
 
-    updateCartSummary(); // Atualiza o resumo da compra ao carregar a página
+    updateCartSummary();
 });
