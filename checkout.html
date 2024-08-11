@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro para Pagamento e Envio</title>
+    <title>Forma de Pagamento</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
@@ -35,105 +35,120 @@
     <p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p>
 </div>
 
-<h4>Finalizar Compra</h4>
-<h5>Contato</h5>
-<h6>Pedido</h6>
+<h4>Forma de Pagamento</h4>
+<h5>Detalhes de Pagamento</h5>
 
 <main>
-    <form id="checkout-form">
-    <div class="input-group">
     <div class="input-container">
-    <input type="text" id="nome" name="nome" autocomplete="given-name" required minlength="2" placeholder="Nome"></div>
-    <div class="input-container">
-    <input type="text" id="sobrenome" name="sobrenome" autocomplete="family-name" required minlength="2" placeholder="Sobrenome"></div></div>
-    <div class="input-container">
-    <input type="email" id="email" name="email" autocomplete="email" required placeholder="E-mail" title="Por favor, insira um e-mail válido"></div>
-    <div class="input-group">
-    <div class="input-container">
-    <input type="tel" id="telefone" name="telefone" autocomplete="tel" required pattern="[0-9]{10,11}" placeholder="Telefone" title="Telefone deve ter 10 ou 11 dígitos"></div>
-    <div class="input-container">
-    <input type="text" id="cep" name="cep" autocomplete="postal-code" required pattern="\d{5}-\d{3}" placeholder="CEP" title="CEP no formato 12345-678"></div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
     </div>
     <div class="input-container">
-    <input type="text" id="endereco" name="endereco" autocomplete="address-line1" required placeholder="Endereço">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
     </div>
     <div class="input-container">
-    <input type="text" id="bairro" name="bairro" autocomplete="address-line2" required placeholder="Bairro">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
     </div>
     <div class="input-container">
-    <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required placeholder="Cidade"></div>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+    </div>
     <div class="input-container">
-    <select id="payment-method" name="payment-method" required>
-    <option value="">Selecione uma opção</option>
-    <option value="pix">Pix</option>
-    <option value="credit-card">Cartão de Crédito</option>
-    <option value="debit-card">Cartão de Débito</option></select></div>
-    <div id="payment-details"></div>
-    <button type="submit" id="submit-button">Enviar</button></form>
-
-    <div class="tela2">
-    <p>Total dos Produtos: <span id="total-produtos">0.00</span></p>
-    <p>Desconto: <span id="desconto">0.00</span></p>
-    <p>Taxa de Entrega: <span id="taxa-entrega">0.00</span></p>
-    <p>Valor Final: <span id="valor-final">0.00</span></p></div>
-
-    <div id="confirmation-modal" class="modal">
-    <div class="modal-content">
-    <span class="close">&times;</span>
-    <p id="confirmation-message"></p>
-    <button id="confirm-button">Confirmar</button>
-    <button id="cancel-button">Cancelar</button></div></div>
-
-    <div class="tela3">
-    <p>Aceitamos</p>
-    <div class="card-icons">
-    <span class="card-icon"><i class="fa-brands fa-cc-visa" style="color: #b4b4b4;"></i></span>
-    <span class="card-icon"><i class="fa-brands fa-cc-mastercard" style="color: #b4b4b4;"></i></span>
-    <span class="card-icon"><i class="fa-brands fa-pix" style="color: #b4b4b4;"></i></span></div></div>
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" required>
+    </div>
+    <div class="input-container">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+    </div>
+    <div class="input-container">
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" required>
+    </div>
+    <div class="input-container">
+        <label for="payment-method">Forma de Pagamento:</label>
+        <select id="payment-method" name="payment-method" required>
+            <option value="credit_card">Cartão de Crédito</option>
+            <option value="debit_card">Cartão de Débito</option>
+            <option value="pix">PIX</option>
+        </select>
+    </div>
+    <button id="checkout-button">Pagar com Stripe</button>
 </main>
 
 <footer id="roda">
     <h1>FURQUIN</h1><h2>Moda Íntima</h2>
     <div id="social-icons">
-    <a href="https://www.instagram.com/furquinlingeries/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/554888779250" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a></div>
+        <a href="https://www.instagram.com/furquinlingeries/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/554888779250" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
     <div id="texto4">
-    <a href="https://www.google.com.br/maps/@-27.663118,-48.5021449,3a,75y,330.47h,86.29t/data=!3m6!1e1!3m4!1sIA-5Zwcm3JifJrK_t2T3Sg!2e0!7i16384!8i8192?coh=205409&entry=ttu" target="_blank">
-    <p>Rodovia SC-405, 356 - Rio Tavares</p></a></div>
+        <a href="https://www.google.com.br/maps/@-27.663118,-48.5021449,3a,75y,330.47h,86.29t/data=!3m6!1e1!3m4!1sIA-5Zwcm3JifJrK_t2T3Sg!2e0!7i16384!8i8192?coh=205409&entry=ttu" target="_blank">
+            <p>Rodovia SC-405, 356 - Rio Tavares</p>
+        </a>
+    </div>
 </footer>
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-        const cartIcon = document.getElementById('cart-icon');
-        const cartCount = document.getElementById('cart-count');
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const paymentMethodSelect = document.getElementById('payment-method');
+        const paymentDetailsDiv = document.getElementById('payment-details');
 
-        function updateCartCount() {
-            const cartLength = cart.length;
-            if (cartLength > 0) {
-                cartCount.textContent = cartLength;
-                cartCount.style.display = 'flex';
-            } else {
-                cartCount.textContent = '';
-                cartCount.style.display = 'none';
+        function updatePaymentDetails() {
+            const selectedMethod = paymentMethodSelect.value;
+            paymentDetailsDiv.innerHTML = '';
+
+            if (selectedMethod === 'credit-card' || selectedMethod === 'debit-card') {
+                paymentDetailsDiv.innerHTML = `
+                    <div class="input-container">
+                        <input type="text" id="card-number" name="card-number" required placeholder="Número do Cartão" maxlength="19" pattern="\d{13,19}" title="Número do cartão deve ter entre 13 e 19 dígitos">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" id="card-name" name="card-name" required placeholder="Nome no Cartão">
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="card-expiry" name="card-expiry" required placeholder="Data de Validade (MM/AA)" pattern="\d{2}/\d{2}" title="Data de validade no formato MM/AA">
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="card-cvc" name="card-cvc" required placeholder="Código de Segurança (CVC)" maxlength="4" pattern="\d{3,4}" title="Código de segurança de 3 ou 4 dígitos">
+                        </div>
+                   
+                    </div>
+                `;
+            } else if (selectedMethod === 'pix') {
+                paymentDetailsDiv.innerHTML = `
+                    <div class="input-container">
+                        <p>Faça o pagamento via Pix para a chave abaixo:</p>
+                        <p><strong>Chave Pix:</strong> 123.456.789-00</p>
+                        <p><strong>Nome:</strong> FURQUIN Moda Íntima</p>
+                    </div>
+                `;
             }
         }
 
-        if (cartIcon) {
-            cartIcon.addEventListener('click', function () {
-                window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
-            });
-        } else {
-            console.error('Ícone do carrinho não encontrado.');
-        }
+        paymentMethodSelect.addEventListener('change', updatePaymentDetails);
 
-        updateCartCount(); // Atualiza o contador ao carregar a página
+        // Atualizar detalhes do pagamento no carregamento inicial
+        updatePaymentDetails();
+
+        // Código para manipular o formulário e redirecionar para a próxima etapa
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedMethod = paymentMethodSelect.value;
+
+            if (selectedMethod) {
+                // Substitua o link abaixo pelo link de pagamento real
+                const paymentUrl = `checkout.html?payment-method=${encodeURIComponent(selectedMethod)}`;
+                window.location.href = paymentUrl;
+            } else {
+                alert('Por favor, selecione um método de pagamento.');
+            }
+        });
     });
 </script>
-
-<script src="js/mobile-navbar.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/checkout.js"></script>
 
 </body>
 </html>
