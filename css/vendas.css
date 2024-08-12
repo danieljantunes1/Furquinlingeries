@@ -12,7 +12,7 @@
         width: 950px;
         top: 210px;
     }
-}
+} 
 
 #loja img {
     position: absolute;
@@ -377,19 +377,20 @@ h6 {
 /* Estilos para a área de compartilhamento */
 .share-container {
     position: absolute;
-    top: 65px; /* Alinhe com a altura de h5 */
-    right: 10px; /* Ajuste conforme necessário */
+    top: 58px; /* Alinhe com a altura de h5 */
+    right: 20px; /* Ajuste conforme necessário */
     display: flex;
     align-items: center;
 }
 
 @media (max-width: 980px) {
     .share-container {
-        margin-top: -660px;
+        top: -550px;
+        right: -30px; /* Ajuste conforme necessário */
     }
 
     #copy-link  {
-        top: 100px;
+        top: 110px;
         left: 7px;
     }
 }
