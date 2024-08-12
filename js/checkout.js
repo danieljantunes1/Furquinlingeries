@@ -192,3 +192,27 @@ ${resumoCompra}
 
     updateCartSummary();
 });
+
+const stripe = Stripe('sua_chave_publicavel');
+const elements = stripe.elements();
+const card = elements.create('card');
+card.mount('#card-element');
+
+document.querySelector('#payment-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+    payment_method: {
+      card: card,
+    },
+  });
+
+  if (error) {
+    console.error(error.message);
+  } else {
+    if (paymentIntent.status === 'succeeded') {
+      console.log('Pagamento bem-sucedido');
+    }
+  }
+});
+
