@@ -39,43 +39,56 @@
 <h5>Detalhes de Pagamento</h5>
 
 <main>
+    <form id="checkout-form">
+    <div class="input-group">
     <div class="input-container">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+    <input type="text" id="nome" name="nome" autocomplete="given-name" required minlength="2" placeholder="Nome"></div>
+    <div class="input-container">
+    <input type="text" id="sobrenome" name="sobrenome" autocomplete="family-name" required minlength="2" placeholder="Sobrenome"></div></div>
+    <div class="input-container">
+    <input type="email" id="email" name="email" autocomplete="email" required placeholder="E-mail" title="Por favor, insira um e-mail válido"></div>
+    <div class="input-group">
+    <div class="input-container">
+    <input type="tel" id="telefone" name="telefone" autocomplete="tel" required pattern="[0-9]{10,11}" placeholder="Telefone" title="Telefone deve ter 10 ou 11 dígitos"></div>
+    <div class="input-container">
+    <input type="text" id="cep" name="cep" autocomplete="postal-code" required pattern="\d{5}-\d{3}" placeholder="CEP" title="CEP no formato 12345-678"></div>
     </div>
     <div class="input-container">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <input type="text" id="endereco" name="endereco" autocomplete="address-line1" required placeholder="Endereço">
     </div>
     <div class="input-container">
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required>
+    <input type="text" id="bairro" name="bairro" autocomplete="address-line2" required placeholder="Bairro">
     </div>
     <div class="input-container">
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" required>
-    </div>
+    <input type="text" id="cidade" name="cidade" autocomplete="address-level1" required placeholder="Cidade"></div>
     <div class="input-container">
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro" required>
-    </div>
-    <div class="input-container">
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" required>
-    </div>
-    <div class="input-container">
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" required>
-    </div>
-    <div class="input-container">
-        <label for="payment-method">Forma de Pagamento:</label>
-        <select id="payment-method" name="payment-method" required>
-            <option value="credit_card">Cartão de Crédito</option>
-            <option value="debit_card">Cartão de Débito</option>
-            <option value="pix">PIX</option>
-        </select>
-    </div>
-    <button id="checkout-button">Pagar com Stripe</button>
+    <select id="payment-method" name="payment-method" required>
+    <option value="">Selecione uma opção</option>
+    <option value="pix">Pix</option>
+    <option value="credit-card">Cartão de Crédito</option>
+    <option value="debit-card">Cartão de Débito</option></select></div>
+    <div id="payment-details"></div>
+    <button type="submit" id="submit-button">Enviar</button></form>
+
+    <div class="tela2">
+    <p>Total dos Produtos: <span id="total-produtos">0.00</span></p>
+    <p>Desconto: <span id="desconto">0.00</span></p>
+    <p>Taxa de Entrega: <span id="taxa-entrega">0.00</span></p>
+    <p>Valor Final: <span id="valor-final">0.00</span></p></div>
+
+    <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="confirmation-message"></p>
+    <button id="confirm-button">Confirmar</button>
+    <button id="cancel-button">Cancelar</button></div></div>
+
+    <div class="tela3">
+    <p>Aceitamos</p>
+    <div class="card-icons">
+    <span class="card-icon"><i class="fa-brands fa-cc-visa" style="color: #b4b4b4;"></i></span>
+    <span class="card-icon"><i class="fa-brands fa-cc-mastercard" style="color: #b4b4b4;"></i></span>
+    <span class="card-icon"><i class="fa-brands fa-pix" style="color: #b4b4b4;"></i></span></div></div>
 </main>
 
 <footer id="roda">
@@ -93,62 +106,34 @@
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-        const paymentMethodSelect = document.getElementById('payment-method');
-        const paymentDetailsDiv = document.getElementById('payment-details');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        function updatePaymentDetails() {
-            const selectedMethod = paymentMethodSelect.value;
-            paymentDetailsDiv.innerHTML = '';
-
-            if (selectedMethod === 'credit-card' || selectedMethod === 'debit-card') {
-                paymentDetailsDiv.innerHTML = `
-                    <div class="input-container">
-                        <input type="text" id="card-number" name="card-number" required placeholder="Número do Cartão" maxlength="19" pattern="\d{13,19}" title="Número do cartão deve ter entre 13 e 19 dígitos">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-container">
-                            <input type="text" id="card-name" name="card-name" required placeholder="Nome no Cartão">
-                        </div>
-                        <div class="input-container">
-                            <input type="text" id="card-expiry" name="card-expiry" required placeholder="Data de Validade (MM/AA)" pattern="\d{2}/\d{2}" title="Data de validade no formato MM/AA">
-                        </div>
-                        <div class="input-container">
-                            <input type="text" id="card-cvc" name="card-cvc" required placeholder="Código de Segurança (CVC)" maxlength="4" pattern="\d{3,4}" title="Código de segurança de 3 ou 4 dígitos">
-                        </div>
-                   
-                    </div>
-                `;
-            } else if (selectedMethod === 'pix') {
-                paymentDetailsDiv.innerHTML = `
-                    <div class="input-container">
-                        <p>Faça o pagamento via Pix para a chave abaixo:</p>
-                        <p><strong>Chave Pix:</strong> 123.456.789-00</p>
-                        <p><strong>Nome:</strong> FURQUIN Moda Íntima</p>
-                    </div>
-                `;
+        function updateCartCount() {
+            const cartLength = cart.length;
+            if (cartLength > 0) {
+                cartCount.textContent = cartLength;
+                cartCount.style.display = 'flex';
+            } else {
+                cartCount.textContent = '';
+                cartCount.style.display = 'none';
             }
         }
 
-        paymentMethodSelect.addEventListener('change', updatePaymentDetails);
+        if (cartIcon) {
+            cartIcon.addEventListener('click', function () {
+                window.location.href = 'sacola.html'; // Ajuste o caminho conforme necessário
+            });
+        } else {
+            console.error('Ícone do carrinho não encontrado.');
+        }
 
-        // Atualizar detalhes do pagamento no carregamento inicial
-        updatePaymentDetails();
-
-        // Código para manipular o formulário e redirecionar para a próxima etapa
-        document.getElementById('payment-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const selectedMethod = paymentMethodSelect.value;
-
-            if (selectedMethod) {
-                // Substitua o link abaixo pelo link de pagamento real
-                const paymentUrl = `checkout.html?payment-method=${encodeURIComponent(selectedMethod)}`;
-                window.location.href = paymentUrl;
-            } else {
-                alert('Por favor, selecione um método de pagamento.');
-            }
-        });
+        updateCartCount(); // Atualiza o contador ao carregar a página
     });
 </script>
+
+<script src="https://js.stripe.com/v3/"></script>
 
 </body>
 </html>
