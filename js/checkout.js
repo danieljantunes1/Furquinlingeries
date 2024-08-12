@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submit-button');
     const cartSummaryElement = document.querySelector('.tela2');
+    const confirmationModal = document.getElementById('confirmation-modal');
+    const closeModal = document.querySelector('.modal .close');
+    const confirmButton = document.getElementById('confirm-button');
+    const cancelButton = document.getElementById('cancel-button');
+    const confirmationMessage = document.getElementById('confirmation-message');
     const paymentMethodSelect = document.getElementById('payment-method');
 
     if (!submitButton) {
@@ -102,25 +107,87 @@ document.addEventListener('DOMContentLoaded', function () {
         return true;
     }
 
-    function prepareSummaryForRedirection() {
-        const purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
-        const queryParams = new URLSearchParams({
-            totalProdutos: purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00',
-            desconto: purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00',
-            taxaEntrega: purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00',
-            valorFinal: purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00',
-            paymentMethod: paymentMethodSelect.value
-        });
+    function prepareConfirmationMessage() {
+        const nome = document.getElementById('nome').value;
+        const sobrenome = document.getElementById('sobrenome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const endereco = document.getElementById('endereco').value;
+        const bairro = document.getElementById('bairro').value;
+        const cidade = document.getElementById('cidade').value;
+        const cep = document.getElementById('cep').value;
+        const paymentMethod = paymentMethodSelect.options[paymentMethodSelect.selectedIndex].text;
 
-        return queryParams.toString();
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
+
+        let cartItemsMessage = cart.map(item => {
+            return `Produto: ${item.product}, Cor: ${item.color}, Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}`;
+        }).join('\n');
+
+        let resumoCompra = `
+Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}
+Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}
+Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}
+Valor Final: R$ ${purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00'}
+        `;
+
+        let message = `
+CONTATO
+Nome: ${nome}
+Sobrenome: ${sobrenome}
+Email: ${email}
+Telefone: ${telefone}
+CEP: ${cep}
+Endereço: ${endereco}
+Bairro: ${bairro}
+Cidade: ${cidade}
+Método de Pagamento: ${paymentMethod}
+
+ITENS DA SACOLA
+${cartItemsMessage}
+
+RESUMO DA COMPRA
+${resumoCompra}
+        `;
+
+        return message.trim();
+    }
+
+    function showModal(message) {
+        confirmationMessage.innerHTML = message.replace(/\n/g, '<br>'); 
+        confirmationModal.style.display = 'block';
+    }
+
+    function hideModal() {
+        confirmationModal.style.display = 'none';
+    }
+
+    function sendToWhatsApp() {
+        let message = prepareConfirmationMessage();
+        let whatsappUrl = `https://wa.me/554888779250?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        clearCart(); 
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        localStorage.removeItem('purchaseSummary');
     }
 
     submitButton.addEventListener('click', function(e) {
         e.preventDefault(); 
         if (validateForm()) {
-            const summaryParams = prepareSummaryForRedirection();
-            window.location.href = `checkout.html?${summaryParams}`;
+            let message = prepareConfirmationMessage();
+            showModal(message);
         }
+    });
+
+    closeModal.addEventListener('click', hideModal);
+    cancelButton.addEventListener('click', hideModal);
+    confirmButton.addEventListener('click', function() {
+        sendToWhatsApp();
+        hideModal();
     });
 
     updateCartSummary();
