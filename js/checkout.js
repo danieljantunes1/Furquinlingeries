@@ -1,69 +1,127 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const stripe = Stripe('pk_live_51PmleS02iBR8Rj9Zdrd7B9HSHxh3E5jOQIsoYDCXZq0qwcTq23xTlaq4CPc5E1vp892FslHQozeTK9Ga5tYosbXD00lAF2Zga1'); // Substitua pela sua chave pública
-    const checkoutButton = document.getElementById('checkout-button');
+    const submitButton = document.getElementById('submit-button');
+    const cartSummaryElement = document.querySelector('.tela2');
+    const paymentMethodSelect = document.getElementById('payment-method');
 
-    checkoutButton.addEventListener('click', function () {
-        fetch('/create-checkout-session', {
-            method: 'POST',
-        })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (sessionId) {
-            return stripe.redirectToCheckout({ sessionId: sessionId });
-        })
-        .then(function (result) {
-            if (result.error) {
-                alert(result.error.message);
-            }
-        })
-        .catch(function (error) {
-            console.error('Error:', error);
-        });
-    });
-});
-
-document.getElementById('pay-button').addEventListener('click', async () => {
-    const response = await fetch('/.netlify/functions/payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        amount: 1000, // Exemplo: 10.00 USD
-        currency: 'usd',
-        paymentMethodId: 'pm_card_visa', // Substitua pelo ID do método de pagamento
-      }),
-    });
-    const data = await response.json();
-    if (data.success) {
-      alert('Pagamento realizado com sucesso!');
-    } else {
-      alert('Erro no pagamento: ' + data.error);
+    if (!submitButton) {
+        console.error('O botão de envio não foi encontrado!');
     }
-  });
+    if (!cartSummaryElement) {
+        console.error('O elemento de resumo do carrinho não foi encontrado!');
+    }
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const stripe = Stripe('pk_live_51PmleS02iBR8Rj9Zdrd7B9HSHxh3E5jOQIsoYDCXZq0qwcTq23xTlaq4CPc5E1vp892FslHQozeTK9Ga5tYosbXD00lAF2Zga1'); 
-    const checkoutButton = document.getElementById('checkout-button');
+    if (!submitButton || !cartSummaryElement) {
+        return;
+    }
 
-    checkoutButton.addEventListener('click', function () {
-        fetch('/create-checkout-session', {
-            method: 'POST',
-        })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (sessionId) {
-            return stripe.redirectToCheckout({ sessionId: sessionId });
-        })
-        .then(function (result) {
-            if (result.error) {
-                alert(result.error.message);
-            }
-        })
-        .catch(function (error) {
-            console.error('Error:', error);
+    function updateCartSummary() {
+        const purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
+
+        let resumoCompra = `
+        <p>Total dos Produtos: R$ ${purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00'}</p>
+        <p>Desconto: R$ ${purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00'}</p>
+        <p>Taxa de Entrega: R$ ${purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00'}</p>
+        <p>Valor Final: R$ ${purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00'}</p>
+        `;
+
+        cartSummaryElement.innerHTML = resumoCompra;
+    }
+
+    function validateForm() {
+        const nome = document.getElementById('nome');
+        const sobrenome = document.getElementById('sobrenome');
+        const email = document.getElementById('email');
+        const telefone = document.getElementById('telefone');
+        const endereco = document.getElementById('endereco');
+        const bairro = document.getElementById('bairro');
+        const cidade = document.getElementById('cidade');
+        const cep = document.getElementById('cep');
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^\d{10,11}$/;
+        const cepPattern = /^\d{5}-\d{3}$/;
+
+        let errors = false;
+
+        const inputs = [nome, sobrenome, email, telefone, endereco, bairro, cidade, cep, paymentMethodSelect];
+        inputs.forEach(input => {
+            input.style.borderColor = '';
+            input.style.backgroundColor = '';
         });
-    });
-});
 
-  
+        if (!nome.value) {
+            nome.style.borderColor = 'red';
+            nome.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!sobrenome.value) {
+            sobrenome.style.borderColor = 'red';
+            sobrenome.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!emailPattern.test(email.value)) {
+            email.style.borderColor = 'red';
+            email.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!phonePattern.test(telefone.value)) {
+            telefone.style.borderColor = 'red';
+            telefone.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!cepPattern.test(cep.value)) {
+            cep.style.borderColor = 'red';
+            cep.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!endereco.value) {
+            endereco.style.borderColor = 'red';
+            endereco.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!bairro.value) {
+            bairro.style.borderColor = 'red';
+            bairro.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!cidade.value) {
+            cidade.style.borderColor = 'red';
+            cidade.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+        if (!paymentMethodSelect.value) {
+            paymentMethodSelect.style.borderColor = 'red';
+            paymentMethodSelect.style.backgroundColor = '#ffe6e6'; 
+            errors = true;
+        }
+
+        if (errors) {
+            alert('Por favor, corrija os campos destacados em vermelho.');
+            return false;
+        }
+        return true;
+    }
+
+    function prepareSummaryForRedirection() {
+        const purchaseSummary = JSON.parse(localStorage.getItem('purchaseSummary')) || {};
+        const queryParams = new URLSearchParams({
+            totalProdutos: purchaseSummary.totalProdutos ? purchaseSummary.totalProdutos.toFixed(2) : '0.00',
+            desconto: purchaseSummary.desconto ? purchaseSummary.desconto.toFixed(2) : '0.00',
+            taxaEntrega: purchaseSummary.taxaEntrega ? purchaseSummary.taxaEntrega.toFixed(2) : '0.00',
+            valorFinal: purchaseSummary.valorFinal ? purchaseSummary.valorFinal.toFixed(2) : '0.00',
+            paymentMethod: paymentMethodSelect.value
+        });
+
+        return queryParams.toString();
+    }
+
+    submitButton.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        if (validateForm()) {
+            const summaryParams = prepareSummaryForRedirection();
+            window.location.href = `checkout.html?${summaryParams}`;
+        }
+    });
+
+    updateCartSummary();
+});
