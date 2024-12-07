@@ -290,30 +290,35 @@ h3 {
 }
 
 
+/* Estilos gerais para o footer */
 footer {
   background-color: #5a3b1a;
   color: white;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   padding: 40px 0;
+  box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
 .footer-top {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  flex-wrap: wrap;
-  width: 1300px;
-  margin: 0 190px;
+  width: 100%; /* Ajusta a largura para evitar scroll lateral */
+  max-width: 1300px; /* Limita a largura máxima */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 15px; /* Adiciona padding para evitar scroll lateral */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
 .footer-column {
   flex: 1;
-  width: 180px;
-  margin: 0 15px;
+  min-width: 180px; /* Define uma largura mínima */
+  margin: 10px; /* Margem uniforme ao redor das colunas */
 }
 
 .footer-column .h3 {
-  font-size: 22px; /* Aumenta o tamanho da fonte */
+  font-size: 22px; /* Tamanho da fonte */
   margin-bottom: 20px;
   color: white;
   letter-spacing: 0.1em;
@@ -321,7 +326,7 @@ footer {
 }
 
 .products-list a {
-  font-size: 18px; /* Aumenta o tamanho da fonte apenas para os itens da lista na primeira coluna */
+  font-size: 18px; /* Tamanho da fonte na lista de produtos */
 }
 
 .footer-column p,
@@ -374,36 +379,18 @@ footer {
 .footer-bottom {
   background-color: #5a3b1a;
   color: white;
-  font-size: 14px;
-  padding: 40px 20px 20px 20px;
-  text-align: right;
-  position: relative;
-}
-
-.footer-bottom::before {
-  content: "";
-  display: block;
-  width: 1120px; /* Ajuste a largura da linha conforme necessário */
-  height: 2px; /* Espessura da linha */
-  background-color: white;
-  position: absolute;
-  top: 25px;
-  right: 200px; /* Ajuste a distância da linha do canto direito conforme necessário */
-}
-
-.footer-bottom {
-  background-color: #5a3b1a;
-  color: white;
   font-size: 16px;
   padding: 50px 0 0 0;
   text-align: center; /* Centraliza o conteúdo */
+  position: relative;
+  box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
 .footer-bottom-content {
   display: flex;
   justify-content: center; /* Alinha horizontalmente ao centro */
   align-items: center; /* Alinha verticalmente ao centro */
-  gap: 20px; /* Espaçamento entre os dois textos */
+  gap: 20px; /* Espaçamento entre os itens */
 }
 
 .footer-bottom p {
@@ -412,4 +399,75 @@ footer {
 
 .footer-address {
   font-size: 16px;
+}
+
+/* Linha branca acima do footer-bottom-content */
+.footer-bottom::before {
+  content: "";
+  display: block;
+  width: 1070px; /* Faz a linha branca ocupar toda a largura do footer */
+  height: 2px; /* Espessura da linha */
+  background-color: white;
+  position: absolute;
+  top: 20px; /* Posiciona a linha no topo do footer-bottom */
+  left: 135px; /* Posiciona a linha alinhada à esquerda */
+}
+
+/* Estilos para telas menores que 980px */
+@media (max-width: 980px) {
+  .footer-top {
+    display: block; /* Garante que os itens estejam empilhados verticalmente */
+    padding: 0; /* Remove padding extra */
+  }
+
+  .footer-column {
+    width: 100%; /* Faz com que cada coluna ocupe a largura total */
+    margin: 10px 0; /* Ajusta as margens para melhor ajuste */
+  }
+
+  .footer-column .h3 {
+    cursor: pointer;
+    margin-bottom: 15px; /* Espaçamento entre títulos */
+    font-size: 18px; /* Ajusta o tamanho da fonte */
+  }
+  
+  .footer-column .h3 + ul {
+    display: none; /* Esconde os menus de categorias quando não ativo */
+  }
+
+  .footer-column .h3.active + ul {
+    display: block; /* Mostra o menu associado ao título ativo */
+  }
+
+  #social-icons,
+  #aceitamos-menu {
+    display: block; /* Garante que "Siga-nos" e "Aceitamos" permaneçam visíveis */
+  }
+
+  .footer-bottom::before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* Estilos para telas menores que 480px */
+@media (max-width: 480px) {
+  .footer-column .h3 {
+    font-size: 16px; /* Ajusta o tamanho da fonte dos títulos */
+  }
+
+  .products-list a {
+    font-size: 14px; /* Ajusta o tamanho da fonte na lista de produtos */
+  }
+
+  .footer-bottom {
+    font-size: 14px; /* Ajusta o tamanho da fonte na parte inferior do footer */
+    padding: 40px 10px 20px 10px; /* Ajusta o padding para telas muito pequenas */
+  }
+
+  .footer-bottom-content {
+    flex-direction: column; /* Empilha os itens verticalmente em vez de horizontalmente */
+    gap: 10px; /* Ajusta o espaçamento entre os itens */
+    text-align: center; /* Centraliza o texto */
+  }
 }

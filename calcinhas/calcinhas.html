@@ -82,40 +82,79 @@
 
 <footer id="roda">
     <div class="footer-top">
-    <div class="footer-column">
-    <div class="h3">Produtos</div>
-    <ul class="products-list">
-    <li><a href="../calcinhas/calcinhas.html">Calcinhas</a></li>
-    <li><a href="../sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
-    <li><a href="../pijamas/pijamas.html">Pijamas</a></li>
-    <li><a href="../sexshop/sexshop.html">Sexshop</a></li>
-    <li><a href="../conjuntos/conjuntos.html">Conjuntos</a></li></ul></div>
-    
-    <div class="footer-column">
-    <div class="h3">Suporte</div>
-    <ul><li><a href="#">Contato</a></li>
-    <li><a href="#">Envio</a></li>
-    <li><a href="#">Troca e Devolução</a></li>
-    <li><a href="#">FAQs</a></li></ul></div>
-    
-    <div class="footer-column">
-    <div class="h3">Siga-nos</div>
-    <div id="social-icons">
-    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a></div></div>
-    
-    <div class="footer-column">
-    <div class="h3">Aceitamos</div>
-    <div class="card-icons">
-    <span class="card-icon"><i class="fa-brands fa-cc-visa"></i></span>
-    <span class="card-icon"><i class="fa-brands fa-cc-mastercard"></i></span>
-    <span class="card-icon"><i class="fa-brands fa-pix"></i></span></div></div></div>
-    
+        <div class="footer-column">
+            <div class="h3" onclick="toggleMenu('produtos-menu')">Produtos</div>
+            <ul id="produtos-menu" class="products-list">
+                <li><a href="../calcinhas/calcinhas.html">Calcinhas</a></li>
+                <li><a href="../sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
+                <li><a href="../pijamas/pijamas.html">Pijamas</a></li>
+                <li><a href="../sexshop/sexshop.html">Sexshop</a></li>
+                <li><a href="../conjuntos/conjuntos.html">Conjuntos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <div class="h3" onclick="toggleMenu('suporte-menu')">Suporte</div>
+            <ul id="suporte-menu">
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Envio</a></li>
+                <li><a href="#">Troca e Devolução</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <div class="h3" onclick="toggleMenu('social-menu')">Siga-nos</div>
+            <div id="social-menu">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <div class="h3" onclick="toggleMenu('aceitamos-menu')">Aceitamos</div>
+            <div id="aceitamos-menu">
+                <span class="card-icon"><i class="fa-brands fa-cc-visa"></i></span>
+                <span class="card-icon"><i class="fa-brands fa-cc-mastercard"></i></span>
+                <span class="card-icon"><i class="fa-brands fa-pix"></i></span>
+            </div>
+        </div>
+    </div>
+
     <div class="footer-bottom">
-    <div class="footer-bottom-content">
-    <p>&copy; 2024 Furquinlingeries. Todos os direitos reservados.</p>
-    <p class="footer-address">Rodovia SC-405, 356 - Rio Tavares - Florianópolis - Santa Catarina</p></div></div>
+        <div class="footer-bottom-content">
+            <p>&copy; 2024 Furquinlingeries. Todos os direitos reservados.</p>
+            <p class="footer-address">Rodovia SC-405, 356 - Rio Tavares - Florianópolis - Santa Catarina</p>
+        </div>
+    </div>
 </footer>
+
+<script>
+    function toggleMenu(menuId) {
+      var menu = document.getElementById(menuId);
+      var h3Element = document.querySelector(`div[onclick="toggleMenu('${menuId}')"]`);
+      
+      // Remove a classe 'active' de todos os títulos
+      document.querySelectorAll('.footer-column .h3').forEach(function(element) {
+        if (element !== h3Element) {
+          element.classList.remove('active');
+          var siblingMenu = document.getElementById(element.getAttribute('onclick').split("'")[1]);
+          if (siblingMenu) siblingMenu.style.display = 'none';
+        }
+      });
+  
+      // Alterna a visibilidade do menu correspondente ao título clicado
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+        h3Element.classList.remove('active');
+      } else {
+        menu.style.display = "block";
+        h3Element.classList.add('active');
+      }
+    }
+  </script>
+  
+
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
