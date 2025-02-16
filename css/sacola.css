@@ -1,0 +1,346 @@
+.tela1 {
+    position: absolute;
+    background-color: #fff;
+    display: flex;
+    width: 719px;
+    top: 530px;
+    left: 445px;
+    overflow-y: auto;
+}
+
+@media (max-width: 980px) {
+    .tela1 {
+        top: 1060px;
+        left: 20px;
+        width: 90%;
+    }
+}
+
+.tela2 {
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    top: 445px;
+    left: 1242px;
+}
+
+.discount-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.discount-section label {
+    position: absolute;
+    top: 25px;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: .072em;
+    margin-bottom: 15px;
+}
+
+.discount-section input {
+    position: absolute;
+    top: 55px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 335px;
+}
+
+@media (max-width: 980px) {
+    .discount-section input {
+        width: 305px;
+        left: 10px;
+    }
+}
+
+.discount-section button {
+    position: absolute;
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5a3b1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    top: 56.5px;
+    left: 291px;
+}
+
+@media (max-width: 980px) {
+    .discount-section button {
+        left: 252px;
+    }
+}
+
+.discount-section button:hover {
+    background-color: #745843;
+}
+
+@media (max-width: 980px) {
+    .tela2 {
+        top: 660px;
+        left: 20px;
+        width: 310px;
+    }
+}
+
+.tela3 {
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    width: 315px;
+    height: 100px;
+    top: 760px;
+    left: 1260px;
+    background-color: #e9e9e9;
+}
+
+@media (max-width: 980px) {
+    .tela3 {
+        top: 450px;
+        left: 20px;
+        width: 310px;
+    }
+}
+
+.tela2 p {
+    font-size: 23px;
+    top: -28px;
+    left: -200px;
+    width: 60%;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    position: absolute;
+    font-weight: 500;
+    letter-spacing: .072em;
+}
+
+@media (max-width: 980px) {
+    .tela2 p {
+        width: 70%;
+        left: -170px;
+    }
+}
+
+.tela3 p, h6 {
+    position: absolute;
+    margin: 0 50% 0 50%;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    letter-spacing: .100em;
+    left: -155px;
+}
+
+h6 {
+    font-size: 14px;
+    top: 20px;
+    width: 100%;
+}
+
+.tela3 p {
+    font-size: 14px;
+    top: 57px;
+    width: 80%;
+    color: #282829;
+}
+
+main p {
+    position: absolute;
+    margin: 0 50% 0 50%;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    letter-spacing: .100em;
+    left: -567px;
+    top: 430px;
+    width: 700px;
+    font-size: 15px;
+    color: black;
+    line-height: 1.5em;
+}
+
+@media (max-width: 980px) {
+    main p {
+       left: -167px;
+       top: 350px;
+       width: 350px;
+    }
+}
+
+h4, h5 {
+    position: absolute;
+    font-weight: 500;
+    margin: 0 50% 0 50%;
+    letter-spacing: .092em;
+    width: 390px;
+}
+
+h4 {
+    font-size: 56px;
+    top: 190px;
+    left: -110px;
+    color: #5a3b1a;
+    font-family: 'calisto MT', sans-serif;
+}
+
+@media (max-width: 980px) {
+    h4 {
+      left: -140px;
+      zoom: 75%;
+      top: 230px;
+      width: 290px;
+    }
+}
+
+h5 {
+    font-size: 26px;
+    top: 327px;
+    left: -570px;
+    padding: 20px 310px 20px 20px;
+    background-color: #e9e9e9;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 980px) {
+    h5 {
+      left: -240px;
+      top: 347px;
+      zoom: 75%;
+      padding: 20px 70px 20px 20px;
+    }
+}
+ 
+.total-section {
+    position: absolute;
+    top: 120px;
+    font-size: 16px;
+    letter-spacing: .092em;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    line-height: 1em;
+    width: 80%;
+    padding-right: 20px; /* Espaço à direita */
+}
+
+.total-section div {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens para as extremidades */
+    margin-bottom: 10px; /* Espaço entre as linhas */
+}
+
+.total-section div .label {
+    text-align: left; /* Alinha o texto à esquerda */
+    flex-basis: 50%; /* Garante que a parte do rótulo ocupe metade do espaço disponível */
+}
+
+.total-section div .value {
+    text-align: right; /* Alinha o texto à direita */
+    flex-basis: 50%; /* Garante que a parte do valor ocupe metade do espaço disponível */
+}
+
+.total-section div .value span {
+    flex-basis: 100%; /* Garante que a parte do valor ocupe metade do espaço disponível */
+}
+
+
+#cart-items-container {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #e9e9e9;
+    width: 719px;
+}
+
+@media (max-width: 980px) {
+    #cart-items-container {
+      width: 310px;
+    }
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    width: 652px;
+}
+
+@media (max-width: 980px) {
+    .cart-item {
+      width: 310px;
+    }
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item span {
+    color: black;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    letter-spacing: .092em;
+}
+
+#botao {
+    background-color: #5a3b1a;
+    border: none;
+    padding: 13px 0 17px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 230px;
+    height: 20px;
+    display: block;
+    top: 330px;
+    left: 1255px;
+    position: absolute;
+    letter-spacing: .092em;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+#botao.disabled {
+    background-color: #d79752; /* Cor para indicar desativado */
+    cursor: not-allowed;
+    pointer-events: none; /* Desativa o clique */
+}
+
+@media (max-width: 980px) {
+    #botao {
+        top: 980px;
+        left: 20px;
+    }
+}
+
+#botao:hover {
+    background-color: #745843;
+}
+
+button {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    color: #e9e9e9;
+}
+
+footer {
+    top: 0;
+}
+
+#roda {
+    margin-top: 100px;
+}
+
+@media (max-width: 980px) {
+  #roda {
+    margin-top: 1000px;
+}
+}

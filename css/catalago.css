@@ -1,0 +1,151 @@
+.caixa1, .caixa2, .caixa3, .caixa4, .caixa5 {
+    position: absolute;
+    width: 270px;
+    height: 500px;
+    margin: 0 50% 0 50%;
+    background-color: #f2f3f3;
+}
+
+.caixa1 a, .caixa2 a, .caixa3 a, .caixa4 a, .caixa5 a {
+    cursor: pointer;
+}
+
+@media (max-width: 980px) {
+  .caixa1, .caixa2, .caixa3, .caixa4, .caixa5 {
+   zoom: 60%;
+}
+}
+
+.caixa1, .caixa5 {
+    left: -572px;
+}
+
+.caixa2 {
+    left: -270px;
+}
+
+.caixa3 {
+    left: 30px;
+}
+
+.caixa4 {
+    left: 330px;
+}
+
+@media (max-width: 980px) {
+    .caixa1, .caixa3, .caixa5 {
+        left: -17.6em;
+    }
+
+    .caixa2, .caixa4 {
+        left: 0.9em; 
+    }
+}
+
+.caixa1, .caixa2, .caixa3, .caixa4 {
+    top: 320px;
+}
+
+.caixa5 {
+    top: 850px;
+}
+
+@media (max-width: 980px) {
+   .caixa1, .caixa2 {
+    top: 460px;
+   }
+
+   .caixa3, .caixa4 {
+    top: 990px;
+   }
+
+   .caixa5 {
+    top: 1520px;
+   }
+}
+
+h4, h5 {
+    position: absolute;
+    color: #5a3b1a;
+    font-weight: 500;
+}
+
+h4 {
+    margin: 0 50% 0 50%;
+    font-size: 56px;
+    top: 190px;
+    font-family: 'calisto MT', sans-serif;
+    letter-spacing: .092em;
+    width: 390px;
+}
+
+@media (max-width: 980px) {
+  h4 {
+    zoom: 75%;
+    top: 230px;
+    width: 380px;
+}
+}
+
+h5 {
+    font-family: 'Helvetica', serif;
+    font-size: 25px;
+    letter-spacing: .042em;
+    margin: 25px 0 0 25px;
+}
+
+#loja ul li {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+}
+
+#caixa img {
+    width: 100%;
+    height: 317px;
+}
+
+.preço p, .preço1 p {
+    position: absolute;
+    letter-spacing: .092em;
+    line-height: 1.50;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    padding: 0 10px 0 0;
+}
+
+.preço p {
+    font-size: 20px;
+    margin: 80px 0 0 25px;
+    color: black;
+}
+
+.preço1 p {
+    margin: 87px 0 0 165px;
+    font-size: 15px;
+    color: #a0a0a0;
+}
+
+@media (max-width: 980px) {
+    .preço p {
+      margin: 70px 0 0 25px;
+    }
+
+    .preço1 p {
+       margin: 75px 0 0 165px;
+    }
+}
+
+/* CSS para o selo de desconto simples */
+.discount-badge {
+    position: absolute;
+    top: 290px; /* Ajuste conforme necessário */
+    right: 0; /* Ajuste conforme necessário */
+    background-color: rgba(242, 243, 243); /* Cor de fundo com opacidade */
+    color: rgb(241, 0, 0); /* Cor do texto */
+    padding: 5px 15px; /* Padding para dar espaço ao redor do texto */
+    border-radius: 5px 0; /* Bordas arredondadas */
+    font-size: 17px; /* Tamanho da fonte grande */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Alinha o texto ao centro */
+}
+

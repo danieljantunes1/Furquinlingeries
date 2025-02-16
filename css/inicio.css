@@ -1,0 +1,216 @@
+#loja ul li {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+}
+
+/* Banner */
+.banner1, .banner2 {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner1 {
+    height: 550px; /* Altura do banner */
+    background-image: url('../imagens/9382656.png'); /* Imagem do banner */
+    margin-top: 0; /* Garante que o banner esteja logo abaixo do menu */
+}
+
+.banner2 {
+    height: 550px; /* Altura do banner */
+    background-image: url('../imagens/6664336.png'); /* Imagem do banner */
+    margin-top: 1090px; /* Garante que o banner esteja logo abaixo do banner1 */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 980px) {
+    .banner1, .banner2 {
+        background-position: top center; /* Alinha o background ao topo e ao centro */
+        height: 170px; /* Ajusta a altura automaticamente com base no conteúdo */
+        margin-top: 0; /* Garante que o banner esteja logo abaixo do menu */
+    }
+
+    .banner2 {
+        margin-top: 1290px; /* Ajuste a margem para garantir que o banner2 não se sobreponha ao banner1 */
+    }
+}
+
+.caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11, .caixa12, .caixa13, .caixa14, .caixa15, .caixa16, .caixa17, .caixa18 {
+    position: absolute;
+    width: 270px;
+    height: 500px;
+    margin: 0 50% 0 50%;
+    background-color: #f2f3f3
+}
+
+.caixa1 a, .caixa2 a, .caixa3 a, .caixa4 a, .caixa5 a, .caixa6 a, .caixa7 a, .caixa8 a, .caixa9 a, .caixa10 a, .caixa11 a, .caixa12 a, .caixa13 a, .caixa14 a, .caixa15 a, .caixa16 a, .caixa17 a, .caixa18 a {
+    cursor: pointer;
+}
+
+@media (max-width: 980px) {
+  .caixa1, .caixa2, .caixa3, .caixa4, .caixa5, .caixa6, .caixa7, .caixa8, .caixa9, .caixa10, .caixa11, .caixa12, .caixa13, .caixa14, .caixa15, .caixa16, .caixa17, .caixa18 {
+   zoom: 60%;
+}
+}
+
+.caixa1, .caixa5, .caixa9, .caixa13, .caixa17 {
+    left: -572px;
+}
+
+.caixa2, .caixa6, .caixa10, .caixa14, .caixa18  {
+    left: -270px;
+}
+
+.caixa3, .caixa7, .caixa11, .caixa15 {
+    left: 30px;
+}
+
+.caixa4, .caixa8, .caixa12, .caixa16 {
+    left: 330px;
+}
+
+@media (max-width: 980px) {
+    .caixa1, .caixa3, .caixa5, .caixa7, .caixa9, .caixa11, .caixa13, .caixa15, .caixa17 {
+        left: -17.6em;
+    }
+
+    .caixa2, .caixa4, .caixa6, .caixa8, .caixa10, .caixa12, .caixa14, .caixa16, .caixa18 {
+        left: 0.9em; 
+    }
+}
+
+.caixa1, .caixa2, .caixa3, .caixa4 {
+    top: 670px;
+}
+
+.caixa5, .caixa6, .caixa7, .caixa8 {
+    top: 1200px;
+}
+
+.caixa9, .caixa10, .caixa11, .caixa12 {
+    top: 2310px;
+}
+
+.caixa13, .caixa14, .caixa15, .caixa16 {
+    top: 2840px;
+}
+
+.caixa17, .caixa18 {
+    top: 3375px;
+}
+
+@media (max-width: 980px) {
+   .caixa1, .caixa2 {
+    top: 420px;
+   }
+
+   .caixa3, .caixa4 {
+    top: 945px;
+   }
+
+   .caixa5, .caixa6 {
+    top: 1475px;
+   }
+
+   .caixa7, .caixa8 {
+    top: 2000px;
+   }
+
+   .caixa9, .caixa10 {
+    top: 2850px;
+   }
+
+   .caixa11, .caixa12 {
+    top: 3380px;
+   }
+
+   .caixa13, .caixa14 {
+    top: 3910px;
+   }
+
+   .caixa15, .caixa16 {
+    top: 4440px;
+   }
+
+   .caixa17, .caixa18 {
+    top: 4970px;
+   }
+
+}
+
+h4 {
+    position: absolute;
+    color: #5a3b1a;
+    font-weight: 500;
+}
+
+h4 {
+    font-family: 'Helvetica', serif;
+    font-size: 25px;
+    letter-spacing: .042em;
+    margin: 25px 0 0 25px;
+}
+
+#caixa img {
+    width: 100%;
+    height: 317px;
+}
+
+.preço p, .preço1 p {
+    position: absolute;
+    letter-spacing: .092em;
+    line-height: 1.50;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    padding: 0 10px 0 0;
+}
+
+.preço p {
+    font-size: 20px;
+    margin: 80px 0 0 25px;
+    color: black;
+}
+
+.preço1 p {
+    margin: 87px 0 0 165px;
+    font-size: 15px;
+    color: #a0a0a0;
+}
+
+@media (max-width: 980px) {
+    .preço p {
+      margin: 70px 0 0 25px;
+    }
+
+    .preço1 p {
+       margin: 75px 0 0 160px;
+    }
+}
+
+/* CSS para o selo de desconto simples */
+.discount-badge {
+    position: absolute;
+    top: 290px; /* Ajuste conforme necessário */
+    right: 0; /* Ajuste conforme necessário */
+    background-color: rgba(242, 243, 243); /* Cor de fundo com opacidade */
+    color: rgb(241, 0, 0); /* Cor do texto */
+    padding: 5px 15px; /* Padding para dar espaço ao redor do texto */
+    border-radius: 5px 0; /* Bordas arredondadas */
+    font-size: 17px; /* Tamanho da fonte grande */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+#roda {
+    margin-top: 1630px;
+}
+
+@media (max-width: 980px) {
+   #roda {
+       margin-top: 2030px;
+   }
+}
+
+.escuro {
+    display: none;
+}

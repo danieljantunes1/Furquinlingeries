@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>FURQUIN Moda Íntima</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/sacola.css">
+    <link rel="stylesheet" href="css/todos.css">
+    <link rel="shortcut icon" href="favicon.jpg">
+</head>
+<body> 
+
+<header><nav>
+    <a href="inicio.html">
+    <h1>FURQUIN</h1><h2>Moda</h2><h3>Íntima</h3></a>
+    <div class="mobile-menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div></div>
+    <ul class="nav-list">
+    <li><a href="calcinhas/calcinhas.html">Calcinhas</a></li>
+    <li><a href="sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
+    <li><a href="pijamas/pijamas.html">Pijamas</a></li>
+    <li><a href="sexshop/sexshop.html">Sexshop</a></li>
+    <li><a href="conjuntos/conjuntos.html">Conjuntos</a></li></ul>
+    <div id="cart-icon">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <div id="cart-count">0</div></div></nav>
+</header>
+    
+<div id="super">
+    <p>FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO &nbsp;&nbsp;/&nbsp;&nbsp; FRETE GRÁTIS PARA TODA FLORIANÓPOLIS &nbsp;&nbsp;/&nbsp;&nbsp; ATÉ 50% DE DESCONTO</p>
+</div>
+
+<h4>Compras</h4>
+<h5>Seu carrinho</h5>
+
+<main>
+    <p>Os itens do seu carrinho não estão reservados. Finalize esta compra para torná-los seus itens pessoais.</p>
+    <div class="tela1">
+    <div id="cart-items-container"><!-- Os itens serão adicionados aqui pelo JavaScript --></div></div>
+
+    <div class="tela2">
+    <p>Resumo do pedido</p>
+    <div class="discount-section">
+    <label for="discount-code">Código de Desconto:</label>
+    <input type="text" id="discount-code" placeholder="Insira o código">
+    <button id="apply-discount">Aplicar</button>
+    <div id="discount-error" style="color: red; margin-top: 5px;"></div></div>
+    <div class="total-section"><div>
+    <div class="label">Total dos Produtos:</div>
+    <div class="value"><span>R$</span> <span id="total-produtos"></span></div></div>
+    <div><div class="label">Desconto:</div>
+    <div class="value"><span>R$</span> <span id="desconto"></span></div></div>
+    <div><div class="label">Taxa de Entrega:</div>
+    <div class="value"><span>R$</span> <span id="taxa-entrega"></span></div></div>
+    <div><div class="label">Valor Final:</div>
+    <div class="value"><span>R$</span> <span id="valor-final"></span></div></div></div></div>
+
+    <div id="botao"><a href="checkout.html" id="checkout-button">Finalizar Compra</a></div>
+
+    <div class="tela3">
+    <h6>COMPRE AGORA COM FRETE FIXO 🚛</h6>
+    <p>Frete fixo nas suas compras, somente para a cidade de florianópolis.</p></div>
+</main>
+
+<footer id="roda">
+    <div class="footer-top">
+    <div class="footer-column">
+    <div class="h3">Produtos</div>
+    <ul class="products-list">
+    <li><a href="../calcinhas/calcinhas.html">Calcinhas</a></li>
+    <li><a href="../sutia&tops/sutia&tops.html">Sutiã e Tops</a></li>
+    <li><a href="../pijamas/pijamas.html">Pijamas</a></li>
+    <li><a href="../sexshop/sexshop.html">Sexshop</a></li>
+    <li><a href="../conjuntos/conjuntos.html">Conjuntos</a></li></ul></div>
+
+    <div class="footer-column">
+    <div class="h3">Suporte</div>
+    <ul><li><a href="#">Contato</a></li>
+    <li><a href="#">Envio</a></li>
+    <li><a href="#">Troca e Devolução</a></li>
+    <li><a href="#">FAQs</a></li></ul></div>
+
+    <div class="footer-column">
+    <div class="h3">Siga-nos</div>
+    <div id="social-icons">
+    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a></div></div>
+
+    <div class="footer-column">
+    <div class="h3">Aceitamos</div>
+    <div class="card-icons">
+    <span class="card-icon"><i class="fa-brands fa-cc-visa"></i></span>
+    <span class="card-icon"><i class="fa-brands fa-cc-mastercard"></i></span>
+    <span class="card-icon"><i class="fa-brands fa-pix"></i></span></div></div></div>
+
+    <div class="footer-bottom">
+    <div class="footer-bottom-content">
+    <p>&copy; 2024 Furquinlingeries. Todos os direitos reservados.</p>
+    <p class="footer-address">Rodovia SC-405, 356 - Rio Tavares - Florianópolis - Santa Catarina</p></div></div>
+</footer>
+
+<script src="js/sacola.js"></script>
+<script src="js/mobile-navbar.js"></script>
+</body>
+</html>

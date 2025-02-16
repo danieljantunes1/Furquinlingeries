@@ -1,0 +1,19 @@
+h4 {
+    left: -100px;
+}
+
+@media (max-width: 980px) {
+  h4 {
+    left: -115px;
+}
+}
+
+#roda {
+    margin-top: 715px;
+}
+
+@media (max-width: 980px) {
+  #roda {
+    margin-top: 690px;
+}
+}
